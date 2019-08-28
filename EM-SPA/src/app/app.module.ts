@@ -6,6 +6,7 @@ import { SharedModule } from "./shared/shared.module";
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { EmailBuilderModule } from "./email-builder/email-builder.module";
 
 @NgModule({
   declarations: [
@@ -16,7 +17,8 @@ import { AppComponent } from './app.component';
     AppRoutingModule,
     BrowserAnimationsModule,
     MatInputModule,
-    SharedModule
+    SharedModule,
+    EmailBuilderModule
   ],
   providers: [],
   bootstrap: [AppComponent]

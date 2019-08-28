@@ -9,6 +9,7 @@ import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatIconModule} from '@angular/material/icon';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {DragDropModule} from '@angular/cdk/drag-drop';
+import { EmailBuilderModule } from "../email-builder/email-builder.module";
 
 
 
@@ -21,7 +22,8 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
     MatToolbarModule,
     MatIconModule,
     MatSidenavModule,
-    DragDropModule
+    DragDropModule,
+    EmailBuilderModule
   ],
   exports: [
     LayoutComponent
