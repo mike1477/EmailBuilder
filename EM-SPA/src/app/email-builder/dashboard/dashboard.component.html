@@ -1,21 +1,18 @@
-<div cdkDropListGroup>
-    <div class="example-container">
-      <div
-        cdkDropList
-        [cdkDropListData]="content"
-        class="example-list"
-        (cdkDropListDropped)="drop($event)">
-        <div class="example-box" *ngFor="let item of content" cdkDrag>{{item}}</div>
+<div class="dashboard-outer">
+    <div class="sidebar">
+        <div cdkDropList class="email-list" (cdkDropListDropped)="drop($event)">
+            <div class="email-box" *ngFor="let option of options" cdkDrag>{{option.title}}
+                <img *cdkDragPreview [src]="option.poster">
+            </div>
+        </div>
+
       </div>
-    </div>
-  
-    <div class="display-container">
-      <div
-        cdkDropList
-        [cdkDropListData]="display"
-        class="example-list" id="display"
-        (cdkDropListDropped)="drop($event)">
-        <div class="example-box" *ngFor="let item of display" cdkDrag>{{item}}</div>
+      <div class="content-display">
+          <app-display #child></app-display>
       </div>
-    </div>
-  </div>
+</div>
+
+
+
+
+

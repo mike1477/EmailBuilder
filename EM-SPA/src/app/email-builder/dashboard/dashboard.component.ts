@@ -1,5 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ComponentFactoryResolver, ViewContainerRef, ViewChild } from '@angular/core';
 import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
+import { TextCardComponent } from '../text-card/text-card.component';
+import { DisplayComponent } from '../display/display.component';
 
 @Component({
   selector: 'app-dashboard',
@@ -13,29 +15,38 @@ export class DashboardComponent implements OnInit {
   ngOnInit() {
   }
 
-  content = [
-    'Text Field',
-    'Image',
-    'Button',
-    'Divider',
-    'Social',
-    'Html',
-    'Video'
-  ];
+  @ViewChild(DisplayComponent, {static: false}) child:DisplayComponent;
 
-  display = [
 
+  options = [
+    {
+      title: 'Add Text Field',
+      poster: '../../../assets/angular.png'
+    },
+    {
+      title: 'Add Email Field',
+      poster: '../../../assets/angular.png'
+    },
+    {
+      title: 'Add Video Field',
+      poster: '../../../assets/angular.png'
+    },
+    {
+      title: 'Add Divider',
+      poster: '../../../assets/angular.png'
+    },
+    {
+      title: 'Add Social',
+      poster: '../../../assets/angular.png'
+    },
   ];
 
   drop(event: CdkDragDrop<string[]>) {
-    if (event.previousContainer === event.container) {
-      moveItemInArray(event.container.data, event.previousIndex, event.currentIndex);
-    } else {
-      transferArrayItem(event.previousContainer.data,
-                        event.container.data,
-                        event.previousIndex,
-                        event.currentIndex);
-    }
+    this.child.AddTextFeild();
+    //moveItemInArray(this.options, event.previousIndex, event.currentIndex);
+    console.log(event);
   }
+
+ 
 
 }
