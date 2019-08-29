@@ -1,6 +1,5 @@
-import { Component, OnInit, ComponentFactoryResolver, ViewContainerRef } from '@angular/core';
-import { TextCardComponent } from '../text-card/text-card.component';
-import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
+import { Component, OnInit } from '@angular/core';
+import { CdkDragDrop } from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-display',
@@ -9,16 +8,16 @@ import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag
 })
 export class DisplayComponent implements OnInit {
 
-  constructor(private componentFactoryResolver: ComponentFactoryResolver,
-    private viewContainerRef: ViewContainerRef) { }
+  constructor() { }
 
   ngOnInit() {
   }
 
-  AddTextFeild() {
-    const factory = this.componentFactoryResolver.resolveComponentFactory(TextCardComponent);
-    const ref = this.viewContainerRef.createComponent(factory);
-    ref.changeDetectorRef.detectChanges();
-}
+  drop(event: CdkDragDrop<string[]>){
+    console.log("dropped");
+    this.layoutRows.push(0);
+  }
+
+  layoutRows = [0,0];
 
 }

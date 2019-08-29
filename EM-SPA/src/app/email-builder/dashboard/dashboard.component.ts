@@ -42,11 +42,6 @@ export class DashboardComponent implements OnInit {
   ];
 
   drop(event: CdkDragDrop<string[]>) {
-    this.child.AddTextFeild();
-    //moveItemInArray(this.options, event.previousIndex, event.currentIndex);
     console.log(event);
   }
-
- 
-
 }

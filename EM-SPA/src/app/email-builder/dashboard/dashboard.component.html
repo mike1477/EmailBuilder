@@ -1,6 +1,12 @@
 <div class="dashboard-outer">
     <div class="sidebar">
-        <div cdkDropList class="email-list" (cdkDropListDropped)="drop($event)">
+        <div 
+        id="layout-row-options"
+        class="email-list"
+        cdkDropList 
+        cdkDropListSortingDisabled 
+        [cdkDropListConnectedTo]="['layout-row-list']" 
+        (cdkDropListDropped)="drop($event)">
             <div class="email-box" *ngFor="let option of options" cdkDrag>{{option.title}}
                 <img *cdkDragPreview [src]="option.poster">
             </div>
@@ -8,7 +14,7 @@
 
       </div>
       <div class="content-display">
-          <app-display #child></app-display>
+          <app-display></app-display>
       </div>
 </div>
 

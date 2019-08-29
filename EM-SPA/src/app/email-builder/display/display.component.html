@@ -1,3 +1,8 @@
-
-
-
+<div 
+id="layout-row-list"
+cdkDropList 
+(cdkDropListDropped)="drop($event)">
+    <div *ngFor="let row of layoutRows" cdkDrag>
+        <p>Here is your text field.</p>
+    </div>
+</div>
