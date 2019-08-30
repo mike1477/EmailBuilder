@@ -6,13 +6,16 @@
                     [cdkDropListConnectedTo]="['layout-row-list']" (cdkDropListDropped)="drop($event)">
                     <div class="email-box" *ngFor="let element of elementOptions" cdkDrag>{{element.title}}
                         <img *cdkDragPreview [src]="element.poster">
+                        <i class="material-icons">
+                                {{element.icon}}
+                                </i>
                     </div>
                 </div>
             </mat-tab>
             <mat-tab label="Rows">
                 <div id="layout-row-options" class="email-list" cdkDropList cdkDropListSortingDisabled
                     [cdkDropListConnectedTo]="['layout-row-list']" (cdkDropListDropped)="drop($event)">
-                    <div class="email-box" *ngFor="let row of rowOptions" cdkDrag>{{row.title}}
+                    <div class="email-box" *ngFor="let row of rowOptions" cdkDrag><img [src]="row.poster" class="row-column-img">
                         <img *cdkDragPreview [src]="row.poster">
                     </div>
                 </div>
