@@ -43,6 +43,37 @@ overflow: hidden;
   font-size: 14px;
   width:85%;
 }
+.element-list {
+
+  max-width: 100%;
+  min-height: 60px;
+  display: block;
+  border-radius: 4px;
+  overflow: hidden;
+  display: flex;
+  flex-flow: row wrap;
+ 
+}
+.element-box {
+  padding: 20px 10px;
+  border: #ccc solid 1px;
+  height: 140px;
+  width: 140px;
+  color: rgba(0, 0, 0, 0.87);
+  margin:18px;
+  align-items: center;
+  justify-content: space-between;
+  box-sizing: border-box;
+  cursor: move;
+  font-size: 14px;
+  text-align: center;
+}
+
+.icon-container-material i{
+  font-size: 60px;
+  text-align:center;
+  margin:auto;
+}
 .mat-tab-body-wrapper{
   width: 300px;
 }

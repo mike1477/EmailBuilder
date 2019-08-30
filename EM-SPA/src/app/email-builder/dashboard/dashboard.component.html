@@ -2,13 +2,16 @@
     <div class="sidebar">
         <mat-tab-group>
             <mat-tab label="Elements">
-                <div id="layout-element-options" class="email-list" cdkDropList cdkDropListSortingDisabled
+                <div id="layout-element-options" class="element-list" cdkDropList cdkDropListSortingDisabled
                     [cdkDropListConnectedTo]="['layout-row-list']" (cdkDropListDropped)="drop($event)">
-                    <div class="email-box" *ngFor="let element of elementOptions" cdkDrag>{{element.title}}
+                    <div class="element-box" *ngFor="let element of elementOptions" cdkDrag>{{element.title}}
                         <img *cdkDragPreview [src]="element.poster">
-                        <i class="material-icons">
-                                {{element.icon}}
-                                </i>
+                        <div class="icon-container-material">
+                                <i class="material-icons">
+                                        {{element.icon}}
+                                        </i>
+                        </div>
+                        
                     </div>
                 </div>
             </mat-tab>
