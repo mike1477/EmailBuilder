@@ -4,15 +4,16 @@
             <mat-tab label="Elements">
                 <div 
                 id="layout-element-options" 
-                class="email-list" 
+                class="element-list" 
                 cdkDropList 
                 [cdkDropListConnectedTo]="TODO"
+                *ngFor="let element of elementOptions"
                  >
-                    <div class="email-box" *ngFor="let element of elementOptions" cdkDrag>{{element.title}}
-                        <img *cdkDragPreview [src]="element.poster">
-                        <i class="material-icons">
-                                {{element.icon}}
-                        </i>
+                    <img *cdkDragPreview [src]="element.poster">
+                    <div class="icon-container-material">
+                            <i class="material-icons">
+                                    {{element.icon}}
+                            </i>
                     </div>
                 </div>
             </mat-tab>

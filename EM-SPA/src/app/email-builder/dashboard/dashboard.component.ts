@@ -26,30 +26,30 @@ export class DashboardComponent implements OnInit {
 
   elementOptions = [
     {
-      title: 'Add Text Field',
+      title: 'Text',
       poster: '../../../assets/angular.png',
       layoutType:"layout-element"
     },
     {
-      title: 'Add Email Field',
+      title: 'Email',
       poster: '../../../assets/angular.png',
       icon: "local_post_office",
       layoutType:"layout-element"
     },
     {
-      title: 'Add Video Field',
+      title: 'Video',
       poster: '../../../assets/angular.png',
       icon: "videocam",
       layoutType:"layout-element"
     },
     {
-      title: 'Add Divider',
+      title: 'Divider',
       poster: '../../../assets/angular.png',
       icon: "view_stream",
       layoutType:"layout-element"
     },
     {
-      title: 'Add Social',
+      title: 'Social',
       poster: '../../../assets/angular.png',
       icon: "public",
       layoutType:"layout-element"
