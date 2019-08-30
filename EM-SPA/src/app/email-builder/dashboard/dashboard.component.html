@@ -7,14 +7,15 @@
                 class="element-list" 
                 cdkDropList 
                 [cdkDropListConnectedTo]="TODO"
-                *ngFor="let element of elementOptions"
                  >
-                    <img *cdkDragPreview [src]="element.poster">
-                    <div class="icon-container-material">
-                            <i class="material-icons">
-                                    {{element.icon}}
-                            </i>
-                    </div>
+                 <div class="element-box" *ngFor="let element of elementOptions" cdkDrag>
+                        <img *cdkDragPreview [src]="element.poster">
+                        <div class="icon-container-material">
+                                <i class="material-icons">
+                                        {{element.icon}}
+                                </i>
+                        </div>
+                 </div>
                 </div>
             </mat-tab>
             <mat-tab label="Rows">
