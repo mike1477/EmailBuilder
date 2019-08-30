@@ -22,36 +22,37 @@ export class DashboardComponent implements OnInit {
   @ViewChild(DisplayComponent, {static: false}) child:DisplayComponent;
 
 
+  allowedDropLists:Array<string> = ['layout-row-list'];
+
   elementOptions = [
     {
       title: 'Add Text Field',
       poster: '../../../assets/angular.png',
-      rowData:{
-        cells:[],
-        border: "",
-        backround: ""
-      },
-      icon: "title"
+      layoutType:"layout-element"
     },
     {
       title: 'Add Email Field',
       poster: '../../../assets/angular.png',
-      icon: "local_post_office"
+      icon: "local_post_office",
+      layoutType:"layout-element"
     },
     {
       title: 'Add Video Field',
       poster: '../../../assets/angular.png',
-      icon: "videocam"
+      icon: "videocam",
+      layoutType:"layout-element"
     },
     {
       title: 'Add Divider',
       poster: '../../../assets/angular.png',
-      icon: "view_stream"
+      icon: "view_stream",
+      layoutType:"layout-element"
     },
     {
       title: 'Add Social',
       poster: '../../../assets/angular.png',
-      icon: "public"
+      icon: "public",
+      layoutType:"layout-element"
     },
   ];
 
@@ -59,79 +60,43 @@ export class DashboardComponent implements OnInit {
     {
       title: 'single row',
       poster: 'https://drive.google.com/uc?id=1bVgvI_BG9bl85wXdDsAesE_8LZcn3pyP',
-      rowData:{
-        cells:[],
-        border: "",
-        backround: ""
-      },   
+      layoutType:"layout-row"  
     },
     {
       title: '10 / 2 row',
       poster: 'https://drive.google.com/uc?id=1ccfJylQqoOGzAd7phgv0a5p9xvB4uLO7',
-      rowData:{
-        cells:[],
-        border: "",
-        backround: ""
-      },   
+      layoutType:"layout-row"  
     },
     {
       title: '3 / 9 row',
       poster: 'https://drive.google.com/uc?id=1VSPd9GlafcTNborSpPbLNTAE_7V0cJMV',
-      rowData:{
-        cells:[],
-        border: "",
-        backround: ""
-      },   
+      layoutType:"layout-row" 
     },
     {
       title: '6 / 6 row',
       poster: 'https://drive.google.com/uc?id=1r3YJbRDydPzVtF_cZigaj4xBCvDZO6dQ',
-      rowData:{
-        cells:[],
-        border: "",
-        backround: ""
-      },   
+      layoutType:"layout-row"   
     },
     {
       title: '9 / 3 row',
       poster: 'https://drive.google.com/uc?id=1GY7ayA5HqFYck6srV9eoITNs02zkHqx4',
-      rowData:{
-        cells:[],
-        border: "",
-        backround: ""
-      },   
+      layoutType:"layout-row" 
     },
     {
       title: '4/4/4 row',
       poster: 'https://drive.google.com/uc?id=1InpMYPVfYb5UUOjj7KNfh0CtxHGcRkHZ',
-      rowData:{
-        cells:[],
-        border: "",
-        backround: ""
-      },   
+      layoutType:"layout-row"  
     },
     {
       title: '3/3/6 row',
       poster: 'https://drive.google.com/uc?id=1WnYaIEVrloy-n7Fm0rFPAW-4jMJbjvJy',
-      rowData:{
-        cells:[],
-        border: "",
-        backround: ""
-      },
+      layoutType:"layout-row"
     },
     {
         title: '3/3/6 row',
         poster: 'https://drive.google.com/uc?id=1nasFuhuuGsweGP-OdgmCiWH5OvdJ7v0-',
-        rowData:{
-          cells:[],
-          border: "",
-          backround: ""
-        },     
+        layoutType:"layout-row"   
     },
 
   ]
-
-  drop(event: CdkDragDrop<string[]>) {
-    console.log(event);
-  }
 }

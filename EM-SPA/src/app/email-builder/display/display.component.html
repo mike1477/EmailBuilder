@@ -2,7 +2,5 @@
 id="layout-row-list"
 cdkDropList 
 (cdkDropListDropped)="drop($event)">
-    <div *ngFor="let row of layoutRows" cdkDrag>
-        <p>Here is your text field.</p>
-    </div>
+    <app-layout-row *ngFor="let row of emailTemplate.rows" cdkDrag [row]="row"></app-layout-row>
 </div>

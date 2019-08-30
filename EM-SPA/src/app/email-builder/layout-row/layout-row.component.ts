@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Row } from 'src/models/row';
 
 @Component({
   selector: 'app-layout-row',
@@ -7,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LayoutRowComponent implements OnInit {
 
+  @Input() row:Row;
   constructor() { }
 
   ngOnInit() {
