@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { TextCardComponent } from './text-card.component';
+import { LayoutCellComponent } from './layout-cell.component';
 
-describe('TextCardComponent', () => {
-  let component: TextCardComponent;
-  let fixture: ComponentFixture<TextCardComponent>;
+describe('LayoutCellComponent', () => {
+  let component: LayoutCellComponent;
+  let fixture: ComponentFixture<LayoutCellComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ TextCardComponent ]
+      declarations: [ LayoutCellComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(TextCardComponent);
+    fixture = TestBed.createComponent(LayoutCellComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

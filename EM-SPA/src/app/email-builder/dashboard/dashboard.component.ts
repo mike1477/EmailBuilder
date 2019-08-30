@@ -1,6 +1,5 @@
 import { Component, OnInit, ComponentFactoryResolver, ViewContainerRef, ViewChild } from '@angular/core';
 import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
-import { TextCardComponent } from '../text-card/text-card.component';
 import { DisplayComponent } from '../display/display.component';
 
 @Component({
@@ -21,7 +20,12 @@ export class DashboardComponent implements OnInit {
   options = [
     {
       title: 'Add Text Field',
-      poster: '../../../assets/angular.png'
+      poster: '../../../assets/angular.png',
+      rowData:{
+        cells:[],
+        border: "",
+        backround: ""
+      }
     },
     {
       title: 'Add Email Field',
