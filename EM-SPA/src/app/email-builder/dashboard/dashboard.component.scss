@@ -21,12 +21,10 @@ width:30%;
   border:dotted red 1px;
 }
 .email-list {
-  width: 500px;
+
   max-width: 100%;
-  border: solid 1px #ccc;
   min-height: 60px;
   display: block;
-  background: white;
   border-radius: 4px;
   overflow: hidden;
 }
@@ -41,8 +39,11 @@ width:30%;
   justify-content: space-between;
   box-sizing: border-box;
   cursor: move;
-  background: white;
   font-size: 14px;
+  width:510px;
+}
+.mat-tab-body-wrapper{
+  width: 300px;
 }
 
 .cdk-drag-preview {

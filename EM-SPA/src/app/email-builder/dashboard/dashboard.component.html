@@ -1,24 +1,21 @@
 <div class="dashboard-outer">
     <div class="sidebar">
-        <div 
-        id="layout-row-options"
-        class="email-list"
-        cdkDropList 
-        cdkDropListSortingDisabled 
-        [cdkDropListConnectedTo]="['layout-row-list']" 
-        (cdkDropListDropped)="drop($event)">
-            <div class="email-box" *ngFor="let option of options" cdkDrag>{{option.title}}
-                <img *cdkDragPreview [src]="option.poster">
-            </div>
-        </div>
-
-      </div>
-      <div class="content-display">
-          <app-display></app-display>
-      </div>
+        <mat-tab-group>
+            <mat-tab label="Elements">
+                <div id="layout-row-options" class="email-list" cdkDropList cdkDropListSortingDisabled
+                    [cdkDropListConnectedTo]="['layout-row-list']" (cdkDropListDropped)="drop($event)">
+                    <div class="email-box" *ngFor="let option of options" cdkDrag>{{option.title}}
+                        <img *cdkDragPreview [src]="option.poster">
+                    </div>
+                </div>
+            </mat-tab>
+            <mat-tab label="Rows">
+                <h1>Rowes</h1>
+                <p>Rows go here</p>
+            </mat-tab>
+        </mat-tab-group>
+    </div>
+    <div class="content-display">
+        <app-display></app-display>
+    </div>
 </div>
-
-
-
-
-

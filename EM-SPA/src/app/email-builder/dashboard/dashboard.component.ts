@@ -2,6 +2,7 @@ import { Component, OnInit, ComponentFactoryResolver, ViewContainerRef, ViewChil
 import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
 import { DisplayComponent } from '../display/display.component';
 
+
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',

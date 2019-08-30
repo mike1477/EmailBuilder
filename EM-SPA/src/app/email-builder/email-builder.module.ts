@@ -1,5 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
+import {MatTabsModule} from '@angular/material/tabs';
 
 import { EmailBuilderRoutingModule } from './email-builder-routing.module';
 import { DashboardComponent } from './dashboard/dashboard.component';
@@ -15,7 +16,8 @@ import { LayoutCellComponent } from './layout-cell/layout-cell.component';
   imports: [
     CommonModule,
     EmailBuilderRoutingModule,
-    DragDropModule
+    DragDropModule,
+    MatTabsModule
   ],
   entryComponents: [LayoutElementComponent],
   exports: [
