@@ -18,7 +18,7 @@ export class DashboardComponent implements OnInit {
   @ViewChild(DisplayComponent, {static: false}) child:DisplayComponent;
 
 
-  options = [
+  elementOptions = [
     {
       title: 'Add Text Field',
       poster: '../../../assets/angular.png',
@@ -45,6 +45,82 @@ export class DashboardComponent implements OnInit {
       poster: '../../../assets/angular.png'
     },
   ];
+
+  rowOptions = [
+    {
+      title: 'single row',
+      poster: '../../../assets/angular.png',
+      rowData:{
+        cells:[],
+        border: "",
+        backround: ""
+      },   
+    },
+    {
+      title: '2 / 10 row',
+      poster: '../../../assets/angular.png',
+      rowData:{
+        cells:[],
+        border: "",
+        backround: ""
+      },   
+    },
+    {
+      title: '3 / 9 row',
+      poster: '../../../assets/angular.png',
+      rowData:{
+        cells:[],
+        border: "",
+        backround: ""
+      },   
+    },
+    {
+      title: '6 / 6 row',
+      poster: '../../../assets/angular.png',
+      rowData:{
+        cells:[],
+        border: "",
+        backround: ""
+      },   
+    },
+    {
+      title: '9 / 3 row',
+      poster: '../../../assets/angular.png',
+      rowData:{
+        cells:[],
+        border: "",
+        backround: ""
+      },   
+    },
+    {
+      title: '4/4/4 row',
+      poster: '../../../assets/angular.png',
+      rowData:{
+        cells:[],
+        border: "",
+        backround: ""
+      },   
+    },
+    {
+      title: '3/3/6 row',
+      poster: '../../../assets/angular.png',
+      rowData:{
+        cells:[],
+        border: "",
+        backround: ""
+      },
+    },
+    {
+        title: '6/3/3 row',
+        poster: '../../../assets/angular.png',
+        rowData:{
+          cells:[],
+          border: "",
+          backround: ""
+        },     
+    },
+
+  ]
 
   drop(event: CdkDragDrop<string[]>) {
     console.log(event);

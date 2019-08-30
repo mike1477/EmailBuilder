@@ -5,6 +5,7 @@
 position: absolute;
 left: 0px;
 width:30%;
+overflow: hidden;
 }
 .content-display{
   border:dotted #000 1px;
@@ -40,7 +41,7 @@ width:30%;
   box-sizing: border-box;
   cursor: move;
   font-size: 14px;
-  width:510px;
+  width:85%;
 }
 .mat-tab-body-wrapper{
   width: 300px;
