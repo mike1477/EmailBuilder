@@ -1,0 +1,20 @@
+
+.row-outer{
+  background-color:#fff;
+  transition: background-color 1s;
+  margin:10px;
+}
+.row-outer:hover{
+  background-color: #ccc;
+}
+.row-display{
+  width:80%;
+   margin:auto;
+}
+.no-content{
+
+}
+.row-display div{
+  background-color: rgba(222,242,250,.85);
+  border:dotted;
+}
