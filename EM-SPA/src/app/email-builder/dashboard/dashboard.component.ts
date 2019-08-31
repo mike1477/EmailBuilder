@@ -1,9 +1,4 @@
-import { Component, OnInit, ComponentFactoryResolver, ViewContainerRef, ViewChild } from '@angular/core';
-import {CdkDragDrop, moveItemInArray, transferArrayItem} from '@angular/cdk/drag-drop';
-import { DisplayComponent } from '../display/display.component';
-import {MatIconRegistry} from '@angular/material/icon';
-import { DomSanitizer } from '@angular/platform-browser';
-
+import { Component, OnInit, ViewChild } from '@angular/core';
 
 @Component({
   selector: 'app-dashboard',
@@ -18,11 +13,6 @@ export class DashboardComponent implements OnInit {
 
   ngOnInit() {
   }
-
-  @ViewChild(DisplayComponent, {static: false}) child:DisplayComponent;
-
-
-  allowedDropLists:Array<string> = ['layout-row-list'];
 
   elementOptions = [
     {

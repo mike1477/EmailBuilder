@@ -1,6 +1,3 @@
-<div 
-id="layout-row-list"
-cdkDropList 
-(cdkDropListDropped)="drop($event)">
-    <app-layout-row *ngFor="let row of emailTemplate.rows" cdkDrag [row]="row"></app-layout-row>
+<div id="layout-row-list">
+    <app-layout-row *ngFor="let row of emailTemplate.rows" [row]="row"></app-layout-row>
 </div>
