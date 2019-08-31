@@ -7,6 +7,7 @@ import { SharedModule } from "./shared/shared.module";
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { EmailBuilderModule } from "./email-builder/email-builder.module";
+import { DragulaModule,  DragulaService} from 'ng2-dragula';
 
 @NgModule({
   declarations: [
@@ -18,9 +19,10 @@ import { EmailBuilderModule } from "./email-builder/email-builder.module";
     BrowserAnimationsModule,
     MatInputModule,
     SharedModule,
-    EmailBuilderModule
+    EmailBuilderModule,
+    DragulaModule.forRoot()
   ],
-  providers: [],
+  providers: [DragulaService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

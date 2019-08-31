@@ -11,7 +11,7 @@
                     </div>
                 </mat-tab>
                 <mat-tab label="Rows">
-                    <div id="layout-row-options" class="email-list">
+                    <div id="layout-row-options" class="email-list" dragula="rows" [(dragulaModel)]="rowOptions">
                         <div class="email-box" *ngFor="let row of rowOptions" >
                             <img [src]="row.poster" class="row-column-img">
                         </div>

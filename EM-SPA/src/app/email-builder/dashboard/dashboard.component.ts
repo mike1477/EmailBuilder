@@ -1,4 +1,6 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit, } from '@angular/core';
+import { DragulaService } from 'ng2-dragula';
+import { Row } from 'src/models/row';
 
 @Component({
   selector: 'app-dashboard',
@@ -7,8 +9,19 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 })
 export class DashboardComponent implements OnInit {
 
-  constructor() {
-
+  constructor(private dragulaService: DragulaService) {
+    dragulaService.createGroup('rows', {
+      copy: (el, source) => {
+        return source.id === 'layout-row-options';
+      },
+      copyItem: (person: Row) => {
+        return new Row();
+      },
+      accepts: (el, target, source, sibling) => {
+        // To avoid dragging from right to left container
+        return target.id !== 'layout-row-options';
+      }
+    });
    }
 
   ngOnInit() {
