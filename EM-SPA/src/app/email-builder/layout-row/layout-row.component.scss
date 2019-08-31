@@ -1,0 +1,23 @@
+.row-outer{
+    
+    transition: background-color 1s;
+    margin:10px;
+  }
+  .row-outer:hover{
+    background-color: #ccc;
+  }
+  .row-display{
+    width:80%;
+     margin:auto;
+  }
+  .no-content{
+    text-align: center;
+    vertical-align: middle;
+    line-height: 90px; 
+  }
+  .row-display div{
+    background: rgba(222,242,250,.85);
+    outline: 1px dashed #2faade;
+    outline-offset: -1px;
+    min-height: 50px;
+  }

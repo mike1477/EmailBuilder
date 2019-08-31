@@ -12,9 +12,13 @@
    margin:auto;
 }
 .no-content{
-
+  text-align: center;
+  vertical-align: middle;
+  line-height: 90px; 
 }
 .row-display div{
-  background-color: rgba(222,242,250,.85);
-  border:dotted;
+  background: rgba(222,242,250,.85);
+  outline: 1px dashed #2faade;
+  outline-offset: -1px;
+  min-height: 50px;
 }
