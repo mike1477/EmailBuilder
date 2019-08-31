@@ -1,4 +1,3 @@
 <div id="layout-row-list" dragula="rows" [(dragulaModel)]="emailTemplate.rows" >
-    <app-layout-row *ngFor="let row of emailTemplate.rows" [row]="row"></app-layout-row>
-    <app-layout-row></app-layout-row>
+    <div app-layout-row class="row-wrapper" *ngFor="let row of emailTemplate.rows" [row]="row"></div>
 </div>

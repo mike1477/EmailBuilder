@@ -17,4 +17,5 @@ export class DisplayComponent implements OnInit {
     this.emailTemplate = new Email();
     this.emailTemplate.rows = [];
   }
+
 }
