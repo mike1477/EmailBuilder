@@ -5,18 +5,18 @@
                     <div id="layout-element-options" class="element-list" >
                         <div class="element-box" *ngFor="let element of elementOptions">
                             <div class="icon-container-material">
-                                    <i class="material-icons"> {{element.icon}} </i>
+                                <i class="material-icons"> {{element.icon}} </i>
                             </div>
                         </div>
                     </div>
                 </mat-tab>
-                <mat-tab label="Rows" >
-                    <div data-simplebar>
-                            <div id="layout-row-options" class="row-list" dragula="rows" [(dragulaModel)]="rowOptions">
-                                    <div class="row-box" *ngFor="let row of rowOptions" >
-                                        <img [src]="row.poster" class="row-column-img">
-                                    </div>
-                           </div>
+                <mat-tab label="Rows">
+                    <div  data-simplebar>
+                        <div id="layout-row-options" class="row-list" dragula="rows" [(dragulaModel)]="rowOptions">
+                            <div class="row-box" *ngFor="let row of rowOptions" >
+                                <img [src]="row.poster" class="row-column-img">
+                            </div>
+                        </div>
                     </div>
                    
                 </mat-tab>
