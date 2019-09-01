@@ -8,13 +8,11 @@ width:30%;
 overflow: hidden;
 }
 .content-display{
-  border:dotted #000 1px;
   position: absolute;
   right:0px;
   width:70%;
   min-height: 500px;
   background-color:#eee;
-  padding:20px;
   transition: background-color 2s;
 }
 .content-display:hover{
@@ -37,7 +35,7 @@ overflow: hidden;
   box-sizing: border-box;
   cursor: move;
   font-size: 14px;
-  width:100%;
+  width:90%;
 }
 .row-box:active {
   box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
