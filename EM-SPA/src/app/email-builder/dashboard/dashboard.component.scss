@@ -22,7 +22,6 @@ overflow: hidden;
   border:dotted red 1px;
 }
 .row-list {
-
   max-width: 100%;
   max-height: 600px;
   display: block;
@@ -42,10 +41,21 @@ overflow: hidden;
   box-sizing: border-box;
   cursor: move;
   font-size: 14px;
-  width:85%;
+  width:100%;
+}
+.row-box:active {
+  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+              0 8px 10px 1px rgba(0, 0, 0, 0.14),
+              0 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+.row-box:hover{
+  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+              0 8px 10px 1px rgba(0, 0, 0, 0.14),
+              0 3px 14px 2px rgba(0, 0, 0, 0.12);
 }
 .element-list {
-
+  padding:0px 10%;
+  border:dotted red 1px;
   max-width: 100%;
   max-height: 600px;
   display: block;
@@ -56,11 +66,12 @@ overflow: hidden;
   
 }
 .element-box {
+  background-color: #fff;
+  color: #505659;
   padding: 20px 10px;
   border: #ccc solid 1px;
   height: 120px;
   width: 120px;
-  color: rgba(0, 0, 0, 0.87);
   margin:18px;
   align-items: center;
   justify-content: space-between;
@@ -69,6 +80,69 @@ overflow: hidden;
   font-size: 14px;
   text-align: center;
 }
+.element-box:hover{
+  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+              0 8px 10px 1px rgba(0, 0, 0, 0.14),
+              0 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+.element-box:active {
+  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+              0 8px 10px 1px rgba(0, 0, 0, 0.14),
+              0 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+
+/*
+.example-box {
+  width: 200px;
+  height: 200px;
+  border: solid 1px #ccc;
+  color: rgba(0, 0, 0, 0.87);
+  cursor: move;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: #fff;
+  border-radius: 4px;
+  position: relative;
+  z-index: 1;
+  transition: box-shadow 200ms cubic-bezier(0, 0, 0.2, 1);
+  box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2),
+              0 2px 2px 0 rgba(0, 0, 0, 0.14),
+              0 1px 5px 0 rgba(0, 0, 0, 0.12);
+}
+
+.example-box:active {
+  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+              0 8px 10px 1px rgba(0, 0, 0, 0.14),
+              0 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+*/
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .icon-container-material i{
   font-size: 60px;
@@ -116,6 +190,7 @@ overflow: hidden;
 /* Track */
 ::-webkit-scrollbar-track {
   -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+  box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
 }
  
 /* Handle */
