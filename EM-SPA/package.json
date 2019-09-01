@@ -25,6 +25,7 @@
     "hammerjs": "^2.0.8",
     "ng2-dragula": "^2.1.1",
     "rxjs": "~6.4.0",
+    "simplebar": "^4.2.0",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"
   },
