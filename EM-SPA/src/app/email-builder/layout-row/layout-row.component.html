@@ -1,7 +1,5 @@
 <div class="row-layout">
-        <div class="row-spacing">
-            <p>Herligheter hva penge, tærer innflytelse forderve hukommelse.</p>
-            <p>Lettsindigheten anstrengende røbe, overser rekk makroner, sengeliggende avbetaler klokt uskjønt fedre.</p>
-        </div>
+    <div app-layout-column [ngClass]="'column column-' + column.widthInPixels " *ngFor="let column of row.columns" [column] = column>
     </div>
+</div>
 

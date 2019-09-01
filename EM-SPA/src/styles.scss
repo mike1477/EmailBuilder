@@ -5,9 +5,9 @@
     position: fixed !important;
     margin: 0 !important;
     z-index: 9999 !important;
-    opacity: 0.8;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=80)";
-    filter: alpha(opacity=80);
+    opacity: 0.5;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+    filter: alpha(opacity=50);
     pointer-events: none;
   }
   /* high-performance display:none; helper */
@@ -23,7 +23,17 @@
   }
   /* added to the source element while its mirror is dragged */
   .gu-transit {
-    opacity: 0.2;
-    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=20)";
-    filter: alpha(opacity=20);
+    opacity: 0.5;
+    -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
+    filter: alpha(opacity=50);
   }
+
+  
+.gu-transit.email-box{
+  width:100% !important;
+}
+
+.gu-transit.email-box img{
+  width:auto;
+  margin:auto;
+}

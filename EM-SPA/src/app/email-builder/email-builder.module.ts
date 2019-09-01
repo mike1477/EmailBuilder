@@ -8,13 +8,12 @@ import {DragDropModule} from '@angular/cdk/drag-drop';
 import { DisplayComponent } from './display/display.component';
 import { LayoutRowComponent } from './layout-row/layout-row.component';
 import { LayoutElementComponent } from './layout-element/layout-element.component';
-import { LayoutCellComponent } from './layout-cell/layout-cell.component';
+import { LayoutColumnComponent } from './layout-column/layout-column.component';
 import { DragulaModule,  DragulaService} from 'ng2-dragula';
 
 
-
 @NgModule({
-  declarations: [DashboardComponent, DisplayComponent, LayoutRowComponent, LayoutElementComponent, LayoutCellComponent],
+  declarations: [DashboardComponent, DisplayComponent, LayoutRowComponent, LayoutElementComponent, LayoutColumnComponent],
   imports: [
     CommonModule,
     EmailBuilderRoutingModule,
