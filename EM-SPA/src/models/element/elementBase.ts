@@ -1,7 +1,7 @@
 import { Padding } from '../padding';
 import { Alignment } from '../eums/alignment';
 
-export class Element{
+export class ElementBase{
     padding: Padding;
     align: Alignment;
     autoWidth: boolean;

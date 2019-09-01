@@ -2,6 +2,10 @@ import { Component, OnInit, } from '@angular/core';
 import { DragulaService } from 'ng2-dragula';
 import { Row } from 'src/models/row';
 import { RowOption } from 'src/app/interfaces/rowOption';
+import { DividerElement } from 'src/models/element/dividerElement';
+import { ImageElement } from 'src/models/element/imageElement';
+import { TextElement } from 'src/models/element/textElement';
+import { ButtonElement } from 'src/models/element/buttonElement';
 
 @Component({
   selector: '[app-dashboard]',
@@ -20,8 +24,19 @@ export class DashboardComponent implements OnInit {
         return newRow;
       },
       accepts: (el, target, source, sibling) => {
-        // To avoid dragging from right to left container
         return target.id !== 'layout-row-options';
+      }
+    });
+    dragulaService.createGroup('elements', {
+      copy: (el, source) => {
+        return source.id === 'layout-element-options';
+      },
+      copyItem: (elementOption: any) => {
+        var newRow = new elementOption.type();
+        return newRow;
+      },
+      accepts: (el, target, source, sibling) => {
+        return target.id !== 'layout-element-options';
       }
     });
    }
@@ -33,31 +48,25 @@ export class DashboardComponent implements OnInit {
     {
       title: 'Text',
       poster: '../../../assets/angular.png',
-      layoutType:"layout-element"
+      type:TextElement
     },
     {
-      title: 'Email',
+      title: 'Button',
       poster: '../../../assets/angular.png',
       icon: "local_post_office",
-      layoutType:"layout-element"
-    },
-    {
-      title: 'Video',
-      poster: '../../../assets/angular.png',
-      icon: "videocam",
-      layoutType:"layout-element"
+      type:ButtonElement
     },
     {
       title: 'Divider',
       poster: '../../../assets/angular.png',
       icon: "view_stream",
-      layoutType:"layout-element"
+      type:DividerElement
     },
     {
-      title: 'Social',
+      title: 'Image',
       poster: '../../../assets/angular.png',
       icon: "public",
-      layoutType:"layout-element"
+      type:ImageElement
     },
   ];
 
