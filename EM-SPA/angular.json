@@ -28,9 +28,12 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/simplebar/dist/simplebar.min.css",
               "src/styles.scss"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/simplebar/dist/simplebar.min.js"
+            ]
           },
           "configurations": {
             "production": {

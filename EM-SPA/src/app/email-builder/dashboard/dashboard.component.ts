@@ -4,7 +4,7 @@ import { Row } from 'src/models/row';
 import { RowOption } from 'src/app/interfaces/rowOption';
 
 @Component({
-  selector: 'app-dashboard',
+  selector: '[app-dashboard]',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
 })

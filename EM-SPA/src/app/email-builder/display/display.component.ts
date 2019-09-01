@@ -3,7 +3,7 @@ import { Email } from 'src/models/email';
 import { Row } from 'src/models/row';
 
 @Component({
-  selector: 'app-display',
+  selector: '[app-display]',
   templateUrl: './display.component.html',
   styleUrls: ['./display.component.scss']
 })
