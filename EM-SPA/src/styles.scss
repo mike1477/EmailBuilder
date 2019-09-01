@@ -1,7 +1,7 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 /* in-flight clone */
-html, body, app-root, .wrapper, .content, [app-dashboard], dashboard-outer, .content-display, .sidebar  {
+html, body, app-root, .wrapper, .content, [app-dashboard], dashboard-outer, .content-display, .sidebar, .row-list  {
   height: 100vh;
   max-height: 100vh;
   padding:0;
