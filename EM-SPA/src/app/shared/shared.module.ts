@@ -1,7 +1,6 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { LayoutComponent } from './layout/layout.component';
-import { SidebarComponent } from './sidebar/sidebar.component';
 import { Routes, RouterModule } from '@angular/router';
 import {MatMenuModule} from '@angular/material/menu';
 import {MatToolbarModule} from '@angular/material/toolbar';
@@ -13,7 +12,7 @@ import { EmailBuilderModule } from "../email-builder/email-builder.module";
 
 
 @NgModule({
-  declarations: [LayoutComponent, SidebarComponent],
+  declarations: [LayoutComponent],
   imports: [
     CommonModule,
     RouterModule,
