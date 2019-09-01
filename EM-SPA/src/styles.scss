@@ -1,11 +1,9 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 /* in-flight clone */
-html, body, app-root, .wrapper, .content, [app-dashboard], dashboard-outer, .content-display, .sidebar  {
+html, body, app-root, .wrapper, .content, [app-dashboard], .dashboard-outer, .content-display, .sidebar  {
   height: 100vh;
   max-height: 100vh;
-  padding:0;
-  margin:0;
 }
 .gu-mirror {
     position: fixed !important;
@@ -35,11 +33,11 @@ html, body, app-root, .wrapper, .content, [app-dashboard], dashboard-outer, .con
   }
 
   
-.gu-transit.email-box{
+.gu-transit.row-box{
   width:100% !important;
 }
 
-.gu-transit.email-box img{
+.gu-transit.row-box img{
   width:auto;
   margin:auto;
 }
