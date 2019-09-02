@@ -1,7 +1,7 @@
 <div class="row-spacing">
     <div dragula="elements" [(dragulaModel)]="column.elements">
-        <p style="text-align: center;">Drag your content here!</p>
-        <div app-layout-element class="layout-element" *ngFor="let element of column.elements" [element] = element>
+        <p *ngIf="column.elements.length === 0; else layout-element" style="text-align: center;">Drag your content here!</p>
+        <div app-layout-element class="layout-element" #layoutElement *ngFor="let element of column.elements" [element] = element>
         </div>
     </div>
 </div>
