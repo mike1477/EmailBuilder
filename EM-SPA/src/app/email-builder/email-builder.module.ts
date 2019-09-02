@@ -10,10 +10,25 @@ import { LayoutRowComponent } from './layout-row/layout-row.component';
 import { LayoutElementComponent } from './layout-element/layout-element.component';
 import { LayoutColumnComponent } from './layout-column/layout-column.component';
 import { DragulaModule,  DragulaService} from 'ng2-dragula';
+import { LayoutElementDividerComponent } from './layout-element-divider/layout-element-divider.component';
+import { LayoutElementTextComponent } from './layout-element-text/layout-element-text.component';
+import { LayoutElementImageComponent } from './layout-element-image/layout-element-image.component';
+import { LayoutElementUnknownComponent } from './layout-element-unknown/layout-element-unknown.component';
+import { LayoutElementButtonComponent } from './layout-element-button/layout-element-button.component';
 
 
 @NgModule({
-  declarations: [DashboardComponent, DisplayComponent, LayoutRowComponent, LayoutElementComponent, LayoutColumnComponent],
+  declarations: [
+    DashboardComponent, 
+    DisplayComponent, 
+    LayoutRowComponent, 
+    LayoutElementComponent, 
+    LayoutColumnComponent, 
+    LayoutElementButtonComponent,
+    LayoutElementDividerComponent, 
+    LayoutElementTextComponent, 
+    LayoutElementImageComponent, 
+    LayoutElementUnknownComponent],
   imports: [
     CommonModule,
     EmailBuilderRoutingModule,
