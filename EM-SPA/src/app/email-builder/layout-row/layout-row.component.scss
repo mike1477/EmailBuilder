@@ -9,6 +9,38 @@
   min-width: 320px;
   width: 320px;
   width: calc(28000% - 173000px);
+  position: relative;
+}
+.row-controls{
+  position: absolute;
+  right: -35px;
+  padding:5px;
+  top:2px;
+  opacity: .1;
+  transition: all .5s;
+}
+.row-controls:hover{
+  opacity: 1;
+}
+.row-controls div{
+  margin-bottom:10px;
+  background-color:lightblue;
+  color:#000;
+  border:solid #000 1px;
+  border-radius: 5px;
+  transition: all .5s;
+ 
+}
+.row-controls div:hover{
+  background-color:rgba(222, 242, 250, 0.85);
+  border:lightblue dashed 1px;
+  color: lightblue;
+}
+.move-button:hover{
+  cursor: move;
+}
+.delete-button:hover{
+  cursor: pointer;
 }
 .row-spacing {
   Margin: 20px;

@@ -1,6 +1,9 @@
 <div class="row-spacing">
     <div dragula="elements" [(dragulaModel)]="column.elements">
-        <p *ngIf="column.elements.length === 0; else layout-element" style="text-align: center;">Drag your content here!</p>
+        <div *ngIf="column.elements.length === 0; else layout-element" class="drag-your-content-container">
+                <p style="text-align: center;">Drag your content here!</p>              
+        </div>      
+        
         <div class="layout-element" #layoutElement *ngFor="let element of column.elements"  [ngSwitch]="element && element.constructor && element.constructor.name">
             <div app-layout-element-button class="layout-element-button" *ngSwitchCase="'ButtonElement'" [element] = "element"></div>
             <div app-layout-element-divider class="layout-element-divider" *ngSwitchCase="'DividerElement'"[element] = "element"></div>

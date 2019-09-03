@@ -1,0 +1,12 @@
+.drag-your-content-container{
+    position: relative;
+    background-color: rgba(222,242,250,.85);
+    color: #2faade;
+    outline: 1px dashed #2faade;
+    margin:0px;  
+    padding-top:25px;
+}
+.drag-your-content-container p{
+    margin: 2px;
+    min-height: 50px;
+}
