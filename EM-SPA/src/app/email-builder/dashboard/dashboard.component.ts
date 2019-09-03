@@ -41,7 +41,10 @@ export class DashboardComponent implements OnInit {
       accepts: (el, target, source, sibling) => {
         return target.id !== 'layout-element-options';
         
-      }
+      },
+      moves: function (el, source, handle, sibling) {
+        return true; // elements are always draggable by default
+      },
     });
    }
 
