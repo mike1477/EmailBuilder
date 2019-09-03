@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { FormControl } from '@angular/forms';
+import { TextElement } from 'src/models/element/textElement';
 
 @Component({
   selector: '[app-layout-element-text]',
@@ -6,6 +8,10 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./layout-element-text.component.scss']
 })
 export class LayoutElementTextComponent implements OnInit {
+
+  @Input() element:TextElement;
+
+  //content = new FormControl(this.element.content);
 
   constructor() { }
 

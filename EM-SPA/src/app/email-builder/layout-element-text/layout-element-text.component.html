@@ -1,1 +1,11 @@
-<p>layout-element-text works!</p>
+<div class="element-wrapper">
+        <editor [init]="{
+            base_url: '/tinymce',
+            suffix: '.min',
+            plugins: 'lists advlist',
+            toolbar: 'undo redo | bold italic | bullist numlist outdent indent',
+            menubar:false,
+            statusbar:false,
+            inline: true
+          }" [initialValue]="element.content"></editor>
+</div>

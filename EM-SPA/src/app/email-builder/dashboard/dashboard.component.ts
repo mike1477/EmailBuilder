@@ -32,11 +32,15 @@ export class DashboardComponent implements OnInit {
         return source.id === 'layout-element-options';
       },
       copyItem: (elementOption: any) => {
-        var newRow = new elementOption.type();
-        return newRow;
+        var newElement = new elementOption.type();
+        if(newElement instanceof TextElement){
+          newElement.content = "Your text content here";
+        }
+        return newElement;
       },
       accepts: (el, target, source, sibling) => {
         return target.id !== 'layout-element-options';
+        
       }
     });
    }

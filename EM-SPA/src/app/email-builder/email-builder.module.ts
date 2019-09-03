@@ -15,7 +15,7 @@ import { LayoutElementTextComponent } from './layout-element-text/layout-element
 import { LayoutElementImageComponent } from './layout-element-image/layout-element-image.component';
 import { LayoutElementUnknownComponent } from './layout-element-unknown/layout-element-unknown.component';
 import { LayoutElementButtonComponent } from './layout-element-button/layout-element-button.component';
-
+import { EditorModule } from '@tinymce/tinymce-angular';
 
 @NgModule({
   declarations: [
@@ -28,13 +28,15 @@ import { LayoutElementButtonComponent } from './layout-element-button/layout-ele
     LayoutElementDividerComponent, 
     LayoutElementTextComponent, 
     LayoutElementImageComponent, 
-    LayoutElementUnknownComponent],
+    LayoutElementUnknownComponent
+  ],
   imports: [
     CommonModule,
     EmailBuilderRoutingModule,
     DragDropModule,
     MatTabsModule,
-    DragulaModule
+    DragulaModule,
+    EditorModule
   ],
   entryComponents: [LayoutElementComponent],
   exports: [

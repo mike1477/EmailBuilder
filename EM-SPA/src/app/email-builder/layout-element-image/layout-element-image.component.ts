@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { ImageElement } from 'src/models/element/imageElement';
 
 @Component({
   selector: '[app-layout-element-image]',
@@ -6,7 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./layout-element-image.component.scss']
 })
 export class LayoutElementImageComponent implements OnInit {
-
+  @Input() element:ImageElement;
   constructor() { }
 
   ngOnInit() {

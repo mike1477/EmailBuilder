@@ -14,13 +14,7 @@ export class LayoutElementComponent implements OnInit {
   
   @Input() element:ElementBase;
 
-  get elementType(){
-    if(this.element instanceof ButtonElement) return "ElementTypeButton";
-    if(this.element instanceof DividerElement) return "ElementTypeDivider";
-    if(this.element instanceof ImageElement) return "ElementTypeImage";
-    if(this.element instanceof TextElement) return "ElementTypeText";
-    return "Unknown";
-  }
+
   constructor() { }
 
   ngOnInit() {
