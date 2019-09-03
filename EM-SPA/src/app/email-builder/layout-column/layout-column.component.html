@@ -1,11 +1,11 @@
 <div class="row-spacing">
     <div dragula="elements" [(dragulaModel)]="column.elements" [ngClass]="{'empty-elements': column.elements.length == 0}">
         <div class="layout-element" #layoutElement *ngFor="let element of column.elements"  [ngSwitch]="element && element.constructor && element.constructor.name">
-            <div app-layout-element-button class="layout-element-button" *ngSwitchCase="'ButtonElement'" [element] = "element"></div>
-            <div app-layout-element-divider class="layout-element-divider" *ngSwitchCase="'DividerElement'"[element] = "element"></div>
-            <div app-layout-element-image class="layout-element-image" *ngSwitchCase="'ImageElement'"[element] = "element"></div>
-            <div app-layout-element-text class="layout-element-text" *ngSwitchCase="'TextElement'" [element]="element"></div>
-            <div app-layout-element-unknown class="layout-element-unknown" *ngSwitchDefault></div>
+            <div app-layout-element-button class="layout-element layout-element-button" *ngSwitchCase="'ButtonElement'" [element] = "element"></div>
+            <div app-layout-element-divider class="layout-element layout-element-divider" *ngSwitchCase="'DividerElement'"[element] = "element"></div>
+            <div app-layout-element-image class="layout-element layout-element-image" *ngSwitchCase="'ImageElement'"[element] = "element"></div>
+            <div app-layout-element-text class="layout-element layout-element-text" *ngSwitchCase="'TextElement'" [element]="element"></div>
+            <div app-layout-element-unknown class="layout-element layout-element-unknown" *ngSwitchDefault></div>
         </div>
     </div>
 </div>

@@ -1,11 +1,12 @@
 import { Component, OnInit, } from '@angular/core';
-import { DragulaService } from 'ng2-dragula';
+import { DragulaService, Group } from 'ng2-dragula';
 import { Row } from 'src/models/row';
 import { RowOption } from 'src/app/interfaces/rowOption';
 import { DividerElement } from 'src/models/element/dividerElement';
 import { ImageElement } from 'src/models/element/imageElement';
 import { TextElement } from 'src/models/element/textElement';
 import { ButtonElement } from 'src/models/element/buttonElement';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: '[app-dashboard]',
@@ -14,8 +15,24 @@ import { ButtonElement } from 'src/models/element/buttonElement';
 })
 export class DashboardComponent implements OnInit {
 
+  private _subs = new Subscription();
+  private _drakeRow:Group;
+  private _drakeElement: Group;
+
   constructor(private dragulaService: DragulaService) {
-    dragulaService.createGroup('rows', {
+    this._subs.add(this.dragulaService.drag()
+      .subscribe(({ name, el, source }) => {
+      })
+    );
+    this._subs.add(this.dragulaService.drop()
+      .subscribe(({ name, el, source }) => {
+      })
+    );
+    this._subs.add(this.dragulaService.cancel()
+      .subscribe(({ name, el, source }) => {
+      })
+    );
+    this._drakeRow = dragulaService.createGroup('rows', {
       copy: (el, source) => {
         return source.id === 'layout-row-options';
       },
@@ -25,9 +42,20 @@ export class DashboardComponent implements OnInit {
       },
       accepts: (el, target, source, sibling) => {
         return target.id !== 'layout-row-options';
+      },
+      invalid:()=>{
+        return false;
+      },
+      moves: function(el, container, target) {
+        if(target.classList.contains("layout-element")) return false;
+        while (target = target.parentElement) {
+          if(target.classList.contains("layout-element")) return false;
+          if (target == el) return true;
+        }
+        return true;     
       }
     });
-    dragulaService.createGroup('elements', {
+    this._drakeElement = dragulaService.createGroup('elements', {
       copy: (el, source) => {
         return source.id === 'layout-element-options';
       },
@@ -40,11 +68,13 @@ export class DashboardComponent implements OnInit {
       },
       accepts: (el, target, source, sibling) => {
         return target.id !== 'layout-element-options';
-        
       },
-      moves: function (el, source, handle, sibling) {
-        return true; // elements are always draggable by default
+      invalid:(el, tag)=>{
+        return false;
       },
+      moves: function(el, container, target) {
+        return true;     
+       }
     });
    }
 
