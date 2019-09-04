@@ -6,6 +6,11 @@
 .row-wrapper{
     position: relative;
 }
+[app-layout-row]{
+  display: table;
+  width:600px;
+  margin:auto;
+}
 .row-controls{
     position: absolute;
     right: 100px;

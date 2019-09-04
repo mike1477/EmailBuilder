@@ -15,6 +15,7 @@ import { LayoutElementImageComponent } from './layout-element-image/layout-eleme
 import { LayoutElementUnknownComponent } from './layout-element-unknown/layout-element-unknown.component';
 import { LayoutElementButtonComponent } from './layout-element-button/layout-element-button.component';
 import { EditorModule } from '@tinymce/tinymce-angular';
+import { SelectorDirective } from './directives/selector/selector.directive';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,7 @@ import { EditorModule } from '@tinymce/tinymce-angular';
     LayoutElementDividerComponent, 
     LayoutElementTextComponent, 
     LayoutElementImageComponent, 
-    LayoutElementUnknownComponent
+    LayoutElementUnknownComponent, SelectorDirective
   ],
   imports: [
     CommonModule,
