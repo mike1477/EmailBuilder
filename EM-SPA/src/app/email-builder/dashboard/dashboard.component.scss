@@ -56,30 +56,29 @@ overflow: hidden;
 }
 
 .element-list {
-  padding:0px 10%;
   max-width: 100%;
   max-height: 600px;
   display: block;
   border-radius: 4px;
   overflow: hidden;
-  display: flex;
   flex-flow: row wrap;
   
 }
 .element-box {
   background-color: #fff;
   color: #505659;
-  padding: 20px 10px;
+  padding: 10px 10px;
   border: #ccc solid 1px;
-  height: 120px;
-  width: 120px;
-  margin:18px;
+  margin:10px;
   align-items: center;
   justify-content: space-between;
   box-sizing: border-box;
   cursor: move;
   font-size: 14px;
   text-align: center;
+}
+.html-container p{
+  margin: 0px;
 }
 .element-box:hover{
   box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
@@ -188,34 +187,8 @@ p {
   display: block;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 .icon-container-material i{
-  font-size: 60px;
+  font-size: 30px;
   text-align:center;
   margin:auto;
 }

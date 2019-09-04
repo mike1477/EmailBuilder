@@ -85,25 +85,30 @@ export class DashboardComponent implements OnInit {
     {
       title: 'Text',
       poster: '../../../assets/angular.png',
-      type:TextElement
+      type:TextElement,
+      icon:'format_size',
+      html: '<p>Add Text Field Editor</p>'
     },
     {
       title: 'Button',
       poster: '../../../assets/angular.png',
-      icon: "local_post_office",
-      type:ButtonElement
+      icon: "radio_button_checked",
+      type:ButtonElement,
+      html: '<p>Add Button</p>'
     },
     {
       title: 'Divider',
       poster: '../../../assets/angular.png',
       icon: "view_stream",
-      type:DividerElement
+      type:DividerElement,
+      html: '<p>Add Divider</p>'
     },
     {
       title: 'Image',
       poster: '../../../assets/angular.png',
-      icon: "public",
-      type:ImageElement
+      icon: "insert_photo",
+      type:ImageElement,
+      html: '<p>Add Image Container</p>'
     },
   ];
 
