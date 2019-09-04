@@ -46,3 +46,11 @@ html, body, app-root, .wrapper, .content, [app-dashboard], .dashboard-outer, .co
 body{
   background-color: #f9f9f9;
 }
+
+.column{
+  position: relative;
+}
+.row-wrapper:hover .column{
+  outline: dotted 2px black;
+  z-index: 100;
+}
