@@ -1,9 +1,6 @@
 <div class="row-layout">
     <div app-layout-column [ngClass]="'column column-' + column.widthInPixels " *ngFor="let column of row.columns" [column] = column>
     </div>
-    <div class="row-controls">
-            <div class="delete-button"> <i class="material-icons"> delete </i></div>
-            <div class="move-button"><i class="material-icons"> import_export </i></div>
-    </div>
+  
 </div>
 

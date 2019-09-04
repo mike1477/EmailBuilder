@@ -7,7 +7,6 @@ import { DashboardComponent } from './dashboard/dashboard.component';
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import { DisplayComponent } from './display/display.component';
 import { LayoutRowComponent } from './layout-row/layout-row.component';
-import { LayoutElementComponent } from './layout-element/layout-element.component';
 import { LayoutColumnComponent } from './layout-column/layout-column.component';
 import { DragulaModule,  DragulaService} from 'ng2-dragula';
 import { LayoutElementDividerComponent } from './layout-element-divider/layout-element-divider.component';
@@ -22,7 +21,6 @@ import { EditorModule } from '@tinymce/tinymce-angular';
     DashboardComponent, 
     DisplayComponent, 
     LayoutRowComponent, 
-    LayoutElementComponent, 
     LayoutColumnComponent, 
     LayoutElementButtonComponent,
     LayoutElementDividerComponent, 
@@ -38,7 +36,7 @@ import { EditorModule } from '@tinymce/tinymce-angular';
     DragulaModule,
     EditorModule
   ],
-  entryComponents: [LayoutElementComponent],
+  entryComponents: [],
   exports: [
     DashboardComponent,
     EmailBuilderRoutingModule

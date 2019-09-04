@@ -1,3 +1,11 @@
 <div id="layout-row-list" dragula="rows" [(dragulaModel)]="emailTemplate.rows" >
-    <div app-layout-row class="row-wrapper" *ngFor="let row of emailTemplate.rows" [row]="row"></div>
+
+    <div *ngFor="let row of emailTemplate.rows; let i = index">
+            <div app-layout-row class="row-wrapper" [row]="row"></div>
+            <div class="row-controls">
+                    <div class="delete-button"> <i class="material-icons" (click)="deleteRow(i)"> delete </i></div>
+                    <div class="move-button"><i class="material-icons"> import_export </i></div>
+            </div>
+    </div>
+    
 </div>

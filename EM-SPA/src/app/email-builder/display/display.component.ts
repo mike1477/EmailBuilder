@@ -18,4 +18,8 @@ export class DisplayComponent implements OnInit {
     this.emailTemplate.rows = [];
   }
 
+  deleteRow(index:any){
+    this.emailTemplate.rows.splice(index, 1);
+  }
+
 }
