@@ -16,6 +16,8 @@ import { LayoutElementUnknownComponent } from './layout-element-unknown/layout-e
 import { LayoutElementButtonComponent } from './layout-element-button/layout-element-button.component';
 import { EditorModule } from '@tinymce/tinymce-angular';
 import { SelectorDirective } from './directives/selector/selector.directive';
+import { ColorPickerComponent } from './components/color-picker/color-picker.component';
+import { ColorPickerModule } from 'ngx-color-picker';
 
 @NgModule({
   declarations: [
@@ -28,7 +30,7 @@ import { SelectorDirective } from './directives/selector/selector.directive';
     LayoutElementTextComponent, 
     LayoutElementImageComponent, 
     LayoutElementUnknownComponent, 
-    SelectorDirective
+    SelectorDirective, ColorPickerComponent
   ],
   imports: [
     CommonModule,
@@ -36,7 +38,8 @@ import { SelectorDirective } from './directives/selector/selector.directive';
     DragDropModule,
     MatTabsModule,
     DragulaModule,
-    EditorModule
+    EditorModule,
+    ColorPickerModule
   ],
   entryComponents: [],
   exports: [

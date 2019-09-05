@@ -1,0 +1,15 @@
+
+<div class="color-picker-container">
+    <div class="open-color-picker" (click)="toggle=!toggle" [style.background-color]="color"></div>
+    <input #ignoredInput class="color-input"
+    [value]="color"
+    [style.background]="inputBackground"
+    [(cpToggle)]="toggle"
+    [(colorPicker)]="color"
+    [cpIgnoredElements]="[ignoredInput]"
+    [cpPosition]="'bottom'"
+    [cpOKButton]="true"
+    [cpOutputFormat]="'hex'"
+    />
+
+</div>

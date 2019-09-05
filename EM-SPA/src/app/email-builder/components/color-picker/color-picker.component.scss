@@ -1,0 +1,13 @@
+.color-picker-container{
+    border: solid #ccc 1px;
+    width:150px;
+    display: flex;
+}
+.open-color-picker{
+    border: solid #ccc .5px;
+    flex: 1;
+}
+.color-input{
+    width:99px;
+    flex: 2;
+}
