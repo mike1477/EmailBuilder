@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Email } from 'src/models/email';
-import { Row } from 'src/models/row';
+import { SelectionManagerService } from '../services/selection-manager/selection-manager.service';
 
 @Component({
   selector: '[app-display]',
@@ -9,13 +9,13 @@ import { Row } from 'src/models/row';
 })
 export class DisplayComponent implements OnInit {
 
-  constructor() { }
+  constructor(selectionService:SelectionManagerService) {
+    this.emailTemplate = selectionService.emailBody;
+   }
 
   emailTemplate:Email;
 
   ngOnInit() {
-    this.emailTemplate = new Email();
-    this.emailTemplate.rows = [];
   }
 
   deleteRow(index:any){

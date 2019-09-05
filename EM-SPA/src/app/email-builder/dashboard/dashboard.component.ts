@@ -6,7 +6,6 @@ import { DividerElement } from 'src/models/element/dividerElement';
 import { ImageElement } from 'src/models/element/imageElement';
 import { TextElement } from 'src/models/element/textElement';
 import { ButtonElement } from 'src/models/element/buttonElement';
-import { Subscription } from 'rxjs';
 
 @Component({
   selector: '[app-dashboard]',
@@ -15,24 +14,8 @@ import { Subscription } from 'rxjs';
 })
 export class DashboardComponent implements OnInit {
 
-  private _subs = new Subscription();
-  private _drakeRow:Group;
-  private _drakeElement: Group;
-
   constructor(private dragulaService: DragulaService) {
-    this._subs.add(this.dragulaService.drag()
-      .subscribe(({ name, el, source }) => {
-      })
-    );
-    this._subs.add(this.dragulaService.drop()
-      .subscribe(({ name, el, source }) => {
-      })
-    );
-    this._subs.add(this.dragulaService.cancel()
-      .subscribe(({ name, el, source }) => {
-      })
-    );
-    this._drakeRow = dragulaService.createGroup('rows', {
+    dragulaService.createGroup('rows', {
       copy: (el, source) => {
         return source.id === 'layout-row-options';
       },
@@ -55,7 +38,7 @@ export class DashboardComponent implements OnInit {
         return true;     
       }
     });
-    this._drakeElement = dragulaService.createGroup('elements', {
+    dragulaService.createGroup('elements', {
       copy: (el, source) => {
         return source.id === 'layout-element-options';
       },
