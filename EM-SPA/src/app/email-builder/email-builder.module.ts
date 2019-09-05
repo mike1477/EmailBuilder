@@ -27,7 +27,8 @@ import { SelectorDirective } from './directives/selector/selector.directive';
     LayoutElementDividerComponent, 
     LayoutElementTextComponent, 
     LayoutElementImageComponent, 
-    LayoutElementUnknownComponent, SelectorDirective
+    LayoutElementUnknownComponent, 
+    SelectorDirective
   ],
   imports: [
     CommonModule,
