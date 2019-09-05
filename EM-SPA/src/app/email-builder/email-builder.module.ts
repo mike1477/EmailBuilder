@@ -19,6 +19,7 @@ import { SelectorDirective } from './directives/selector/selector.directive';
 import { ColorPickerComponent } from './components/color-picker/color-picker.component';
 import { ColorPickerModule } from 'ngx-color-picker';
 import { NumberSelectorInputComponent } from './components/number-selector-input/number-selector-input.component';
+import { BorderPickerComponent } from './components/border-picker/border-picker.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +32,7 @@ import { NumberSelectorInputComponent } from './components/number-selector-input
     LayoutElementTextComponent, 
     LayoutElementImageComponent, 
     LayoutElementUnknownComponent, 
-    SelectorDirective, ColorPickerComponent, NumberSelectorInputComponent
+    SelectorDirective, ColorPickerComponent, NumberSelectorInputComponent, BorderPickerComponent
   ],
   imports: [
     CommonModule,
