@@ -1,0 +1,5 @@
+<div class="number-selector-container">
+            <button (click)="sub();">-</button>
+            <input type="text" name="value" [value]="value" (input)="value = $event.target.value" >
+            <button (click)="add();">+</button>
+</div>

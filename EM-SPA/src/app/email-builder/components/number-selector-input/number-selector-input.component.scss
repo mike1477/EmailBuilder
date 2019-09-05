@@ -1,0 +1,13 @@
+.number-selector-container{
+    width:150px;
+    display: flex;
+    border: solid #ccc 1px;
+}
+.number-selector-container button{
+    height: 30px;
+    width: 30px;
+}
+.number-selector-container input{
+    flex:2;
+    width: 100%;
+}
