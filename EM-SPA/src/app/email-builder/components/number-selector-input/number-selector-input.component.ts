@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 
 @Component({
   selector: 'app-number-selector-input',
@@ -6,7 +6,22 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./number-selector-input.component.scss']
 })
 export class NumberSelectorInputComponent implements OnInit {
-  value: number;
+  
+
+  counterValue: number;
+
+  @Input()
+  get value():number{
+    return this.counterValue;
+  }
+
+  @Output() valueChange = new EventEmitter<number>();
+
+  set value(newValue:number){
+    newValue = isNaN(newValue) ? 0 : newValue;
+    this.counterValue = newValue;
+    this.valueChange.emit(this.counterValue);
+  }
 
   constructor() { }
 

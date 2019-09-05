@@ -22,6 +22,7 @@ import { NumberSelectorInputComponent } from './components/number-selector-input
 import { BorderPickerComponent } from './components/border-picker/border-picker.component';
 import { ImageInputComponent } from './components/image-input/image-input.component';
 import { FormsModule } from '@angular/forms';
+import { RowPropertyManagerComponent } from './components/row-property-manager/row-property-manager.component';
 
 @NgModule({
   declarations: [
@@ -34,7 +35,7 @@ import { FormsModule } from '@angular/forms';
     LayoutElementTextComponent, 
     LayoutElementImageComponent, 
     LayoutElementUnknownComponent, 
-    SelectorDirective, ColorPickerComponent, NumberSelectorInputComponent, BorderPickerComponent, ImageInputComponent
+    SelectorDirective, ColorPickerComponent, NumberSelectorInputComponent, BorderPickerComponent, ImageInputComponent, RowPropertyManagerComponent
   ],
   imports: [
     CommonModule,

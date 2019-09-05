@@ -4,7 +4,8 @@ dragula="rows"
 
     <div *ngFor="let row of emailTemplate.rows; let i = index" 
         class="row-wrapper" 
-        [appSelector]="row">
+        [appSelector]="row"
+        [style.background-color] = "row.backgroundColor">
             <div app-layout-row [row]="row"></div>
             <div class="row-controls">
                     <div class="delete-button"> <i class="material-icons" (click)="deleteRow(i)"> delete </i></div>

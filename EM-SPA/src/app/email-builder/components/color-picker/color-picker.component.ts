@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+
+const defaultStringColor = "transparent";
 
 @Component({
   selector: 'app-color-picker',
@@ -10,9 +12,23 @@ export class ColorPickerComponent implements OnInit {
                                 // -- https://zefoy.github.io/ngx-color-picker/
 
 
-  color: any;
   toggle: boolean;
   inputBackground: string;
+
+  private managedColor:string = defaultStringColor;
+
+  @Input()
+  get color():string{
+    return this.managedColor;
+  }
+
+  @Output() colorChange = new EventEmitter<string>();
+
+  set color(newValue: string){
+    newValue = typeof newValue === "string" ? newValue : defaultStringColor;
+    this.managedColor = newValue;
+    this.colorChange.emit(this.managedColor);
+  }
 
   constructor() { }
 

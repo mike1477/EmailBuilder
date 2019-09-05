@@ -54,3 +54,10 @@ body{
   outline: dotted 2px black;
   z-index: 100;
 }
+
+/*Disable arrow on number input boxes*/
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
