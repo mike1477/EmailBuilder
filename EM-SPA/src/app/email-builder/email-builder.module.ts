@@ -18,6 +18,7 @@ import { EditorModule } from '@tinymce/tinymce-angular';
 import { SelectorDirective } from './directives/selector/selector.directive';
 import { ColorPickerComponent } from './components/color-picker/color-picker.component';
 import { ColorPickerModule } from 'ngx-color-picker';
+import { NumberSelectorInputComponent } from './components/number-selector-input/number-selector-input.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,7 @@ import { ColorPickerModule } from 'ngx-color-picker';
     LayoutElementTextComponent, 
     LayoutElementImageComponent, 
     LayoutElementUnknownComponent, 
-    SelectorDirective, ColorPickerComponent
+    SelectorDirective, ColorPickerComponent, NumberSelectorInputComponent
   ],
   imports: [
     CommonModule,
