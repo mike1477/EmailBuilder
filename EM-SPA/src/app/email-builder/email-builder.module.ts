@@ -20,6 +20,8 @@ import { ColorPickerComponent } from './components/color-picker/color-picker.com
 import { ColorPickerModule } from 'ngx-color-picker';
 import { NumberSelectorInputComponent } from './components/number-selector-input/number-selector-input.component';
 import { BorderPickerComponent } from './components/border-picker/border-picker.component';
+import { ImageInputComponent } from './components/image-input/image-input.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,7 @@ import { BorderPickerComponent } from './components/border-picker/border-picker.
     LayoutElementTextComponent, 
     LayoutElementImageComponent, 
     LayoutElementUnknownComponent, 
-    SelectorDirective, ColorPickerComponent, NumberSelectorInputComponent, BorderPickerComponent
+    SelectorDirective, ColorPickerComponent, NumberSelectorInputComponent, BorderPickerComponent, ImageInputComponent
   ],
   imports: [
     CommonModule,
@@ -41,7 +43,8 @@ import { BorderPickerComponent } from './components/border-picker/border-picker.
     MatTabsModule,
     DragulaModule,
     EditorModule,
-    ColorPickerModule
+    ColorPickerModule,
+    FormsModule
   ],
   entryComponents: [],
   exports: [
