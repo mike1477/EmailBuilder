@@ -31,17 +31,17 @@ overflow: hidden;
 
 .row-option-column{
   display: table-cell;
-  padding: 20px 0;
-  background-color:#00a1ff;
-  border: solid #100080;
-  border-width:25px 10px;
+  padding: 30px 0;
+  background-color:#ADD8E6;
+  border: solid #EEEEEE;
+  border-width:12px 6px;
 }
 
 .row-option-column:first-child{
-  border-left-width: 20px;
+  border-left-width: 12px;
 }
 .row-option-column:last-child{
-  border-right-width: 20px;
+  border-right-width: 12px;
 }
 
 .row-box:active {
@@ -135,7 +135,7 @@ p {
   display: flex;
   flex-wrap: wrap;
   max-width: 700px;
-  background: #e5e5e5;
+  background: #eee;
   box-shadow: 0 48px 80px -32px rgba(0,0,0,0.3);
 }
 .input {
@@ -145,7 +145,7 @@ p {
 .label {
   width: 100%;
   padding: 20px 30px;
-  background: #e5e5e5;
+  background: #eee;
   cursor: pointer;
   font-weight: bold;
   font-size: 18px;
@@ -159,8 +159,7 @@ p {
   background: #ccc;
 }
 .input:focus + .label {
-  box-shadow: inset 0px 0px 0px 3px #2aa1c0;
-  z-index: 1;
+   z-index: 1;
 }
 .input:checked + .label {
   background: #fff;
