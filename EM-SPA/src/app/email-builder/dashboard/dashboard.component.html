@@ -1,9 +1,9 @@
 <div class="dashboard-outer">
         <div class="sidebar">
-            <div class="tabs">
-                <input name="tabs" type="radio" id="tab-1" checked="checked" class="input"/>
-                <label for="tab-1" class="label">Rows</label>
-                <div class="panel" data-simplebar>
+            <div class="sidepanel-tabs">
+                <input name="sidepanel-tabs" type="radio" id="sidepanel-tabs-rows" checked="checked"/>
+                <label for="sidepanel-tabs-rows" class="sidepanel-tabs-label">Rows</label>
+                <div class="sidepanel-tabs-panel" data-simplebar>
                     <div id="layout-row-options" class="row-list" dragula="rows" [(dragulaModel)]="rowOptions">
                         <div class="row-option" *ngFor="let row of rowOptions" >
                             <div class="row-option-column" *ngFor="let columnWidth of row.columnDefinitions" 
@@ -12,9 +12,9 @@
                     </div>
                 </div>
               
-                <input name="tabs" type="radio" id="tab-2" class="input"/>
-                <label for="tab-2" class="label">Elements</label>
-                <div class="panel" data-simplebar>
+                <input name="sidepanel-tabs" type="radio" id="sidepanel-tabs-elements"/>
+                <label for="sidepanel-tabs-elements" class="sidepanel-tabs-label">Elements</label>
+                <div class="sidepanel-tabs-panel" data-simplebar>
                     <div id="layout-element-options" class="element-list" dragula="elements" [(dragulaModel)]="elementOptions" >
                         <div class="element-box" *ngFor="let element of elementOptions">
                             <div class="icon-container-material"><i class="material-icons"> {{element.icon}} </i> </div>
@@ -23,13 +23,55 @@
                     </div>
                 </div>
                   
-                <input name="tabs" type="radio" id="tab-3" class="input"/>
-                <label for="tab-3" class="label">Settings</label>
-                <div class="panel">
-                  <h1>Settings</h1>
-                  <app-color-picker></app-color-picker>
+                <input name="sidepanel-tabs" type="radio" id="sidepanel-tabs-properties"/>
+                <label for="sidepanel-tabs-properties" class="sidepanel-tabs-label">Properties</label>
+                <div class="sidepanel-tabs-panel" data-simplebar>
+                    <div class="accordion-tabs">
+                        <div class="accordion-tab">
+                            <input type="checkbox" id="body-properties" name="accordion-tab">
+                            <label class="accordion-tab-label" for="body-properties">Email Body Properties</label>
+                            <div class="accordion-tab-content">
+                            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ipsum, reiciendis!
+                            </div>
+                        </div>
+                        <div class="accordion-tab">
+                            <input type="checkbox" id="row-properties" name="accordion-tab">
+                            <label class="accordion-tab-label" for="row-properties">Row Properties</label>
+                            <div class="accordion-tab-content">
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. A, in!
+                            </div>
+                        </div>
+                        <div class="accordion-tab">
+                            <input type="checkbox" id="element-properties" name="accordion-tab">
+                            <label class="accordion-tab-label" for="element-properties">Element Properties</label>
+                            <div class="accordion-tab-content">
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. A, in!
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. A, in!
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. A, in!
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. A, in!
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. A, in!
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. A, in!
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. A, in!
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. A, in!
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. A, in!
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. A, in!
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. A, in!
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. A, in!
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. A, in!
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. A, in!
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. A, in!
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. A, in!
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. A, in!
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. A, in!
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. A, in!
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. A, in!
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. A, in!
+                                Lorem ipsum dolor sit amet consectetur adipisicing elit. A, in!
+                            </div>
+                        </div>
+                    </div>
                 </div>
-              </div>
+            </div>
         </div>
         <div app-display class="content-display" data-simplebar>
         </div>
