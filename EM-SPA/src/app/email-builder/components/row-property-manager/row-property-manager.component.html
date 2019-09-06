@@ -1,3 +1,14 @@
-<div>
-    <app-color-picker [(color)]="backgroundColor"></app-color-picker>
+<div class="row-property-manager">
+        <div class="manager-row">
+                <div class="manager-label">Background Color</div>
+                <div class="manager-input">
+                        <app-color-picker [(color)]="backgroundColor"></app-color-picker>
+                </div>
+        </div>
+        <div class="manager-row">
+                <div class="manager-label">Padding</div>
+                <div class="manager-input">
+                        <app-number-selector-input></app-number-selector-input>
+                </div>
+        </div>
 </div>

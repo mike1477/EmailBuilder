@@ -61,3 +61,13 @@ input[type=number]::-webkit-outer-spin-button {
   -webkit-appearance: none; 
   margin: 0; 
 }
+
+.manager-row{
+  display:flex;
+  background-color: #eee;
+  border:solid #ccc 1px;
+}
+.manager-row>div{
+  flex:1;
+  padding:10px;
+}
