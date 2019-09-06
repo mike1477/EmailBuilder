@@ -6,4 +6,5 @@ export class ElementBase{
     align: Alignment;
     autoWidth: boolean;
     widthInPercentage:number;
+    backgroundColor:string;
 }

@@ -23,6 +23,8 @@ import { BorderPickerComponent } from './components/border-picker/border-picker.
 import { ImageInputComponent } from './components/image-input/image-input.component';
 import { FormsModule } from '@angular/forms';
 import { RowPropertyManagerComponent } from './components/row-property-manager/row-property-manager.component';
+import { EmailBodyManagerComponent } from './components/email-body-manager/email-body-manager.component';
+import { ElementPropertyManagerComponent } from './components/element-property-manager/element-property-manager.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,7 @@ import { RowPropertyManagerComponent } from './components/row-property-manager/r
     LayoutElementTextComponent, 
     LayoutElementImageComponent, 
     LayoutElementUnknownComponent, 
-    SelectorDirective, ColorPickerComponent, NumberSelectorInputComponent, BorderPickerComponent, ImageInputComponent, RowPropertyManagerComponent
+    SelectorDirective, ColorPickerComponent, NumberSelectorInputComponent, BorderPickerComponent, ImageInputComponent, RowPropertyManagerComponent, EmailBodyManagerComponent, ElementPropertyManagerComponent
   ],
   imports: [
     CommonModule,

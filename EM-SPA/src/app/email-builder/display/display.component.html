@@ -1,6 +1,7 @@
 <div id="layout-row-list" 
 dragula="rows" 
-[(dragulaModel)]="emailTemplate.rows" >
+[(dragulaModel)]="emailTemplate.rows"
+[style.background-color] = "emailTemplate.backgroundColor" >
 
     <div *ngFor="let row of emailTemplate.rows; let i = index" 
         class="row-wrapper" 
