@@ -25,6 +25,7 @@ import { FormsModule } from '@angular/forms';
 import { RowPropertyManagerComponent } from './components/sidebar-managers/row-property-manager/row-property-manager.component';
 import { EmailBodyManagerComponent } from './components/sidebar-managers/email-body-manager/email-body-manager.component';
 import { ElementPropertyManagerComponent } from './components/sidebar-managers/element-property-manager/element-property-manager.component';
+import { PaddingComponent } from './components/widgets/padding/padding.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +38,7 @@ import { ElementPropertyManagerComponent } from './components/sidebar-managers/e
     LayoutElementTextComponent, 
     LayoutElementImageComponent, 
     LayoutElementUnknownComponent, 
-    SelectorDirective, ColorPickerComponent, NumberSelectorInputComponent, BorderPickerComponent, ImageInputComponent, RowPropertyManagerComponent, EmailBodyManagerComponent, ElementPropertyManagerComponent
+    SelectorDirective, ColorPickerComponent, NumberSelectorInputComponent, BorderPickerComponent, ImageInputComponent, RowPropertyManagerComponent, EmailBodyManagerComponent, ElementPropertyManagerComponent, PaddingComponent
   ],
   imports: [
     CommonModule,

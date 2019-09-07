@@ -1,0 +1,22 @@
+.padding-widget{
+    background-color: #006992;
+    border:solid #ccc 1px;
+}
+.padding-widget-label p{
+    border-bottom: solid #ccc 1px;
+    padding:0px 0px 10px 10px;
+    margin-bottom:5px;
+}
+.padding-widget-number-selectors{
+    padding: 10px;
+}
+.padding-widget-number-selectors .number-selector-container{
+    display: inline-block;
+    width:49%;
+    padding-bottom: 15px;
+ }
+ .number-selector-container p{
+     margin-bottom: 5px;
+     margin-top: 0px;
+     font-size: 14px;
+ }
