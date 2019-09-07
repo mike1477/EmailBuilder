@@ -1,12 +1,6 @@
-$primary: #006992;
-$secondary: #001D4A;
-$text: #EAF8BF;
-$acaent1: #ECA400;
-$accent2: #27476E;
-
-
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import "styles.theme.scss";
 /* in-flight clone */
 html, body, app-root, .wrapper, .content, [app-dashboard], .dashboard-outer, .content-display, .sidebar, .row-list  {
    height: 100vh;
