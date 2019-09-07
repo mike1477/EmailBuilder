@@ -1,6 +1,6 @@
 import { Padding } from './padding';
 import { BorderDefinition } from './borderDefinition';
-import { ElementBase } from './element/elementBase';
+import { ElementBase } from './elements/elementBase';
 
 export class Column{
     constructor(width:number){

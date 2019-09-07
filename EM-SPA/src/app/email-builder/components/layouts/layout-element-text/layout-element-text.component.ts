@@ -1,6 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { FormControl } from '@angular/forms';
-import { TextElement } from 'src/models/element/textElement';
+import { TextElement } from 'src/app/email-builder/models/elements/textElement';
 
 @Component({
   selector: '[app-layout-element-text]',

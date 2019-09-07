@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Row } from 'src/models/row';
+import { Row } from 'src/app/email-builder/models/row';
 
 @Component({
   selector: '[app-layout-row]',

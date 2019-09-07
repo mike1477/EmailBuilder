@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ImageElement } from 'src/models/element/imageElement';
+import { ImageElement } from 'src/app/email-builder/models/elements/imageElement';
 
 @Component({
   selector: '[app-layout-element-image]',

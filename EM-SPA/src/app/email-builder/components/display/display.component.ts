@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Email } from 'src/models/email';
-import { SelectionManagerService } from '../services/selection-manager/selection-manager.service';
+import { Email } from 'src/app/email-builder/models/email';
+import { SelectionManagerService } from '../../services/selection-manager/selection-manager.service';
 
 @Component({
   selector: '[app-display]',

@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Column } from 'src/models/column';
+import { Column } from 'src/app/email-builder/models/column';
 
 @Component({
   selector: '[app-layout-column]',

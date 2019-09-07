@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { DividerElement } from 'src/models/element/dividerElement';
+import { DividerElement } from 'src/app/email-builder/models/elements/dividerElement';
 
 @Component({
   selector: '[app-layout-element-divider]',

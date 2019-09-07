@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Email } from 'src/models/email';
-import { Row } from 'src/models/row';
-import { ElementBase } from 'src/models/element/elementBase';
+import { Email } from 'src/app/email-builder/models/email';
+import { Row } from 'src/app/email-builder/models/row';
+import { ElementBase } from 'src/app/email-builder/models/elements/elementBase';
 
 @Injectable({
   providedIn: 'root'

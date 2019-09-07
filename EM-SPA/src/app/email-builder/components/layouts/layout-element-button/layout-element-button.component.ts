@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ButtonElement } from 'src/models/element/buttonElement';
+import { ButtonElement } from 'src/app/email-builder/models/elements/buttonElement';
 
 @Component({
   selector: '[app-layout-element-button]',

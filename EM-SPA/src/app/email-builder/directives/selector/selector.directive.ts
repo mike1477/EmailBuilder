@@ -1,7 +1,7 @@
 import { Directive, ElementRef, HostListener, Input } from '@angular/core';
 import { SelectionManagerService } from '../../services/selection-manager/selection-manager.service';
-import { Row } from 'src/models/row';
-import { ElementBase } from 'src/models/element/elementBase';
+import { Row } from 'src/app/email-builder/models/row';
+import { ElementBase } from 'src/app/email-builder/models/elements/elementBase';
 
 @Directive({
   selector: '[appSelector]'

@@ -1,4 +1,4 @@
-import { BorderType } from './eums/borderType';
+import { BorderType } from './enums/borderType';
 
 export class Border{
     constructor(){

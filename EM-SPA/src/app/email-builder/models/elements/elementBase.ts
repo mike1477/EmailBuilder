@@ -1,5 +1,5 @@
 import { Padding } from '../padding';
-import { Alignment } from '../eums/alignment';
+import { Alignment } from '../enums/alignment';
 
 export class ElementBase{
     padding: Padding;

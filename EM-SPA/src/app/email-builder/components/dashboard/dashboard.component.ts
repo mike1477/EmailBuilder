@@ -1,11 +1,11 @@
 import { Component, OnInit, } from '@angular/core';
 import { DragulaService, Group } from 'ng2-dragula';
-import { Row } from 'src/models/row';
-import { RowOption } from 'src/app/interfaces/rowOption';
-import { DividerElement } from 'src/models/element/dividerElement';
-import { ImageElement } from 'src/models/element/imageElement';
-import { TextElement } from 'src/models/element/textElement';
-import { ButtonElement } from 'src/models/element/buttonElement';
+import { Row } from 'src/app/email-builder/models/row';
+import { RowOption } from 'src/app/email-builder/models/rowOption';
+import { DividerElement } from 'src/app/email-builder/models/elements/dividerElement';
+import { ImageElement } from 'src/app/email-builder/models/elements/imageElement';
+import { TextElement } from 'src/app/email-builder/models/elements/textElement';
+import { ButtonElement } from 'src/app/email-builder/models/elements/buttonElement';
 
 @Component({
   selector: '[app-dashboard]',
