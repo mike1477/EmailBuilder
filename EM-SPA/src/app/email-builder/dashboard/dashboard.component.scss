@@ -1,3 +1,9 @@
+$primary: #006992;
+$secondary: #001D4A;
+$text: #EAF8BF;
+$acaent1: #ECA400;
+$accent2: #27476E;
+
 .dashboard-outer{
   position: relative;
 }
@@ -12,12 +18,10 @@ overflow: hidden;
   right:0px;
   width:70%;
   min-height: 500px;
-  background-color:#eee;
+  background-color:$primary;
   transition: background-color 2s;
 }
-.content-display:hover{
-  background-color:#ccc;
-}
+
 .row-list {
   max-width: 100%;
   display: block;
@@ -32,8 +36,9 @@ overflow: hidden;
 .row-option-column{
   display: table-cell;
   padding: 30px 0;
-  background-color:#ADD8E6;
-  border: solid #EEEEEE;
+  background-color:$primary;
+  border: solid;
+  border-color: $accent2;
   border-width:12px 6px;
 }
 
@@ -65,10 +70,10 @@ overflow: hidden;
   
 }
 .element-box {
-  background-color: #fff;
-  color: #505659;
+  background-color: $primary;
+  color: $text;
   padding: 10px 10px;
-  border: #ccc solid 1px;
+  border: $secondary solid 1px;
   margin:10px;
   align-items: center;
   justify-content: space-between;
@@ -98,8 +103,7 @@ overflow: hidden;
   display: flex;
   flex-wrap: wrap;
   max-width: 700px;
-  background: #eee;
-  box-shadow: 0 48px 80px -32px rgba(0,0,0,0.3);
+  background: $primary;
 }
 input[name="sidepanel-tabs"] {
   position: absolute;
@@ -108,25 +112,25 @@ input[name="sidepanel-tabs"] {
 .sidepanel-tabs-label {
   width: 100%;
   padding: 20px 30px;
-  background: #eee;
+  background: $primary;
   cursor: pointer;
   font-weight: bold;
   font-size: 18px;
-  color: #7f7f7f;
+  color: $text;
   transition: background 0.1s, color 0.1s;
 }
 .sidepanel-tabs-label:hover {
-  background: #d8d8d8;
+  background: $primary;
 }
 .sidepanel-tabs-label:active {
-  background: #ccc;
+  background: $primary;
 }
 input[name="sidepanel-tabs"]:focus + .sidepanel-tabs-label {
    z-index: 1;
 }
 input[name="sidepanel-tabs"]:checked + .sidepanel-tabs-label {
-  background: #fff;
-  color: #000;
+  background: $secondary;
+  color: $acaent1;
 }
 @media (min-width: 600px) {
   .sidepanel-tabs-label {
@@ -136,9 +140,9 @@ input[name="sidepanel-tabs"]:checked + .sidepanel-tabs-label {
 .sidepanel-tabs-panel {
   display: none;
   padding: 20px 30px 30px 20px;
-  background: #fff;
+  background: $secondary;
   width:100%;
-  height: calc(100vh - 100px);;
+  height: calc(100vh - 100px);
 }
 @media (min-width: 600px) {
   .sidepanel-tabs-panel {
@@ -156,8 +160,6 @@ input[name="sidepanel-tabs"]:checked + .sidepanel-tabs-label + .sidepanel-tabs-p
 }
 
 /* Accordion styles */
-$midnight: #2c3e50;
-$clouds: #ecf0f1;
 // General
 
 input[name="accordion-tab"] {
@@ -172,18 +174,18 @@ input[name="accordion-tab"] {
 }
 .accordion-tab {
   width: 100%;
-  color: white;
+  color: $text;
   overflow: hidden;
   &-label {
     display: flex;
     justify-content: space-between;
     padding: 1em;
-    background: $midnight;
+    background: $secondary;
     font-weight: bold;
     cursor: pointer;
     /* Icon */
     &:hover {
-      background: darken($midnight, 10%);
+      color: $acaent1;
     }
     &::after {
       content: "\276F";
@@ -196,8 +198,8 @@ input[name="accordion-tab"] {
   &-content {
     max-height: 0;
     padding: 0 1em;
-    color: $midnight;
-    background: white;
+    color: $text;
+    background: $primary;
     transition: all .35s;
   }
   &-close {
@@ -205,10 +207,10 @@ input[name="accordion-tab"] {
     justify-content: flex-end;
     padding: 1em;
     font-size: 0.75em;
-    background: $midnight;
+    background: $primary;
     cursor: pointer;
     &:hover {
-      background: darken($midnight, 10%);
+      background: $secondary;
     }
   }
 }
@@ -216,7 +218,7 @@ input[name="accordion-tab"] {
 // :checked
 input[name="accordion-tab"]:checked {
   + .accordion-tab-label {
-    background: darken($midnight, 10%);
+    background: $secondary;
     &::after {
       transform: rotate(90deg);
     }

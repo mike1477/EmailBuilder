@@ -33,8 +33,7 @@ export class ColorPickerComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.color = '#000';
-    this.inputBackground = '#fff';
+    this.inputBackground = '#ffffff';
     this.toggle = false;
   }
 

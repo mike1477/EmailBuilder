@@ -1,3 +1,10 @@
+$primary: #006992;
+$secondary: #001D4A;
+$text: #EAF8BF;
+$acaent1: #ECA400;
+$accent2: #27476E;
+
+
 /* You can add global styles to this file, and also import other style files */
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 /* in-flight clone */
@@ -6,7 +13,17 @@ html, body, app-root, .wrapper, .content, [app-dashboard], .dashboard-outer, .co
    max-height: 100vh;
    padding:0;
    margin:0;
+   font-family: Arial, Helvetica, sans-serif
 }
+
+input[type=text],input[type=number], select {
+  padding: 3px 10px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 2px;
+  box-sizing: border-box;
+}
+
 .gu-mirror {
     position: fixed !important;
     margin: 0 !important;
@@ -44,7 +61,7 @@ html, body, app-root, .wrapper, .content, [app-dashboard], .dashboard-outer, .co
   margin:auto;
 }
 body{
-  background-color: #f9f9f9;
+  background-color: $primary;
 }
 
 .column{
@@ -64,7 +81,7 @@ input[type=number]::-webkit-outer-spin-button {
 
 .manager-row{
   display:flex;
-  background-color: #eee;
+  background-color: $primary;
   border:solid #ccc 1px;
 }
 .manager-row>div{

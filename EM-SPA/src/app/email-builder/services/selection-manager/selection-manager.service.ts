@@ -15,6 +15,8 @@ export class SelectionManagerService {
 
   constructor() { 
     this._emailTemplate = new Email();
+    this._emailTemplate.backgroundColor = "#ffffff";
+    this._emailTemplate.contentBackgroundColor = "transparent";
     this._emailTemplate.rows = [];
     console.log("test");
   }
