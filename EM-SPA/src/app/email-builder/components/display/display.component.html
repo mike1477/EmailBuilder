@@ -1,4 +1,6 @@
-<div id="layout-row-list" 
+<div 
+*ngIf="emailTemplate"
+id="layout-row-list" 
 dragula="rows" 
 [(dragulaModel)]="emailTemplate.rows"
 [style.background-color] = "emailTemplate.backgroundColor" >
