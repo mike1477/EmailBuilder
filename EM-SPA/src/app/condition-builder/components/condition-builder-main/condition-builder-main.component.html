@@ -1,1 +1,6 @@
-<p>condition-builder-main works!</p>
+<div class="condition-builder-wrapper">
+  <div class="condition-definition" *ngFor="let condition of propertyManger.conditions">
+    <app-condition-group *ngFor="let conditionGroup of condition.conditionGroups" [conditionGroup] ="conditionGroup"></app-condition-group>
+    <p>Then this is true</p>
+  </div>
+</div>

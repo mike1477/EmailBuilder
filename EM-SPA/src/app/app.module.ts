@@ -13,7 +13,7 @@ import { PreviewerModule } from './previewer/previewer.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
