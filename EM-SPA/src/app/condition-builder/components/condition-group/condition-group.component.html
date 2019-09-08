@@ -1,0 +1,6 @@
+<div class="condition-group">
+  <div class="condition-operator" *ngFor="let operator of group.operators">
+    <span>When/And/Or</span><span>This Property</span> <span> IS SOME predicate</span> <span> To This value</span>
+  </div>
+  <app-condition-group *ngFor="let conditionGroup of group.conditionGroups" [conditionGroup]="conditionGroup"></app-condition-group>
+</div>

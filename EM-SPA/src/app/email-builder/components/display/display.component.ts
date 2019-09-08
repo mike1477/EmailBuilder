@@ -9,13 +9,16 @@ import { SelectionManagerService } from '../../services/selection-manager/select
 })
 export class DisplayComponent implements OnInit {
 
-  constructor(selectionService:SelectionManagerService) {
-    this.emailTemplate = selectionService.emailBody;
-   }
+  constructor(private selectionManager:SelectionManagerService) {}
 
   emailTemplate:Email;
 
   ngOnInit() {
+    this.selectionManager.loadEmailTemplate().subscribe(
+      (newValue)=>{ this.emailTemplate = newValue},
+      (err)=> { /*TODO handle error */},
+      ()=>{ /*TODO handle complete*/}
+    );;
   }
 
   deleteRow(index:any){

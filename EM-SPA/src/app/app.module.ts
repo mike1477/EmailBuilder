@@ -8,6 +8,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { EmailBuilderModule } from "./email-builder/email-builder.module";
 import { DragulaModule,  DragulaService} from 'ng2-dragula';
+import { ConditionBuilderModule } from './condition-builder/condition-builder-module';
+import { PreviewerModule } from './previewer/previewer.module';
 
 @NgModule({
   declarations: [
@@ -20,6 +22,8 @@ import { DragulaModule,  DragulaService} from 'ng2-dragula';
     MatInputModule,
     SharedModule,
     EmailBuilderModule,
+    ConditionBuilderModule,
+    PreviewerModule,
     DragulaModule.forRoot()
   ],
   providers: [DragulaService],

@@ -38,7 +38,15 @@ import { PaddingComponent } from './components/widgets/padding/padding.component
     LayoutElementTextComponent, 
     LayoutElementImageComponent, 
     LayoutElementUnknownComponent, 
-    SelectorDirective, ColorPickerComponent, NumberSelectorInputComponent, BorderPickerComponent, ImageInputComponent, RowPropertyManagerComponent, EmailBodyManagerComponent, ElementPropertyManagerComponent, PaddingComponent
+    SelectorDirective,
+    ColorPickerComponent,
+    NumberSelectorInputComponent,
+    BorderPickerComponent,
+    ImageInputComponent,
+    RowPropertyManagerComponent,
+    EmailBodyManagerComponent,
+    ElementPropertyManagerComponent,
+    PaddingComponent
   ],
   imports: [
     CommonModule,

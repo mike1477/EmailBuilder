@@ -1,5 +1,7 @@
+@import "../../../../../styles.theme.scss";
+
 .padding-widget{
-    background-color: #006992;
+    background-color: $accent2;
     border:solid #ccc 1px;
 }
 .padding-widget-label p{

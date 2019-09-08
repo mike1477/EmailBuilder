@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SelectionManagerService } from '../../../services/selection-manager/selection-manager.service';
+import { ElementBase } from 'src/app/email-builder/models/elements/elementBase';
 
 @Component({
   selector: 'app-element-property-manager',
@@ -10,18 +11,19 @@ export class ElementPropertyManagerComponent implements OnInit {
 
   constructor(private selectionManager: SelectionManagerService) { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
+  get selectedElement() {
+    return this.selectionManager.selectedElement;
+  }
   get backgroundColor():string {
-    return this.selectionManager.selectedElement && this.selectionManager.selectedElement.backgroundColor;
+    return this.selectedElement && this.selectedElement.backgroundColor;
   }
 
   set backgroundColor(newValue: string){
     newValue = typeof newValue === "string" ? newValue: "transparent";
-    var selectedElement = this.selectionManager.selectedElement;
-    if(selectedElement){
-      selectedElement.backgroundColor = newValue;
+    if (this.selectedElement){
+      this.selectedElement.backgroundColor = newValue;
     }
   }
 
