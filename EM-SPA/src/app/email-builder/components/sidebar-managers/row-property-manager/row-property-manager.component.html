@@ -5,6 +5,8 @@
                         <app-color-picker [(color)]="backgroundColor"></app-color-picker>
                 </div>
         </div>
-        <app-padding></app-padding>
+        <div *ngFor="let column of columns">
+                <app-padding [padding]="column.padding"></app-padding>
+        </div>
 
 </div>

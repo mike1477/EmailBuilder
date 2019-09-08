@@ -1,5 +1,13 @@
 <div class="row-layout">
-    <div app-layout-column [ngClass]="'column column-' + column.widthInPixels " *ngFor="let column of row.columns" [column] = column>
+    <div 
+    app-layout-column 
+    [ngClass]="'column column-' + column.widthInPixels " 
+    *ngFor="let column of row.columns" 
+    [column] = column
+    [style.paddingTop]="column.padding.top + 'px'"
+    [style.paddingBottom]="column.padding.bottom + 'px'"
+    [style.paddingRight]="column.padding.right + 'px'"
+    [style.paddingLeft]="column.padding.left + 'px'">
     </div>
   
 </div>

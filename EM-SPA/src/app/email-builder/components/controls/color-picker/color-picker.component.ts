@@ -12,7 +12,7 @@ export class ColorPickerComponent implements OnInit {
                                 // -- https://zefoy.github.io/ngx-color-picker/
 
 
-  toggle: boolean;
+  toggle: boolean = false;
   inputBackground: string;
 
   private managedColor:string = defaultStringColor;
@@ -33,8 +33,7 @@ export class ColorPickerComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.inputBackground = '#ffffff';
-    this.toggle = false;
+
   }
 
 

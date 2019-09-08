@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SelectionManagerService } from '../../../services/selection-manager/selection-manager.service';
+import { Padding } from 'src/app/email-builder/models/padding';
 
 @Component({
   selector: 'app-row-property-manager',
@@ -20,9 +21,14 @@ export class RowPropertyManagerComponent implements OnInit {
     var row = this.selectionManager && this.selectionManager.selectedRow;
     if(row) row.backgroundColor = color;
   }
+    
+  get columns(){
+    return this.selectionManager.selectedRow && this.selectionManager.selectedRow.columns;
+  };
+
 
   ngOnInit() {
-  
   }
+
 
 }

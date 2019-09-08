@@ -26,7 +26,6 @@ export class NumberSelectorInputComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
-    this.value = 0;
   }
 
   sub(){
