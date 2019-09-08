@@ -9,26 +9,21 @@ import { Row } from 'src/app/email-builder/models/row';
 })
 export class RowPropertyManagerComponent implements OnInit {
   
-  private _selectedRow:Row = null;
-
   constructor(private selectionManager: SelectionManagerService) { }
   
-  ngOnInit() {
-    this.selectionManager.selectedRow.subscribe(
-      (newValue)=>{ this._selectedRow = newValue},
-      (err)=> { /*TODO handle error */},
-      ()=>{ /*TODO handle complete*/}
-    );
+  ngOnInit() {}
+
+  get selectedRow(): Row {
+    return this.selectionManager.selectedRow;
   }
 
-
   get backgroundColor():string{
-    var color = this._selectedRow && this._selectedRow.backgroundColor;
+    var color = this.selectedRow && this.selectedRow.backgroundColor;
     return typeof color === "string" ? color :"transparent";
   }
   
   set backgroundColor (color:string){
     color = typeof color === "string" ? color : "transparent";
-    if(this._selectedRow) this._selectedRow.backgroundColor = color;
+    if (this.selectedRow) this.selectedRow.backgroundColor = color;
   }
 }

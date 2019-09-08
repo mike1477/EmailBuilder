@@ -14,60 +14,46 @@ export class SelectionManagerService {
   private _selectedRow: Row = null;
   private _selectedElement: ElementBase = null;  
   
-  private _emailTemplateSource:Observable<Email>;
-  private _selectedRowSource: Observable<Row>;
-  private _selectedElementSource: Observable<ElementBase>;
-
-  emailTemplate:Subject<Email> = new Subject<Email>();
-  selectedRow: Subject<Row> = new Subject<Row>();
-  selectedElement: Subject<ElementBase> = new Subject<ElementBase>();
+  get emailTemplate(): Email{
+    return this._emailTemplate;
+  }
+  get selectedRow(): Row{
+    return this._selectedRow
+  };
+  get selectedElement(): ElementBase{
+    return this._selectedElement;
+  };
 
   constructor() { 
-   
-    this._emailTemplateSource = new Observable<Email>((observer)=>{
-      //observer.next(this._emailTemplate);
-      return {unsubscribe(){}};
-    });
-    this._emailTemplateSource.subscribe(this.emailTemplate);
-
-    this._selectedRowSource = new Observable<Row>((observer)=>{
-      //observer.next(this._selectedRow);
-      return {unsubscribe(){}};
-    });
-    this._selectedRowSource.subscribe(this.selectedRow);
-
-    this._selectedElementSource = new Observable<ElementBase>((observer)=>{
-      //observer.next(this._selectedElement);
-      return {unsubscribe(){}};
-    });
-    this._selectedElementSource.subscribe(this.selectedElement);
 
   }
 
   selectElement(element:ElementBase){
     this._selectedElement = element;
-    this.selectedElement.next(this._selectedElement);
   }
 
   selectRow(row:Row){
     this._selectedElement = null;
     this._selectedRow = row;
-    this.selectedRow.next(this._selectedRow);
-    this.emailTemplate.next(this._emailTemplate);
-
   }
 
-  loadEmailTemplate(){
-    if(!this._emailTemplate){
-      this._emailTemplate = new Email();
-      this._emailTemplate.backgroundColor = "#ffffff";
-      this._emailTemplate.contentBackgroundColor = "transparent";
-      this._emailTemplate.rows = [];
+  private activeObservable:Observable<Email> = null;
+
+  loadEmailTemplate():Observable<Email>{
+    if(!this.activeObservable){
+      this.activeObservable =new Observable<Email>((observer)=>{
+        
+        this._emailTemplate = new Email();
+        this._emailTemplate.backgroundColor = "#ffffff";
+        this._emailTemplate.contentBackgroundColor = "transparent";
+        this._emailTemplate.rows = [];
+        
+        observer.next(this._emailTemplate);
+        return{unsubscribe(){}};
+      });
     }
 
-    this.emailTemplate.next(this._emailTemplate);
-    this.selectedElement.next(this._selectedElement);
-    this.selectedRow.next(this._selectedRow);
+    return this.activeObservable
 
   }
 }

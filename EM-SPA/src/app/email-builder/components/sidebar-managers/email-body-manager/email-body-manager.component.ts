@@ -11,24 +11,20 @@ export class EmailBodyManagerComponent implements OnInit {
 
   constructor(private selectionManager: SelectionManagerService) { }
 
-  private _emailBody:Email = null;
+  ngOnInit() { }
 
-  ngOnInit() {
-    this.selectionManager.emailTemplate.subscribe(
-      (newValue)=>{ this._emailBody = newValue},
-      (err)=> { /*TODO handle error */},
-      ()=>{ /*TODO handle complete*/}
-    );
+  get emailBody(): Email{
+    return this.selectionManager.emailTemplate;
   }
 
   get backgroundColor():string {
-    return this._emailBody && this._emailBody.backgroundColor;
+    return this.emailBody && this.emailBody.backgroundColor;
   }
 
   set backgroundColor(newValue: string){
     newValue = typeof newValue === "string" ? newValue: "transparent";
-    if(this._emailBody){
-      this._emailBody.backgroundColor = newValue;
+    if (this.emailBody){
+      this.emailBody.backgroundColor = newValue;
     }
   }
 

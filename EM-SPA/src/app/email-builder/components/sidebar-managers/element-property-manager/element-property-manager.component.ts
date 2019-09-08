@@ -11,24 +11,19 @@ export class ElementPropertyManagerComponent implements OnInit {
 
   constructor(private selectionManager: SelectionManagerService) { }
 
-  private _selectedElement:ElementBase = null;
+  ngOnInit() { }
 
-  ngOnInit() {
-    this.selectionManager.selectedElement.subscribe(
-      (newValue) => { this._selectedElement = newValue},
-      (err)=> { /*TODO handle error */},
-      ()=>{ /*TODO handle complete*/}
-    );
+  get selectedElement() {
+    return this.selectionManager.selectedElement;
   }
-
   get backgroundColor():string {
-    return this._selectedElement && this._selectedElement.backgroundColor;
+    return this.selectedElement && this.selectedElement.backgroundColor;
   }
 
   set backgroundColor(newValue: string){
     newValue = typeof newValue === "string" ? newValue: "transparent";
-    if(this._selectedElement){
-      this._selectedElement.backgroundColor = newValue;
+    if (this.selectedElement){
+      this.selectedElement.backgroundColor = newValue;
     }
   }
 

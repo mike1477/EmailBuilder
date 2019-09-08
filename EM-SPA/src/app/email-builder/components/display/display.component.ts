@@ -14,12 +14,11 @@ export class DisplayComponent implements OnInit {
   emailTemplate:Email;
 
   ngOnInit() {
-    this.selectionManager.emailTemplate.subscribe(
+    this.selectionManager.loadEmailTemplate().subscribe(
       (newValue)=>{ this.emailTemplate = newValue},
       (err)=> { /*TODO handle error */},
       ()=>{ /*TODO handle complete*/}
-    );
-    this.selectionManager.loadEmailTemplate();
+    );;
   }
 
   deleteRow(index:any){
