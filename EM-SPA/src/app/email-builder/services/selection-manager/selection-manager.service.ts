@@ -24,9 +24,7 @@ export class SelectionManagerService {
     return this._selectedElement;
   };
 
-  constructor() { 
-
-  }
+  constructor() { }
 
   selectElement(element:ElementBase){
     this._selectedElement = element;
@@ -41,7 +39,7 @@ export class SelectionManagerService {
 
   loadEmailTemplate():Observable<Email>{
     if(!this.activeObservable){
-      this.activeObservable =new Observable<Email>((observer)=>{
+      this.activeObservable = new Observable<Email>((observer)=>{
         
         this._emailTemplate = new Email();
         this._emailTemplate.backgroundColor = "#ffffff";
@@ -49,6 +47,8 @@ export class SelectionManagerService {
         this._emailTemplate.rows = [];
         
         observer.next(this._emailTemplate);
+        observer.complete();
+        this.activeObservable = null;
         return{unsubscribe(){}};
       });
     }
