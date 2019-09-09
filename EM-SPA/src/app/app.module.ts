@@ -10,7 +10,6 @@ import { EmailBuilderModule } from "./email-builder/email-builder.module";
 import { DragulaModule,  DragulaService} from 'ng2-dragula';
 import { ConditionBuilderModule } from './condition-builder/condition-builder-module';
 import { PreviewerModule } from './previewer/previewer.module';
-
 @NgModule({
   declarations: [
     AppComponent

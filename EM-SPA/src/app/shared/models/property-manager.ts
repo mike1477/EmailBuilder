@@ -1,7 +1,9 @@
 import { ConditionDefinition } from './condition-definition';
 
 export class PropertyManger {
-  constructor() {}
+  constructor() {
+    this.conditions = [];
+  }
   defaultValue: any;
   conditions: Array<ConditionDefinition>;
 }

@@ -1,9 +1,14 @@
-import { ConditionGroup } from './condition-group';
+import { ConditionOperatorGroup } from './condition-operator-group';
+import { ConditionOperator } from './condition-operator';
 
 export class ConditionDefinition {
-  constructor() {
-    this.conditionGroups = [];
+  constructor() {}
+  operationModel: any;
+  conditionValue: any;
+  get isCompound():boolean{
+      return this.operationModel instanceof ConditionOperator;
   }
-  conditionGroups: Array<ConditionGroup>;
-  valueWhenTrue: any;
+  get isSimple(): boolean{
+      return this.operationModel instanceof ConditionOperatorGroup;
+  }
 }

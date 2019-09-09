@@ -1,0 +1,13 @@
+<div class="condition-wrapper">
+
+    <app-condition-simple 
+    *ngIf="condition.isSimple" 
+    [operator]="condition.operationModel"></app-condition-simple>
+
+    <app-condition-compound
+    *ngIf="condition.isCompound"
+    [compoundDefinition] = condition.operationModel
+    ></app-condition-compound>
+
+    <p>{{condition.conditionValue}}</p>
+</div>

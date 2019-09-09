@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { ConditionGroupComponent } from './condition-group.component';
+import { ConditionSimpleComponent } from './condition-simple.component';
 
-describe('ConditionGroupComponent', () => {
-  let component: ConditionGroupComponent;
-  let fixture: ComponentFixture<ConditionGroupComponent>;
+describe('ConditionSimpleComponent', () => {
+  let component: ConditionSimpleComponent;
+  let fixture: ComponentFixture<ConditionSimpleComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ ConditionGroupComponent ]
+      declarations: [ ConditionSimpleComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(ConditionGroupComponent);
+    fixture = TestBed.createComponent(ConditionSimpleComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

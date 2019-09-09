@@ -1,5 +1,5 @@
 export class ConditionOperator {
   fieldOperand: string;
-  predicate: string;
+  predicateKey: string;
   valueOperand: string;
 }
