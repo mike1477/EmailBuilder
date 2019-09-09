@@ -1,7 +1,27 @@
-<div class="condition-builder-wrapper">
-    <button (click)="addSimple()">Add a simple condition</button>
-    <button (click)="addCompound()">Add a cpmpound condition</button>
-    <div class="condition-definition" >
-    <app-condition-handler *ngFor="let condition of propertyManger.conditions" [condition]="condition"></app-condition-handler>
+<div class="condition-builder-wrapper container-fluid">
+  <div class="row">
+    <div class="col-12">
+        <h2>Conditionally set this property. By default this property value will be <b>TODO Put default value here.</b></h2>
+        <button 
+        class="btn btn-primary"
+        (click)="addSimple()">Create New Condition</button>
+    </div>
+  </div>
+  <div class="row"
+  *ngIf="propertyManger.conditions.length == 0">
+    <div class="col-12 text-center">
+      <h3>Currently there are no conditions for this property</h3>
+      <button 
+      class="btn btn-primary"
+      (click)="addSimple()">Create New Condition</button>
+    </div>
+  </div>
+  <div class="row"
+  *ngIf="propertyManger.conditions.length > 0">
+    <div class="col-12">
+        <app-condition-handler 
+        *ngFor="let condition of propertyManger.conditions" 
+        [condition]="condition"></app-condition-handler>
+    </div>
   </div>
 </div>

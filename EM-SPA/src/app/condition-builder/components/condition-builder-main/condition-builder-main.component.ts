@@ -3,6 +3,7 @@ import { PropertyManger } from '../../../shared/models/property-manager';
 import { ConditionOperator } from 'src/app/shared/models/condition-operator';
 import { ConditionDefinition } from 'src/app/shared/models/condition-definition';
 import { ConditionOperatorGroup } from 'src/app/shared/models/condition-operator-group';
+import { PropertyManagerTypes } from 'src/app/shared/models/property-manager-types';
 
 @Component({
   selector: 'app-condition-builder-main',
@@ -16,6 +17,7 @@ export class ConditionBuilderMainComponent implements OnInit {
   constructor() { }
 
   ngOnInit() {
+    this.propertyManger.managerType = PropertyManagerTypes.color;
   }
 
   addSimple() {

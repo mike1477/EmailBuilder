@@ -6,9 +6,9 @@ export class ConditionDefinition {
   operationModel: any;
   conditionValue: any;
   get isCompound():boolean{
-      return this.operationModel instanceof ConditionOperator;
+      return this.operationModel instanceof ConditionOperatorGroup;
   }
   get isSimple(): boolean{
-      return this.operationModel instanceof ConditionOperatorGroup;
+      return this.operationModel instanceof ConditionOperator;
   }
 }
