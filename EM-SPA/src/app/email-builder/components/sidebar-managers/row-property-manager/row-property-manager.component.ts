@@ -23,9 +23,19 @@ export class RowPropertyManagerComponent implements OnInit {
     return typeof color === "string" ? color :"transparent";
   }
   
-  set backgroundColor (color:string){
+  set backgroundColor(color:string){
     color = typeof color === "string" ? color : "transparent";
     if (this.selectedRow) this.selectedRow.backgroundColor = color;
+  }
+
+  get contentBackgroundColor():string{
+    var color = this.selectedRow && this.selectedRow.contentBackgroundColor;
+    return typeof color === "string" ? color :"transparent";
+  }
+  
+  set contentBackgroundColor(color:string){
+    color = typeof color === "string" ? color : "transparent";
+    if (this.selectedRow) this.selectedRow.contentBackgroundColor = color;
   }
 
   get columns(){
