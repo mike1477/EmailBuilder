@@ -11,8 +11,15 @@
                         <app-color-picker [(color)]="contentBackgroundColor"></app-color-picker>
                 </div>
         </div>
-        <div *ngFor="let column of columns">
-                <app-padding [padding]="column.padding"></app-padding>
-        </div>
+
+      <div class="row-property-tabs" >
+                <ng-container *ngFor="let column of columns">
+                                <input name="row-property-tabs" type="radio" id="{{column.id}}" checked="checked" class="row-property-tabs-input"/>
+                                <label for="{{column.id}}" class="row-property-tabs-label">Column {{columns.indexOf(column) + 1}}</label>
+                                <div class="row-property-tabs-panel">
+                                  <app-padding [padding]="column.padding"></app-padding>
+                                </div>
+               </ng-container>                          
+       </div>
 
 </div>

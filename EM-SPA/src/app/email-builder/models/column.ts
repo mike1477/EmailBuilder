@@ -9,7 +9,9 @@ export class Column{
         this.widthInPixels = width;
         this.borderDefinition = this.borderDefinition = new BorderDefinition();
         this.elements = [];
+        this.id = Math.floor((Math.random() * 1000000) + 1);
     }
+    id: number;
     padding:Padding;
     backgroundColor:string;
     widthInPercentage:number;
