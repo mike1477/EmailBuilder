@@ -10,14 +10,6 @@ html, body, app-root, .wrapper, .content, [app-dashboard], .dashboard-outer, .co
    font-family: Arial, Helvetica, sans-serif
 }
 
-input[type=text],input[type=number], select {
-  padding: 3px 10px;
-  display: inline-block;
-  border: 1px solid #ccc;
-  border-radius: 2px;
-  box-sizing: border-box;
-}
-
 .gu-mirror {
     position: fixed !important;
     margin: 0 !important;
@@ -74,11 +66,6 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 .manager-row{
-  display:flex;
-  background-color: $primary;
-  border:solid #ccc 1px;
+  padding: 8px 0 8px 0;
 }
-.manager-row>div{
-  flex:1;
-  padding:10px;
-}
+

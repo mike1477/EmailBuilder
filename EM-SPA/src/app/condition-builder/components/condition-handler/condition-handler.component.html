@@ -2,11 +2,11 @@
 
     <app-condition-simple 
     *ngIf="condition.isSimple" 
-    [operator]="condition.operationModel"></app-condition-simple>
+    [condition]="condition"></app-condition-simple>
 
     <app-condition-compound
     *ngIf="condition.isCompound"
-    [compoundDefinition] = condition.operationModel
+    [condition] = condition
     ></app-condition-compound>
 
 </div>

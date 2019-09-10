@@ -1,9 +1,9 @@
 @import "../../../../../styles.theme.scss";
 
-.padding-widget{
-    background-color: $accent2;
-    border:solid #ccc 1px;
+.number-widget{
+    padding:20px 0;
 }
+
 .padding-widget-label p{
     border-bottom: solid #ccc 1px;
     padding:0px 0px 10px 10px;

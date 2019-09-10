@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {MatInputModule} from '@angular/material/input';
 import { SharedModule } from "./shared/shared.module";
-
+import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { EmailBuilderModule } from "./email-builder/email-builder.module";
@@ -23,6 +23,7 @@ import { PreviewerModule } from './previewer/previewer.module';
     EmailBuilderModule,
     ConditionBuilderModule,
     PreviewerModule,
+    NgbModule,
     DragulaModule.forRoot()
   ],
   providers: [DragulaService],

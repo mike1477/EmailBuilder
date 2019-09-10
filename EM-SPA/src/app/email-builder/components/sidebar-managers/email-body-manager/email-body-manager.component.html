@@ -1,9 +1,15 @@
-<div class="email-body-manager">
-    <div class="manager-row">
-        <div class="manager-label">Background Color</div>
-        <div class="manager-input">
-                <app-color-picker [(color)]="backgroundColor"></app-color-picker>
-        </div>
-    </div>
-    
-</div>
+<ul class="list-group element-property-manager ">
+        <li class="list-group-item">
+            <div class="container">
+                        <div class="manager-row row">
+                                <div class="manager-label col-6">
+                                        <p>Background Color</p></div>
+                                <div class="manager-input col-6">
+                                        <app-color-picker [(color)]="backgroundColor"></app-color-picker>
+                                </div>
+                        </div>     
+                </div>    
+        </li>
+        <li class="list-group-item">More Property Mangers Here</li>
+
+</ul>

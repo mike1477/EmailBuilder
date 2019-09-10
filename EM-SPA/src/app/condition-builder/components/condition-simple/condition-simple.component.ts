@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ConditionOperator } from 'src/app/shared/models/condition-operator';
+import { ConditionDefinition } from 'src/app/shared/models/condition-definition';
 
 @Component({
   selector: 'app-condition-simple',
@@ -8,7 +8,7 @@ import { ConditionOperator } from 'src/app/shared/models/condition-operator';
 })
 export class ConditionSimpleComponent implements OnInit {
 
-  @Input() operator: ConditionOperator
+  @Input() condition:ConditionDefinition;
 
   constructor() { }
 

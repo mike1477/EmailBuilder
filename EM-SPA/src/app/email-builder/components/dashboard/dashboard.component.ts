@@ -1,4 +1,4 @@
-import { Component, OnInit, } from '@angular/core';
+import { Component, OnInit, ViewContainerRef, } from '@angular/core';
 import { DragulaService, Group } from 'ng2-dragula';
 import { Row } from 'src/app/email-builder/models/row';
 import { RowOption } from 'src/app/email-builder/models/rowOption';

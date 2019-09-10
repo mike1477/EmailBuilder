@@ -1,15 +1,19 @@
 
-<div class="color-picker-container">
-    <div class="open-color-picker" (click)="toggle=!toggle" [style.background-color]="color"></div>
+<div class="input-group">
+    <div class="input-group-prepend" (click)="toggle=!toggle">
+        <span class="input-group-text open-color-picker" [style.background-color]="color"></span>
+    </div> 
     <input type="text" 
-    #ignoredInput class="color-input"
+    class="form-control"
+    #ignoredInput
     [value]="color"
     [style.background]="inputBackground"
     [(cpToggle)]="toggle"
     [(colorPicker)]="color"
     [cpIgnoredElements]="[ignoredInput]"
     [cpPosition]="'left'"
-    [cpOKButton]="true"
+    [cpOKButton]="false"
     [cpOutputFormat]="'hex'"
+    [cpUseRootViewContainer]="true"
     />
 </div>

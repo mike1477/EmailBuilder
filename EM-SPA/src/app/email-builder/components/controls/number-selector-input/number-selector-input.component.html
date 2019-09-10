@@ -1,5 +1,5 @@
-<div class="number-selector-container">
-    <button (click)="sub();">-</button>
-    <input type="number" name="value" [(ngModel)]="value"  >
-    <button (click)="add();">+</button>
+<div class="input-group">
+    <button class="btn btn-sm btn-secondary input-group-prepend" (click)="sub();">-</button>
+    <input class="form-control" type="number" name="value" [(ngModel)]="value"  >
+    <button class="btn btn-sm btn-secondary input-group-append" (click)="add();">+</button>
 </div>

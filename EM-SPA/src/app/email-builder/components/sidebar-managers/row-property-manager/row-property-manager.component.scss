@@ -2,8 +2,6 @@
     display: flex;
     flex-wrap: wrap;
     max-width: 700px;
-    background: #efefef;
-    box-shadow: 0 48px 80px -32px rgba(0,0,0,0.3);
   }
   .row-property-tabs-input {
     position: absolute;
@@ -11,13 +9,14 @@
   }
   .row-property-tabs-label {
     width: 100%;
-    padding: 10px 15px;
+    padding: 6px 8px;
     background: #e5e5e5;
     cursor: pointer;
     font-weight: bold;
     font-size: 15px;
     color: #7f7f7f;
     transition: background 0.1s, color 0.1s;
+    margin-bottom: 0;
   }
   
   .row-property-tabs-label:hover {
@@ -45,8 +44,6 @@
   }
   .row-property-tabs-panel {
     display: none;
-    padding: 20px 30px 30px;
-    background: #fff;
   }
   
   @media (min-width: 600px) {

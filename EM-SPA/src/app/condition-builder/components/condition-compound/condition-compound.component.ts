@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ConditionOperatorGroup } from 'src/app/shared/models/condition-operator-group';
+import { ConditionDefinition } from 'src/app/shared/models/condition-definition';
 
 @Component({
   selector: 'app-condition-compound',
@@ -8,7 +8,7 @@ import { ConditionOperatorGroup } from 'src/app/shared/models/condition-operator
 })
 export class ConditionCompoundComponent implements OnInit {
   
-  @Input() compoundDefinition: ConditionOperatorGroup;
+  @Input() condition:ConditionDefinition;
   
   constructor() { }
 

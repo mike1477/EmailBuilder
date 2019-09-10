@@ -1,24 +1,25 @@
-<div class="padding-widget">
-        <div class="padding-widget-label">
-                <p>Padding</p>
+<div class="container number-widget">
+<div class="row">
+    <div class="col-4"></div>
+    <div class="col-4">
+        <app-number-selector-input [(value)]="padding.top"></app-number-selector-input>
     </div>
-    <div class="padding-widget-number-selectors">
-        <div class="number-selector-container">
-            <p>Padding Top</p>
-            <app-number-selector-input [(value)]="padding.top"></app-number-selector-input>
-        </div>
-        <div class="number-selector-container">
-            <p>Padding Right</p>
-            <app-number-selector-input [(value)]="padding.right"></app-number-selector-input>
-        </div>
-        <div class="number-selector-container">
-            <p>Padding Bottom</p>
-            <app-number-selector-input [(value)]="padding.bottom"></app-number-selector-input>
-        </div>
-        <div class="number-selector-container">
-            <p>Padding Left</p>
-            <app-number-selector-input [(value)]="padding.left"></app-number-selector-input>
-        </div>
-    </div>    
+    <div class="col-4"></div>
 </div>
-           
+<div class="row">
+    <div class="col-4">
+        <app-number-selector-input [(value)]="padding.left"></app-number-selector-input>
+    </div>
+    <div class="col-4"></div>
+    <div class="col-4">
+        <app-number-selector-input [(value)]="padding.right"></app-number-selector-input>
+    </div>
+</div>
+<div class="row">
+    <div class="col-4"></div>
+    <div class="col-4">
+        <app-number-selector-input [(value)]="padding.bottom"></app-number-selector-input>
+    </div>
+    <div class="col-4"></div>
+</div>
+</div>                                  
