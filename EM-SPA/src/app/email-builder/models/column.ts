@@ -4,7 +4,7 @@ import { ElementBase } from './elements/elementBase';
 
 export class Column{
     constructor(width:number){
-        this.padding =new Padding();
+        this.padding = new Padding();
         this.backgroundColor = "transparent";
         this.widthInPixels = width;
         this.borderDefinition = this.borderDefinition = new BorderDefinition();
