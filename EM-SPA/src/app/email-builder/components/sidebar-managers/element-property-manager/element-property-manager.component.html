@@ -1,16 +1,20 @@
-
-
-<ul class="list-group element-property-manager ">
+<div class="element-property-manager" *ngIf="!selectedElement">
+        <div>
+                <p>Click on element in the display to see edit options</p>
+        </div>
+</div>
+<ul class="list-group element-property-manager " *ngIf="selectedElement">
         <li class="list-group-item">
-            <div class="container">
+                <div class="container">
                         <div class="manager-row row">
                                 <div class="manager-label col-6">
-                                        <p>Background Color</p></div>
+                                        <p>Background Color</p>
+                                </div>
                                 <div class="manager-input col-6">
                                         <app-color-picker [(color)]="backgroundColor"></app-color-picker>
                                 </div>
-                        </div>     
-                </div>    
+                        </div>
+                </div>
         </li>
         <li class="list-group-item">More Property Mangers Here</li>
 

@@ -1,35 +1,45 @@
-<ul class="list-group element-property-manager ">
+<div class="element-property-manager" *ngIf="!columns">
+        <div>
+                <p>Click on row in the display to see edit options</p>
+        </div>
+</div>
+
+<ul class="list-group element-property-manager" *ngIf="columns">
         <li class="list-group-item">
                 <div class="container">
                         <div class="manager-row row">
                                 <div class="manager-label col-6">
-                                        <p>Background Color</p></div>
+                                        <p>Background Color</p>
+                                </div>
                                 <div class="manager-input col-6">
                                         <app-color-picker [(color)]="backgroundColor"></app-color-picker>
                                 </div>
-                        </div>     
-                </div>    
+                        </div>
+                </div>
         </li>
         <li class="list-group-item">
                 <div class="container">
                         <div class="manager-row row">
                                 <div class="manager-label col-6">
-                                        <p>Content Background Color</p></div>
+                                        <p>Content Background Color</p>
+                                </div>
                                 <div class="manager-input col-6">
                                         <app-color-picker [(color)]="contentBackgroundColor"></app-color-picker>
                                 </div>
-                        </div>     
-                </div>    
+                        </div>
+                </div>
         </li>
         <li class="list-group-item">
                 <div class="row-property-tabs">
                         <ng-container *ngFor="let column of columns">
-                                        <input name="row-property-tabs" type="radio" id="{{column.id}}" checked="checked" class="row-property-tabs-input"/>
-                                        <label for="{{column.id}}" class="row-property-tabs-label">Column {{columns.indexOf(column) + 1}}</label>
-                                        <div class="row-property-tabs-panel">
-                                                <app-padding [padding]="column.padding"></app-padding>
-                                        </div>
-                        </ng-container>                                                        
+                                <input name="row-property-tabs" type="radio" id="{{column.id}}" checked="checked"
+                                        class="row-property-tabs-input" />
+                                <label for="{{column.id}}" class="row-property-tabs-label">Column
+                                        {{columns.indexOf(column) + 1}}</label>
+                                <div class="row-property-tabs-panel">
+                                        <app-padding [padding]="column.padding"></app-padding>
+                                </div>
+                        </ng-container>
                 </div>
         </li>
 </ul>
