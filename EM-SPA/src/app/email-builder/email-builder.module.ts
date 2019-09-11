@@ -25,7 +25,7 @@ import { FormsModule } from '@angular/forms';
 import { RowPropertyManagerComponent } from './components/sidebar-managers/row-property-manager/row-property-manager.component';
 import { EmailBodyManagerComponent } from './components/sidebar-managers/email-body-manager/email-body-manager.component';
 import { ElementPropertyManagerComponent } from './components/sidebar-managers/element-property-manager/element-property-manager.component';
-import { PaddingComponent } from './components/widgets/padding/padding.component';
+import { CommonNumberSelectorComponent } from './components/widgets/common-number-selector/common-number-selector.component';
 
 @NgModule({
   declarations: [
@@ -46,7 +46,7 @@ import { PaddingComponent } from './components/widgets/padding/padding.component
     RowPropertyManagerComponent,
     EmailBodyManagerComponent,
     ElementPropertyManagerComponent,
-    PaddingComponent
+    CommonNumberSelectorComponent
   ],
   imports: [
     CommonModule,

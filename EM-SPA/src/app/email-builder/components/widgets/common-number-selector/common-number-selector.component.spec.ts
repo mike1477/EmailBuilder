@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { PaddingComponent } from './padding.component';
+import { CommonNumberSelectorComponent } from './common-number-selector.component';
 
 describe('PaddingComponent', () => {
-  let component: PaddingComponent;
-  let fixture: ComponentFixture<PaddingComponent>;
+  let component: CommonNumberSelectorComponent;
+  let fixture: ComponentFixture<CommonNumberSelectorComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ PaddingComponent ]
+      declarations: [ CommonNumberSelectorComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(PaddingComponent);
+    fixture = TestBed.createComponent(CommonNumberSelectorComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -2,11 +2,11 @@ import { Component, OnInit, EventEmitter, Output , SimpleChange, SimpleChanges, 
 import { Padding } from 'src/app/email-builder/models/padding';
 
 @Component({
-  selector: 'app-padding',
-  templateUrl: './padding.component.html',
-  styleUrls: ['./padding.component.scss']
+  selector: 'app-common-number-selector',
+  templateUrl: './common-number-selector.component.html',
+  styleUrls: ['./common-number-selector.component.scss']
 })
-export class PaddingComponent implements OnInit {
+export class CommonNumberSelectorComponent implements OnInit {
 
  
 
