@@ -6,7 +6,7 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root'
 })
-export class MergeFeildsService {
+export class MergeFieldsService {
 
   private _mergeFields: MergeField[] = null;
 
@@ -41,6 +41,28 @@ export class MergeFeildsService {
   addMergeField(newMergeField: MergeField): Observable<MergeField[]>{
     return new Observable<MergeField[]>((observer) => {
       this._mergeFields.push(newMergeField); //TODO this is http
+
+      observer.next(this.mergeFields);
+      observer.complete();
+      return { unsubscribe(){ } }
+    });
+  }
+
+  updateMergeField(mergeField: MergeField, name: string, type: VariableTypes){
+    return new Observable<MergeField[]>((observer) => {
+      mergeField.name = name; //TODO this is http
+      mergeField.type = type;
+      
+      observer.next(this.mergeFields);
+      observer.complete();
+      return { unsubscribe(){ } }
+    });
+  }
+
+  deleteMergeField(mergeField: MergeField){
+    return new Observable<MergeField[]>((observer) => {
+      this._mergeFields.splice(this._mergeFields.indexOf(mergeField),1);  //TODO this is http
+      
       observer.next(this.mergeFields);
       observer.complete();
       return { unsubscribe(){ } }

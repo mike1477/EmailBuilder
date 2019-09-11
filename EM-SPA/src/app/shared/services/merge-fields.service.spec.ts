@@ -1,12 +1,11 @@
 import { TestBed } from '@angular/core/testing';
-
-import { MergeFeildsService } from './merge-feilds.service';
+import { MergeFieldsService } from './merge-fields.service';
 
 describe('MergeFeildsService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {
-    const service: MergeFeildsService = TestBed.get(MergeFeildsService);
+    const service: MergeFieldsService = TestBed.get(MergeFieldsService);
     expect(service).toBeTruthy();
   });
 });
