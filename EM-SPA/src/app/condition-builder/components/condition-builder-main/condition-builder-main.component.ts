@@ -4,6 +4,8 @@ import { ConditionOperator } from 'src/app/shared/models/condition-operator';
 import { ConditionDefinition } from 'src/app/shared/models/condition-definition';
 import { ConditionOperatorGroup } from 'src/app/shared/models/condition-operator-group';
 import { PropertyManagerTypes } from 'src/app/shared/models/property-manager-types';
+import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
+import { AppConfigurationService } from 'src/app/shared/services/app-configuration.service';
 
 @Component({
   selector: 'app-condition-builder-main',
@@ -14,7 +16,9 @@ export class ConditionBuilderMainComponent implements OnInit {
 
   propertyManger: PropertyManger = new PropertyManger();
 
-  constructor() { }
+  constructor(
+    private modalService: NgbModal,
+    private config: AppConfigurationService,  ) { }
 
   ngOnInit() {
     this.propertyManger.managerType = PropertyManagerTypes.color;
@@ -32,5 +36,10 @@ export class ConditionBuilderMainComponent implements OnInit {
     condition.operationModel = new ConditionOperatorGroup();
     condition.conditionValue = "Compound Condition";
     this.propertyManger.conditions.push(condition);
+  }
+
+  
+  editMergeField(content) {
+    this.modalService.open(content, this.config.MERGE_FIELD_MODAL_CONGIG).result.then(()=>{}, ()=>{});
   }
 }

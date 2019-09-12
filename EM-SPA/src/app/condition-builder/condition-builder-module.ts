@@ -4,16 +4,20 @@ import { ConditionBuilderMainComponent } from './components/condition-builder-ma
 import { ConditionHandlerComponent } from './components/condition-handler/condition-handler.component';
 import { ConditionSimpleComponent } from './components/condition-simple/condition-simple.component';
 import { ConditionCompoundComponent } from './components/condition-compound/condition-compound.component';
+import { MergeFieldManagerComponent } from '../shared/components/modals/merge-field-manager/merge-field-manager.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     ConditionBuilderMainComponent,
     ConditionHandlerComponent,
     ConditionSimpleComponent,
-    ConditionCompoundComponent
+    ConditionCompoundComponent,
+    MergeFieldManagerComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: []

@@ -1,3 +1,7 @@
+<ng-template #mergeFieldManagerModal let-modal>
+    <app-merge-field-manager [modal]="modal" ></app-merge-field-manager>
+</ng-template>
+
 <div class="condition-builder-wrapper container-fluid">
   <div class="row">
     <div class="col-12">
@@ -5,6 +9,9 @@
         <button 
         class="btn btn-primary"
         (click)="addSimple()">Create New Condition</button>
+        <button 
+        class="btn btn-primary"
+        (click)="editMergeField(mergeFieldManagerModal)">Add or Edit Merge Fields</button>
     </div>
   </div>
   <div class="row"
