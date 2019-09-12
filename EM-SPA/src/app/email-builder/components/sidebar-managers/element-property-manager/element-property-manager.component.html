@@ -23,13 +23,27 @@
                                         <p>Padding</p>
                                 </div>
                                 <div>
-                                        <app-common-number-selector [padding]="selectedElement.padding"></app-common-number-selector>
+                                        <app-common-number-selector [padding]="selectedElement.padding">
+                                        </app-common-number-selector>
                                 </div>
                         </div>
                 </div>
 
         </li>
+        <li class="list-group-item">
+                <div class="container">
+                        <div class="manager-row row">
+                                <div class="manager-label col-6">
+                                        <p>Align</p>
+                                </div>
+                                 <div class="col-6">
+                                        <app-align-control [align]="selectedElement.align"></app-align-control>
+                                 </div>
+                                  
+                        </div>
+                </div>
+        </li>
         <li class="list-group-item">More Property Mangers Here</li>
-        <div><app-align-control></app-align-control></div>
+
 
 </ul>

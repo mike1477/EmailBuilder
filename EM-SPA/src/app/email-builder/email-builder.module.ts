@@ -27,7 +27,6 @@ import { EmailBodyManagerComponent } from './components/sidebar-managers/email-b
 import { ElementPropertyManagerComponent } from './components/sidebar-managers/element-property-manager/element-property-manager.component';
 import { CommonNumberSelectorComponent } from './components/widgets/common-number-selector/common-number-selector.component';
 import { AlignControlComponent } from './components/controls/align-control/align-control.component';
-import { AlignWidgetComponent } from './components/widgets/align-widget/align-widget.component';
 
 @NgModule({
   declarations: [
@@ -49,8 +48,7 @@ import { AlignWidgetComponent } from './components/widgets/align-widget/align-wi
     EmailBodyManagerComponent,
     ElementPropertyManagerComponent,
     CommonNumberSelectorComponent,
-    AlignControlComponent,
-    AlignWidgetComponent
+    AlignControlComponent
   ],
   imports: [
     CommonModule,
