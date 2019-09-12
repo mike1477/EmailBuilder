@@ -1,5 +1,7 @@
+import { MergeField } from './merge-field';
+
 export class ConditionOperator {
-  fieldOperand: string;
+  targetField:MergeField;
   predicateKey: string;
   valueOperand: string;
 }

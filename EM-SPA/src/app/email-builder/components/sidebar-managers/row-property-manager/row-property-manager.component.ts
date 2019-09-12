@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SelectionManagerService } from '../../../services/selection-manager/selection-manager.service';
+import { SelectionManagerService } from '../../../../shared/services/selection-manager.service';
 import { Padding } from 'src/app/email-builder/models/padding';
 import { Row } from 'src/app/email-builder/models/row';
 

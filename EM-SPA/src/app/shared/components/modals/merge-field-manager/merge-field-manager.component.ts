@@ -28,7 +28,7 @@ export class MergeFieldManagerComponent implements OnInit {
         return value;
       });
   
-       this.mergeFieldService.getMerdeFields().subscribe(
+       this.mergeFieldService.getMergeFields().subscribe(
         (mergeFields)=>{ }, 
         (err)=>{},  //TODO handle err
         ()=>{});    //Complete
@@ -66,13 +66,6 @@ export class MergeFieldManagerComponent implements OnInit {
 
     set selectedMergeFieldType(newValue: VariableTypes){
       this._editedMergeField.type = newValue;
-    }
-
-    private onChangeError(err){
-    }
-
-    private onChangeComplete(){
-
     }
 
     submitChanges(){

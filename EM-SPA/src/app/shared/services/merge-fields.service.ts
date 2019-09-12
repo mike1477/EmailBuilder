@@ -18,7 +18,7 @@ export class MergeFieldsService {
 
   private activeObservable: Observable<MergeField[]> = null;
 
-  getMerdeFields(): Observable<MergeField[]> {
+  getMergeFields(): Observable<MergeField[]> {
     if (this.mergeFields instanceof Array) {
       return new Observable<MergeField[]>((observer) => {
         observer.next(this.mergeFields);

@@ -29,6 +29,7 @@ export class ConditionBuilderMainComponent implements OnInit {
     condition.operationModel = new ConditionOperator();
     condition.conditionValue = "Simple Condition";
     this.propertyManger.conditions.push(condition);
+    console.log(this.propertyManger);
   }
 
   addCompound() {

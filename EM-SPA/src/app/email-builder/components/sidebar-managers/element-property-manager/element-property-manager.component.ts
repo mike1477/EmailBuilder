@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { SelectionManagerService } from '../../../services/selection-manager/selection-manager.service';
-import { ElementBase } from 'src/app/email-builder/models/elements/elementBase';
+import { SelectionManagerService } from 'src/app/shared/services/selection-manager.service';
 
 @Component({
   selector: 'app-element-property-manager',

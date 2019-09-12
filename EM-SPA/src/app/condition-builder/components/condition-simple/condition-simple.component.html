@@ -4,17 +4,30 @@
             <div class="input-group-prepend">
                 <label class="input-group-text">When</label>
             </div>
-            <select [(ngModel)]="selectedMergeField" class="custom-select">
+            <select [(ngModel)]="selectedMergeField" class="form-control">
                 <option *ngIf="selectedMergeField === null" selected [ngValue]="null">Select a merge field....</option>
                 <option *ngFor="let mergeField of mergeFields" [ngValue]="mergeField">{{mergeField.name}}</option>
             </select>
-            <select class="custom-select">
+            <select [(ngModel)]="selectedPredicate" class="form-control">
                 <option selected>Choose...</option>
-                <option value="1">Starts With</option>
-                <option value="2">Ends With</option>
-                <option value="3">Contains</option>
+                <option [ngValue]="predicateOption.key" *ngFor="let predicateOption of predicateOptions">{{predicateOption.label}}</option>
             </select>
-            <input type="text" value="SOME VALUE"/>
+            <ng-container [ngSwitch]="selectedVariableType">
+                <ng-container *ngSwitchCase="'string'">
+                    <input class="form-control" type="text" value="string" placeholder="Enter Value"/>
+                </ng-container>
+                <ng-container *ngSwitchCase="'number'">
+                    <input type="number" value="number"/>
+                </ng-container>
+                <ng-container *ngSwitchCase="'boolean'">
+                </ng-container>
+                <ng-container *ngSwitchCase="'date'">
+                    <input type="text" value="date"/>
+                </ng-container>
+                <ng-container *ngSwitchDefault>
+                    <input disabled="disabled" type="text" value="No Merge Field Selected!"/>
+                </ng-container>
+            </ng-container>
             <div class="input-group-append">
                 <label class="input-group-text">set property to</label>
                 <label class="input-group-text">{{condition.conditionValue}}</label>

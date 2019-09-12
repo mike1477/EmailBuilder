@@ -10,6 +10,7 @@ import { EmailBuilderModule } from "./email-builder/email-builder.module";
 import { DragulaModule,  DragulaService} from 'ng2-dragula';
 import { ConditionBuilderModule } from './condition-builder/condition-builder-module';
 import { PreviewerModule } from './previewer/previewer.module';
+import { SelectionManagerService } from './shared/services/selection-manager.service';
 @NgModule({
   declarations: [
     AppComponent
@@ -26,7 +27,7 @@ import { PreviewerModule } from './previewer/previewer.module';
     NgbModule,
     DragulaModule.forRoot()
   ],
-  providers: [DragulaService],
+  providers: [DragulaService, SelectionManagerService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
