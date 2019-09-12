@@ -1,5 +1,5 @@
 <div class="row">
-    <div class="col-10">
+    <div class="col-12">
         <div class="input-group mb-3">
             <div class="input-group-prepend">
                 <label class="input-group-text">When</label>
@@ -32,10 +32,9 @@
                 <label class="input-group-text">set property to</label>
                 <label class="input-group-text">{{condition.conditionValue}}</label>
             </div>
+            <button class="btn btn-outline-secondary">Compound Condition</button>
+            <button class="btn btn-outline-danger" (click)="removeSimpleCondition()">X</button>
         </div>
-    </div>
-    <div class="col-2">
-        <button class="btn btn-primary btn-block">Compound Condition</button>
     </div>
 </div>
 

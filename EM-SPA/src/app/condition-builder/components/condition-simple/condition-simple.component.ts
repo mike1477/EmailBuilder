@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ConditionDefinition } from 'src/app/shared/models/condition-definition';
 import { MergeField } from 'src/app/shared/models/merge-field';
 import { MergeFieldsService } from 'src/app/shared/services/merge-fields.service';
@@ -15,6 +15,25 @@ export class ConditionSimpleComponent implements OnInit {
   private _predicateOptions:Array<any> = [];
 
   @Input() condition:ConditionDefinition;
+  @Output()
+  removeSimpleConditionRequest = new EventEmitter<ConditionDefinition>();
+
+  constructor(
+    private mergeFieldService: MergeFieldsService,
+    private conditionOperatorsService: ConditionPredicateService) { 
+  }
+
+  ngOnInit() { 
+    this.mergeFieldService.getMergeFields().subscribe(
+      (mergeFields)=>{},
+      (err)=>{}, //TODO handle error
+      ()=>{});
+
+    this.conditionOperatorsService.getConditionOperators().subscribe(
+      (mergeFields)=>{},
+      (err)=>{}, //TODO handle error
+      ()=>{});
+  }
 
   get operationModel():ConditionOperator{
     let isSimple = this.condition && this.condition.isSimple ? true : false;
@@ -60,20 +79,8 @@ export class ConditionSimpleComponent implements OnInit {
     return this.selectedMergeField && this.selectedMergeField.type;
   }
 
-  constructor(
-    private mergeFieldService: MergeFieldsService,
-    private conditionOperatorsService: ConditionPredicateService) { 
+  removeSimpleCondition() {
+    this.removeSimpleConditionRequest.emit(this.condition);
   }
 
-  ngOnInit() { 
-    this.mergeFieldService.getMergeFields().subscribe(
-      (mergeFields)=>{},
-      (err)=>{}, //TODO handle error
-      ()=>{});
-
-    this.conditionOperatorsService.getConditionOperators().subscribe(
-      (mergeFields)=>{},
-      (err)=>{}, //TODO handle error
-      ()=>{});
-  }
 }

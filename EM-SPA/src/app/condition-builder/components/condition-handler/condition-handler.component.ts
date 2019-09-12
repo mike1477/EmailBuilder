@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { ConditionDefinition } from 'src/app/shared/models/condition-definition';
 
 @Component({
@@ -9,8 +9,13 @@ import { ConditionDefinition } from 'src/app/shared/models/condition-definition'
 export class ConditionHandlerComponent implements OnInit {
 
 @Input() condition:ConditionDefinition;
+@Output()
+removeSimpleConditionRequest = new EventEmitter<ConditionDefinition>();
 
-  constructor() { }
+removeSimpleCondition(target) {
+  this.removeSimpleConditionRequest.emit(target);
+}
+constructor() { }
 
   ngOnInit() {
   }

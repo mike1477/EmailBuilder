@@ -1,8 +1,9 @@
-<div class="condition-wrapper">
+<div class="condition-wrapper" >
 
     <app-condition-simple 
     *ngIf="condition.isSimple" 
-    [condition]="condition"></app-condition-simple>
+    [condition]="condition"
+    (removeSimpleConditionRequest)="removeSimpleCondition($event)"></app-condition-simple>
 
     <app-condition-compound
     *ngIf="condition.isCompound"

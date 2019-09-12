@@ -3,7 +3,6 @@ import { PropertyManager } from '../../../shared/models/property-manager';
 import { ConditionOperator } from 'src/app/shared/models/condition-operator';
 import { ConditionDefinition } from 'src/app/shared/models/condition-definition';
 import { ConditionOperatorGroup } from 'src/app/shared/models/condition-operator-group';
-import { PropertyManagerTypes } from 'src/app/shared/models/property-manager-types';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { AppConfigurationService } from 'src/app/shared/services/app-configuration.service';
 import { SelectionManagerService } from 'src/app/shared/services/selection-manager.service';
@@ -43,6 +42,11 @@ export class ConditionBuilderMainComponent implements OnInit {
     condition.operationModel = new ConditionOperatorGroup();
     condition.conditionValue = "Compound Condition";
     this.propertyManger.conditions.push(condition);
+  }
+
+  removeSimpleCondition(target){
+    let conditions = this.propertyManger.conditions;
+    conditions.splice(conditions.indexOf(target), 1);
   }
 
   

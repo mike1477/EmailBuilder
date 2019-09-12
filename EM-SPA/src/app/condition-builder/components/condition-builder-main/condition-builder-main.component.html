@@ -2,25 +2,29 @@
     <app-merge-field-manager [modal]="modal" ></app-merge-field-manager>
 </ng-template>
 
-<div class="condition-builder-wrapper container-fluid">
+<div class="condition-builder-wrapper container" *ngIf="propertyManger">
   <div class="row">
     <div class="col-12">
-        <h2>Conditionally set this property. By default this property value will be <b>TODO Put default value here.</b></h2>
-        <button 
-        class="btn btn-primary"
-        (click)="addSimple()">Create New Condition</button>
-        <button 
-        class="btn btn-primary"
-        (click)="editMergeField(mergeFieldManagerModal)">Add or Edit Merge Fields</button>
-    </div>
+        <h2 class="text-center">Merge Field Condion Builder</h2>
+        <p class="alert alert-info text-center">Conditionally set this  property based off of values in your merge fields. If you don't see your merge field, 
+          <span class="alert-link" (click)="editMergeField(mergeFieldManagerModal)">you can add or edit them here</span>.
+        </p>
+        <p class="text-center" *ngIf="propertyManger.conditions.length > 0">
+            <button 
+            class="btn btn-secondary"
+            (click)="addSimple()">Add New Condition</button>
+        </p>
+      </div>
   </div>
   <div class="row"
   *ngIf="propertyManger.conditions.length == 0">
     <div class="col-12 text-center">
-      <h3>Currently there are no conditions for this property</h3>
-      <button 
-      class="btn btn-primary"
-      (click)="addSimple()">Create New Condition</button>
+      <h4>Currently there are no conditions for this property.</h4>
+      <p class="text-center">
+          <button 
+          class="btn btn-secondary"
+          (click)="addSimple()">Start Adding</button>
+      </p>
     </div>
   </div>
   <div class="row"
@@ -28,7 +32,8 @@
     <div class="col-12">
         <app-condition-handler 
         *ngFor="let condition of propertyManger.conditions" 
-        [condition]="condition"></app-condition-handler>
+        [condition]="condition"
+        (removeSimpleConditionRequest)="removeSimpleCondition($event)"></app-condition-handler>
     </div>
   </div>
 </div>
