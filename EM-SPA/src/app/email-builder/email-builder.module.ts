@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import {MatTabsModule} from '@angular/material/tabs';
 
-import { EmailBuilderRoutingModule } from './email-builder-routing.module';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import { DisplayComponent } from './components/display/display.component';
@@ -27,6 +26,8 @@ import { EmailBodyManagerComponent } from './components/sidebar-managers/email-b
 import { ElementPropertyManagerComponent } from './components/sidebar-managers/element-property-manager/element-property-manager.component';
 import { CommonNumberSelectorComponent } from './components/widgets/common-number-selector/common-number-selector.component';
 import { AlignControlComponent } from './components/controls/align-control/align-control.component';
+import { RouterModule } from '@angular/router';
+import { ColorPropertyManagerComponent } from './components/controls/color-property-manager/color-property-manager.component';
 
 @NgModule({
   declarations: [
@@ -48,22 +49,22 @@ import { AlignControlComponent } from './components/controls/align-control/align
     EmailBodyManagerComponent,
     ElementPropertyManagerComponent,
     CommonNumberSelectorComponent,
-    AlignControlComponent
+    AlignControlComponent,
+    ColorPropertyManagerComponent
   ],
   imports: [
     CommonModule,
-    EmailBuilderRoutingModule,
     DragDropModule,
     MatTabsModule,
     DragulaModule,
     EditorModule,
     ColorPickerModule,
-    FormsModule
+    FormsModule,
+    RouterModule
   ],
   entryComponents: [],
   exports: [
-    DashboardComponent,
-    EmailBuilderRoutingModule
+    DashboardComponent
   ]
 })
 export class EmailBuilderModule { }

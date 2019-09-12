@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Email } from 'src/app/email-builder/models/email';
 import { SelectionManagerService } from 'src/app/shared/services/selection-manager.service';
+import { PropertyManagerColor } from 'src/app/shared/models/property-manager-color';
 
 @Component({
   selector: 'app-email-body-manager',
@@ -17,15 +18,8 @@ export class EmailBodyManagerComponent implements OnInit {
     return this.selectionManager.emailTemplate;
   }
 
-  get backgroundColor():string {
+  get backgroundColor():PropertyManagerColor {
     return this.emailBody && this.emailBody.backgroundColor;
-  }
-
-  set backgroundColor(newValue: string){
-    newValue = typeof newValue === "string" ? newValue: "transparent";
-    if (this.emailBody){
-      this.emailBody.backgroundColor = newValue;
-    }
   }
 
 }

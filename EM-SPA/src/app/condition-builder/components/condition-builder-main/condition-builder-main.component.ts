@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-import { PropertyManger } from '../../../shared/models/property-manager';
+import { PropertyManager } from '../../../shared/models/property-manager';
 import { ConditionOperator } from 'src/app/shared/models/condition-operator';
 import { ConditionDefinition } from 'src/app/shared/models/condition-definition';
 import { ConditionOperatorGroup } from 'src/app/shared/models/condition-operator-group';
 import { PropertyManagerTypes } from 'src/app/shared/models/property-manager-types';
 import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
 import { AppConfigurationService } from 'src/app/shared/services/app-configuration.service';
+import { SelectionManagerService } from 'src/app/shared/services/selection-manager.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-condition-builder-main',
@@ -14,14 +16,18 @@ import { AppConfigurationService } from 'src/app/shared/services/app-configurati
 })
 export class ConditionBuilderMainComponent implements OnInit {
 
-  propertyManger: PropertyManger = new PropertyManger();
+  propertyManger: PropertyManager<any> = null;
 
   constructor(
     private modalService: NgbModal,
-    private config: AppConfigurationService,  ) { }
+    private config: AppConfigurationService,
+    private selectionManagerService: SelectionManagerService,
+    private router: Router   ) { }
 
   ngOnInit() {
-    this.propertyManger.managerType = PropertyManagerTypes.color;
+    this.propertyManger = this.selectionManagerService.targetPropertyManger;
+    //Go to the home page if there is no property to manage
+    if(!this.propertyManger) this.router.navigateByUrl("/");
   }
 
   addSimple() {

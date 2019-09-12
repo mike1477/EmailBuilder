@@ -1,11 +1,9 @@
 import { ConditionDefinition } from './condition-definition';
-import { PropertyManagerTypes } from './property-manager-types';
 
-export class PropertyManger {
+export class PropertyManager<T> {
   constructor() {
     this.conditions = [];
   }
-  defaultValue: any;
-  managerType: PropertyManagerTypes;
+  defaultValue: T;
   conditions: Array<ConditionDefinition>;
 }

@@ -5,6 +5,8 @@ export class ElementBase{
     constructor(){
         this.padding = new Padding();
         this.align = "left";
+        this.autoWidth = false;
+        this.backgroundColor = "transparent";
     }
     padding: Padding;
     align: string;

@@ -3,6 +3,8 @@ import { Email } from 'src/app/email-builder/models/email';
 import { Row } from 'src/app/email-builder/models/row';
 import { ElementBase } from 'src/app/email-builder/models/elements/elementBase';
 import { Observable, Subject } from 'rxjs';
+import { PropertyManager } from '../models/property-manager';
+import { PropertyManagerColor } from '../models/property-manager-color';
 
 @Injectable({
   providedIn: 'root'
@@ -10,6 +12,7 @@ import { Observable, Subject } from 'rxjs';
 
 export class SelectionManagerService {
 
+  public targetPropertyManger:PropertyManager<any> = null;
   private _emailTemplate:Email = null;
   private _selectedRow: Row = null;
   private _selectedElement: ElementBase = null;  
@@ -24,7 +27,7 @@ export class SelectionManagerService {
     return this._selectedElement;
   };
 
-  constructor() { console.log("this is a test"); }
+  constructor() { }
 
   selectElement(element:ElementBase){
     this._selectedElement = element;
@@ -49,8 +52,9 @@ export class SelectionManagerService {
       this.activeObservable = new Observable<Email>((observer)=>{
         
         this._emailTemplate = new Email();
-        this._emailTemplate.backgroundColor = "#ffffff";
-        this._emailTemplate.contentBackgroundColor = "transparent";
+        this._emailTemplate.backgroundColor = new PropertyManagerColor();
+        this._emailTemplate.backgroundColor.defaultValue = "#ffffff";
+        this._emailTemplate.contentBackgroundColor = new PropertyManagerColor();
         this._emailTemplate.rows = [];
         
         observer.next(this._emailTemplate);

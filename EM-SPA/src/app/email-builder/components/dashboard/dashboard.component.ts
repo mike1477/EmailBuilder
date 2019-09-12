@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewContainerRef, } from '@angular/core';
+import { Component, OnInit, ViewContainerRef, OnDestroy, } from '@angular/core';
 import { DragulaService, Group } from 'ng2-dragula';
 import { Row } from 'src/app/email-builder/models/row';
 import { RowOption } from 'src/app/email-builder/models/rowOption';
@@ -7,15 +7,20 @@ import { ImageElement } from 'src/app/email-builder/models/elements/imageElement
 import { TextElement } from 'src/app/email-builder/models/elements/textElement';
 import { ButtonElement } from 'src/app/email-builder/models/elements/buttonElement';
 
+const rowDragGroup = "rows"
+const elementDragGroup = "elements"
+
 @Component({
   selector: '[app-dashboard]',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.scss']
 })
-export class DashboardComponent implements OnInit {
+export class DashboardComponent implements OnInit, OnDestroy {
 
-  constructor(private dragulaService: DragulaService) {
-    dragulaService.createGroup('rows', {
+  constructor(private dragulaService: DragulaService) {}
+
+  ngOnInit() {
+    this.dragulaService.createGroup(rowDragGroup, {
       copy: (el, source) => {
         return source.id === 'layout-row-options';
       },
@@ -38,7 +43,7 @@ export class DashboardComponent implements OnInit {
         return true;     
       }
     });
-    dragulaService.createGroup('elements', {
+    this.dragulaService.createGroup(elementDragGroup, {
       copy: (el, source) => {
         return source.id === 'layout-element-options';
       },
@@ -59,9 +64,11 @@ export class DashboardComponent implements OnInit {
         return true;     
        }
     });
-   }
+  }
 
-  ngOnInit() {
+  ngOnDestroy(): void {
+    this.dragulaService.destroy(rowDragGroup);
+    this.dragulaService.destroy(elementDragGroup);
   }
 
   elementOptions = [
