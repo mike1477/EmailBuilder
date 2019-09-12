@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input, Output } from '@angular/core';
 
 @Component({
   selector: 'app-align-control',
@@ -7,9 +7,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AlignControlComponent implements OnInit {
 
+  @Input() align:string;
+
   constructor() { }
 
   ngOnInit() {
+  }
+
+  set setAlign(newValue: string){
+    if(this.align){
+      this.align = newValue;
+    }
+    console.log(this.align);
   }
 
 }
