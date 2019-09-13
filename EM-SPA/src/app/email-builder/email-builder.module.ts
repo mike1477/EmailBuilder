@@ -28,6 +28,8 @@ import { CommonNumberSelectorComponent } from './components/widgets/common-numbe
 import { AlignControlComponent } from './components/controls/align-control/align-control.component';
 import { RouterModule } from '@angular/router';
 import { ColorPropertyManagerComponent } from './components/controls/color-property-manager/color-property-manager.component';
+import { DimensionsSetterWidgetComponent } from './components/widgets/dimensions-setter-widget/dimensions-setter-widget.component';
+
 
 @NgModule({
   declarations: [
@@ -50,7 +52,8 @@ import { ColorPropertyManagerComponent } from './components/controls/color-prope
     ElementPropertyManagerComponent,
     CommonNumberSelectorComponent,
     AlignControlComponent,
-    ColorPropertyManagerComponent
+    ColorPropertyManagerComponent,
+    DimensionsSetterWidgetComponent
   ],
   imports: [
     CommonModule,

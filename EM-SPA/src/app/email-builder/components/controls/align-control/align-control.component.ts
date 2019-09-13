@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output } from '@angular/core';
+import { ElementBase } from 'src/app/email-builder/models/elements/elementBase';
 
 @Component({
   selector: 'app-align-control',
@@ -7,18 +8,15 @@ import { Component, OnInit, Input, Output } from '@angular/core';
 })
 export class AlignControlComponent implements OnInit {
 
-  @Input() align:string;
+  @Input() selectedElement: ElementBase;
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  set setAlign(newValue: string){
-    if(this.align){
-      this.align = newValue;
-    }
-    console.log(this.align);
+  set align(newValue: string){
+    this.selectedElement.align = newValue;
   }
 
 }
