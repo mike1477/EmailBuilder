@@ -25,5 +25,15 @@ export class ElementPropertyManagerComponent implements OnInit {
       this.selectedElement.backgroundColor = newValue;
     } 
   }
+  get color():string {
+    return this.selectedElement && this.selectedElement.color;
+  }
+
+  set color(newValue: string){
+    newValue = typeof newValue === "string" ? newValue: "transparent";
+    if (this.selectedElement){
+      this.selectedElement.color = newValue;
+    } 
+  }
 
 }
