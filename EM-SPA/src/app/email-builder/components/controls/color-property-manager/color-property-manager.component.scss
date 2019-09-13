@@ -1,6 +1,11 @@
 .edit-condition-action{
-    position:absolute;
-    right:0;
-    top:0;
-    margin-right: 15px;
+    position: absolute;
+    right: 0;
+    margin-right: -24px;
+    bottom: 50%;
+    margin-bottom: -18px;
+    outline: none;
+}
+.edit-condition-action:focus{
+    box-shadow: none;
 }

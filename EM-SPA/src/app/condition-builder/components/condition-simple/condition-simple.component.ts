@@ -1,18 +1,19 @@
-import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter, OnDestroy } from '@angular/core';
 import { ConditionDefinition } from 'src/app/shared/models/condition-definition';
 import { MergeField } from 'src/app/shared/models/merge-field';
 import { MergeFieldsService } from 'src/app/shared/services/merge-fields.service';
 import { ConditionPredicateService } from 'src/app/shared/services/condition-predicate.service';
 import { ConditionOperator } from 'src/app/shared/models/condition-operator';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-condition-simple',
   templateUrl: './condition-simple.component.html',
   styleUrls: ['./condition-simple.component.scss']
 })
-export class ConditionSimpleComponent implements OnInit {
-
+export class ConditionSimpleComponent implements OnInit, OnDestroy {
   private _predicateOptions:Array<any> = [];
+  private subs:Subscription = new Subscription();
 
   @Input() condition:ConditionDefinition;
   @Output()
@@ -24,15 +25,39 @@ export class ConditionSimpleComponent implements OnInit {
   }
 
   ngOnInit() { 
-    this.mergeFieldService.getMergeFields().subscribe(
+    let self = this;
+    let oneComplete = false;
+    this.subs.add(this.mergeFieldService.getMergeFields().subscribe(
       (mergeFields)=>{},
       (err)=>{}, //TODO handle error
-      ()=>{});
+      ()=>{
+      if(oneComplete) self.loadPredicateOptions();
+      oneComplete = true;
+    }));
 
-    this.conditionOperatorsService.getConditionOperators().subscribe(
+    this.subs.add(
+      this.conditionOperatorsService.getConditionOperators().subscribe(
       (mergeFields)=>{},
       (err)=>{}, //TODO handle error
-      ()=>{});
+      ()=>{
+        if(oneComplete) self.loadPredicateOptions();
+        oneComplete = true;
+      })
+    );
+  }
+  
+  ngOnDestroy(): void {
+    this.subs.unsubscribe();
+  }
+
+  private loadPredicateOptions(){
+    let operators = this.conditionOperatorsService.conditionOperators;
+    let mergeField = this.selectedMergeField;
+    if(operators && mergeField && operators[mergeField.type]){
+      this._predicateOptions = Object.keys(operators[mergeField.type]).map((item)=>{
+        return {key:item, label:operators[mergeField.type][item]};
+      });
+    }
   }
 
   get operationModel():ConditionOperator{
@@ -50,14 +75,10 @@ export class ConditionSimpleComponent implements OnInit {
     //when a new mergefield is selected then a new predicate must be selected
     this.selectedPredicate = null; 
 
-    //load up the predicate options for the merge field type
-    let operators = this.conditionOperatorsService.conditionOperators;
-    if(operators && operators[newValue.type]){
-      this._predicateOptions = Object.keys(operators[newValue.type]).map((item)=>{
-        return {key:item, label:operators[newValue.type][item]};
-      });
-    }
     this.operationModel.targetField = newValue;
+
+    //load up the predicate options for the merge field type
+    this.loadPredicateOptions();
   }
 
   get mergeFields(): Array<MergeField>{

@@ -4,8 +4,13 @@
 
 <div class="condition-builder-wrapper container" *ngIf="propertyManger">
   <div class="row">
-    <div class="col-12">
-        <h2 class="text-center">Merge Field Condion Builder</h2>
+    <div class="col-2">
+      <a class="btn btn-outline-secondary" [routerLink]="['/']">
+        <i class="fas fa-arrow-left"></i> Back
+      </a>
+    </div>
+    <div class="col-8">
+        <h2 class="text-center">Merge Field Condition Builder</h2>
         <p class="alert alert-info text-center">Conditionally set this  property based off of values in your merge fields. If you don't see your merge field, 
           <span class="alert-link" (click)="editMergeField(mergeFieldManagerModal)">you can add or edit them here</span>.
         </p>
@@ -14,6 +19,9 @@
             class="btn btn-secondary"
             (click)="addSimple()">Add New Condition</button>
         </p>
+      </div>
+      <div class="col-2">
+
       </div>
   </div>
   <div class="row"

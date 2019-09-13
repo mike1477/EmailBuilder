@@ -6,6 +6,7 @@ import { ConditionSimpleComponent } from './components/condition-simple/conditio
 import { ConditionCompoundComponent } from './components/condition-compound/condition-compound.component';
 import { MergeFieldManagerComponent } from '../shared/components/modals/merge-field-manager/merge-field-manager.component';
 import { FormsModule } from '@angular/forms';
+import { RouterModule } from '@angular/router';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { FormsModule } from '@angular/forms';
   ],
   imports: [
     CommonModule,
-    FormsModule
+    FormsModule,
+    RouterModule
   ],
   providers: [],
   bootstrap: []
