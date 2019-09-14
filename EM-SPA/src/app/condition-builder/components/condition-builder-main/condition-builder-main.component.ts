@@ -21,27 +21,25 @@ export class ConditionBuilderMainComponent implements OnInit {
     private modalService: NgbModal,
     private config: AppConfigurationService,
     private selectionManagerService: SelectionManagerService,
-    private router: Router   ) { }
+    private router: Router) { }
 
   ngOnInit() {
     this.propertyManger = this.selectionManagerService.targetPropertyManger;
     //Go to the home page if there is no property to manage
-    if(!this.propertyManger) this.router.navigateByUrl("/");
+    if (!this.propertyManger) this.router.navigateByUrl("/");
   }
 
-  get defaultValue():string{
+  get defaultValue(): string {
     return this.propertyManger && this.propertyManger.defaultValue;
   }
-  set defaultValue(newValue:string){
-    if(this.propertyManger) this.propertyManger.defaultValue = newValue;
+  set defaultValue(newValue: string) {
+    if (this.propertyManger) this.propertyManger.defaultValue = newValue;
   }
 
   addSimple() {
     var condition = new ConditionDefinition();
     condition.operationModel = new ConditionOperator();
-    condition.conditionValue = "Simple Condition";
     this.propertyManger.conditions.push(condition);
-    console.log(this.propertyManger);
   }
 
   addCompound() {
@@ -51,13 +49,13 @@ export class ConditionBuilderMainComponent implements OnInit {
     this.propertyManger.conditions.push(condition);
   }
 
-  removeSimpleCondition(target){
+  removeSimpleCondition(target) {
     let conditions = this.propertyManger.conditions;
     conditions.splice(conditions.indexOf(target), 1);
   }
 
-  
+
   editMergeField(content) {
-    this.modalService.open(content, this.config.MERGE_FIELD_MODAL_CONGIG).result.then(()=>{}, ()=>{});
+    this.modalService.open(content, this.config.MERGE_FIELD_MODAL_CONGIG).result.then(() => { }, () => { });
   }
 }

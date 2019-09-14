@@ -34,7 +34,6 @@ export class ElementPropertyManagerComponent implements OnInit {
     return this.selectedElement && this.selectedElement.alignment;
   }
   set alignment(newValue: string) {
-    console.log(newValue);
     if (this.selectedElement) this.selectedElement.alignment = newValue;
   }
 
