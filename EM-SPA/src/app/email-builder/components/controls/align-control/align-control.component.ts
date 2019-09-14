@@ -14,10 +14,11 @@ export class AlignControlComponent implements OnInit {
     return this.managedValue;
   }
 
-  @Output() valueChange = new EventEmitter<string>();
+  @Output() alignmentChange = new EventEmitter<string>();
+
   set alignment(newValue: string) {
     this.managedValue = newValue;
-    this.valueChange.emit(this.managedValue);
+    this.alignmentChange.emit(this.managedValue);
   }
 
   constructor() { }
