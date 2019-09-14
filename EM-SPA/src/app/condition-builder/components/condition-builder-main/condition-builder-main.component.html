@@ -1,23 +1,17 @@
 <ng-template #mergeFieldManagerModal let-modal>
     <app-merge-field-manager [modal]="modal" ></app-merge-field-manager>
 </ng-template>
-
 <div class="condition-builder-wrapper container" *ngIf="propertyManger">
-  <div class="row">
-    <div class="col-3">
+    <h2 class="text-center">Merge Field Condition Builder</h2><hr/>
+    <div class="row">
+    <div class="col-1">
       <a class="btn btn-outline-secondary" [routerLink]="['/']">
         <i class="fas fa-arrow-left"></i> Back
       </a>
     </div>
-    <div class="col-6">
-        <h2 class="text-center">Merge Field Condition Builder</h2>
-        <p class="alert alert-info text-center">Conditionally set this  property based off of values in your merge fields. If you don't see your merge field, 
+    <div class="col-8">
+        <p class="alert alert-info">Conditionally set this  property based off of values in your merge fields. If you don't see your merge field, 
           <span class="alert-link" (click)="editMergeField(mergeFieldManagerModal)">you can add or edit them here</span>.
-        </p>
-        <p class="text-center" *ngIf="propertyManger.conditions.length > 0">
-            <button 
-            class="btn btn-secondary"
-            (click)="addSimple()">Add New Condition</button>
         </p>
       </div>
       <div class="col-3">
@@ -41,12 +35,22 @@
               />
               <div class="input-group-prepend" (click)="toggle=!toggle">
                 <span class="input-group-text open-color-picker" [style.background-color]="defaultValue"></span>
-            </div> 
-              </div>
+              </div> 
+            </div>
           </div>
         </div>
       </div>
   </div>
+  <div class="row" *ngIf="propertyManger.conditions.length > 0">
+    <div class="col-12">
+        <hr>
+        <button 
+        class="btn btn-secondary btn-block"
+        (click)="addSimple()">Add Another Condition</button>
+    </div>
+  </div>
+
+  <hr>
   <div class="row"
   *ngIf="propertyManger.conditions.length == 0">
     <div class="col-12 text-center">
@@ -55,7 +59,6 @@
           <button 
           class="btn btn-secondary"
           (click)="addSimple()">Start Adding</button>
-          
       </p>
 
     </div>

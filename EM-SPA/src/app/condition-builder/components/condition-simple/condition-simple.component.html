@@ -1,39 +1,57 @@
 <div class="row">
     <div class="col-12">
-        <div class="input-group mb-3">
-            <div class="input-group-prepend">
-                <label class="input-group-text">When</label>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">When</h5>
+                <h6 class="card-subtitle mb-2 text-muted">Simple condition. Set this property when the following is true.</h6>
+                <div class="input-group mb-2">
+                        <select [(ngModel)]="selectedMergeField" class="form-control">
+                            <option *ngIf="selectedMergeField === null" selected [ngValue]="null">Select a merge field....</option>
+                            <option *ngFor="let mergeField of mergeFields" [ngValue]="mergeField">{{mergeField.name}}</option>
+                        </select>
+                        <select [(ngModel)]="selectedPredicate" class="form-control">
+                            <option selected>Choose...</option>
+                            <option [ngValue]="predicateOption.key" *ngFor="let predicateOption of predicateOptions">{{predicateOption.label}}</option>
+                        </select>
+                        <ng-container [ngSwitch]="selectedVariableType">
+                            <ng-container *ngSwitchCase="'string'">
+                                <input class="form-control" type="text" [(ngModel)]="operationModel.valueOperand" placeholder="Enter Value"/>
+                            </ng-container>
+                            <ng-container *ngSwitchCase="'number'">
+                                <input type="number" [(ngModel)]="operationModel.valueOperand"/>
+                            </ng-container>
+                            <ng-container *ngSwitchCase="'boolean'">
+                            </ng-container>
+                            <ng-container *ngSwitchCase="'date'">
+                                <input type="text" [(ngModel)]="operationModel.valueOperand"/>
+                            </ng-container>
+                            <ng-container *ngSwitchDefault>
+                                <input disabled="disabled" type="text" value="No Merge Field Selected!"/>
+                            </ng-container>
+                        </ng-container>
+                        <div class="input-group-append">
+                            <label class="input-group-text">set property to</label>
+                            <div class="input-group">
+                                <input type="text" 
+                                class="form-control"
+                                #ignoredInput
+                                [value]="condition.conditionValue"
+                                [(cpToggle)]="toggle"
+                                [(colorPicker)]="condition.conditionValue"
+                                [cpIgnoredElements]="[ignoredInput]"
+                                [cpPosition]="'left'"
+                                [cpOKButton]="false"
+                                [cpOutputFormat]="'hex'"
+                                />
+                                <div class="input-group-append" (click)="toggle=!toggle">
+                                    <span class="input-group-text open-color-picker" [style.background-color]="condition.conditionValue"></span>
+                                </div> 
+                            </div>
+                        </div>
+                    </div> 
+                <button class="btn btn-sm btn-secondary condition-action" (click)="removeSimpleCondition()">Remove this condition</button>
+                <button class="btn btn-sm btn-secondary condition-action">Create a compond condition</button>
             </div>
-            <select [(ngModel)]="selectedMergeField" class="form-control">
-                <option *ngIf="selectedMergeField === null" selected [ngValue]="null">Select a merge field....</option>
-                <option *ngFor="let mergeField of mergeFields" [ngValue]="mergeField">{{mergeField.name}}</option>
-            </select>
-            <select [(ngModel)]="selectedPredicate" class="form-control">
-                <option selected>Choose...</option>
-                <option [ngValue]="predicateOption.key" *ngFor="let predicateOption of predicateOptions">{{predicateOption.label}}</option>
-            </select>
-            <ng-container [ngSwitch]="selectedVariableType">
-                <ng-container *ngSwitchCase="'string'">
-                    <input class="form-control" type="text" [(ngModel)]="operationModel.valueOperand" placeholder="Enter Value"/>
-                </ng-container>
-                <ng-container *ngSwitchCase="'number'">
-                    <input type="number" [(ngModel)]="operationModel.valueOperand"/>
-                </ng-container>
-                <ng-container *ngSwitchCase="'boolean'">
-                </ng-container>
-                <ng-container *ngSwitchCase="'date'">
-                    <input type="text" [(ngModel)]="operationModel.valueOperand"/>
-                </ng-container>
-                <ng-container *ngSwitchDefault>
-                    <input disabled="disabled" type="text" value="No Merge Field Selected!"/>
-                </ng-container>
-            </ng-container>
-            <div class="input-group-append">
-                <label class="input-group-text">set property to</label>
-                <label class="input-group-text">{{condition.conditionValue}}</label>
-            </div>
-            <button class="btn btn-outline-secondary">Compound Condition</button>
-            <button class="btn btn-outline-danger" (click)="removeSimpleCondition()">X</button>
         </div>
     </div>
 </div>
