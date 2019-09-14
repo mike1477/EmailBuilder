@@ -10,37 +10,36 @@ import { ElementBase } from 'src/app/email-builder/models/elements/elementBase';
 })
 export class ElementPropertyManagerComponent implements OnInit {
 
- 
+
 
   constructor(private selectionManager: SelectionManagerService) { }
 
   ngOnInit() { }
 
-  get selectedElement():ElementBase {
+  get selectedElement(): ElementBase {
     return this.selectionManager.selectedElement;
   }
-  get backgroundColor():string {
+  get backgroundColor(): string {
     return this.selectedElement && this.selectedElement.backgroundColor;
   }
 
-  set backgroundColor(newValue: string){
-    newValue = typeof newValue === "string" ? newValue: "transparent";
-    if (this.selectedElement){
+  set backgroundColor(newValue: string) {
+    newValue = typeof newValue === "string" ? newValue : "transparent";
+    if (this.selectedElement) {
       this.selectedElement.backgroundColor = newValue;
-    } 
+    }
   }
-  // get color():string {
-  //   return this.selectedElement && this.selectedElement.color;
-  // }
 
-  // set color(newValue: string){
-  //   newValue = typeof newValue === "string" ? newValue: "transparent";
-  //   if (this.selectedElement){
-  //     this.selectedElement.color = newValue;
-  //   } 
-  // }
+  get alignment(): string {
+    return this.selectedElement && this.selectedElement.alignment;
+  }
+  set alignment(newValue: string) {
+    console.log(newValue);
+    if (this.selectedElement) this.selectedElement.alignment = newValue;
+  }
 
-  get elementType():string{
+
+  get elementType(): string {
     return typeof this.selectedElement.constructor && this.selectedElement.constructor.name;
   }
 

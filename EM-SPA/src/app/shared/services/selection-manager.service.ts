@@ -5,6 +5,10 @@ import { ElementBase } from 'src/app/email-builder/models/elements/elementBase';
 import { Observable, Subject } from 'rxjs';
 import { PropertyManager } from '../models/property-manager';
 import { PropertyManagerColor } from '../models/property-manager-color';
+import { ButtonElement } from 'src/app/email-builder/models/elements/buttonElement';
+import { DividerElement } from 'src/app/email-builder/models/elements/dividerElement';
+import { TextElement } from 'src/app/email-builder/models/elements/textElement';
+import { ImageElement } from 'src/app/email-builder/models/elements/imageElement';
 
 @Injectable({
   providedIn: 'root'
@@ -55,8 +59,17 @@ export class SelectionManagerService {
         this._emailTemplate.backgroundColor = new PropertyManagerColor();
         this._emailTemplate.backgroundColor.defaultValue = "#ffffff";
         this._emailTemplate.contentBackgroundColor = new PropertyManagerColor();
-        this._emailTemplate.rows = [];
+
+        //Adding elements for developmnet purposes
+        var newRow = new Row([200, 200, 200]);
+ 
+        newRow.columns[1].elements.push(new ButtonElement());
+        newRow.columns[1].elements.push(new DividerElement());
+        newRow.columns[1].elements.push(new TextElement());
+        newRow.columns[1].elements.push(new ImageElement());
         
+        this._emailTemplate.rows = [newRow];
+
         observer.next(this._emailTemplate);
         observer.complete();
         this.activeObservable = null;

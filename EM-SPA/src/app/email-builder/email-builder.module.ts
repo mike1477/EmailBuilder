@@ -1,13 +1,13 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import {MatTabsModule} from '@angular/material/tabs';
+import { MatTabsModule } from '@angular/material/tabs';
 
 import { DashboardComponent } from './components/dashboard/dashboard.component';
-import {DragDropModule} from '@angular/cdk/drag-drop';
+import { DragDropModule } from '@angular/cdk/drag-drop';
 import { DisplayComponent } from './components/display/display.component';
 import { LayoutRowComponent } from './components/layouts/layout-row/layout-row.component';
 import { LayoutColumnComponent } from './components/layouts/layout-column/layout-column.component';
-import { DragulaModule,  DragulaService} from 'ng2-dragula';
+import { DragulaModule, DragulaService } from 'ng2-dragula';
 import { LayoutElementDividerComponent } from './components/layouts/layout-element-divider/layout-element-divider.component';
 import { LayoutElementTextComponent } from './components/layouts/layout-element-text/layout-element-text.component';
 import { LayoutElementImageComponent } from './components/layouts/layout-element-image/layout-element-image.component';
@@ -28,7 +28,6 @@ import { CommonNumberSelectorComponent } from './components/widgets/common-numbe
 import { AlignControlComponent } from './components/controls/align-control/align-control.component';
 import { RouterModule } from '@angular/router';
 import { ColorPropertyManagerComponent } from './components/controls/color-property-manager/color-property-manager.component';
-import { DimensionsSetterWidgetComponent } from './components/widgets/dimensions-setter-widget/dimensions-setter-widget.component';
 import { ElementButtonManagerComponent } from './components/sidebar-managers/element-button-manager/element-button-manager.component';
 import { ElementDividerManagerComponent } from './components/sidebar-managers/element-divider-manager/element-divider-manager.component';
 import { ElementImageManagerComponent } from './components/sidebar-managers/element-image-manager/element-image-manager.component';
@@ -37,15 +36,15 @@ import { ElementTextManagerComponent } from './components/sidebar-managers/eleme
 
 @NgModule({
   declarations: [
-    DashboardComponent, 
-    DisplayComponent, 
-    LayoutRowComponent, 
-    LayoutColumnComponent, 
+    DashboardComponent,
+    DisplayComponent,
+    LayoutRowComponent,
+    LayoutColumnComponent,
     LayoutElementButtonComponent,
-    LayoutElementDividerComponent, 
-    LayoutElementTextComponent, 
-    LayoutElementImageComponent, 
-    LayoutElementUnknownComponent, 
+    LayoutElementDividerComponent,
+    LayoutElementTextComponent,
+    LayoutElementImageComponent,
+    LayoutElementUnknownComponent,
     SelectorDirective,
     ColorPickerComponent,
     NumberSelectorInputComponent,
@@ -57,7 +56,6 @@ import { ElementTextManagerComponent } from './components/sidebar-managers/eleme
     CommonNumberSelectorComponent,
     AlignControlComponent,
     ColorPropertyManagerComponent,
-    DimensionsSetterWidgetComponent,
     ElementButtonManagerComponent,
     ElementDividerManagerComponent,
     ElementImageManagerComponent,
