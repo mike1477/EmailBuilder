@@ -4,35 +4,11 @@
         </div>
 </div>
 <ul class="list-group element-property-manager " *ngIf="selectedElement">
-        <!-- <li class="list-group-item">
-                <div class="container">
-                        <div class="manager-row row">
-                                <div class="manager-label col-6">
-                                        <p>Background Color</p>
-                                </div>
-                                <div class="manager-input col-6">
-                                        <app-color-picker [(color)]="backgroundColor"></app-color-picker>
-                                </div>
-                        </div>
-                </div>
-        </li> -->
         <li class="list-group-item">
                 <div class="container">
                         <div class="manager-row row">
                                 <div class="manager-label col-6">
-                                        <p>Color</p>
-                                </div>
-                                <div class="manager-input col-6">
-                                        <app-color-picker [(color)]="color"></app-color-picker>
-                                </div>
-                        </div>
-                </div>
-        </li>
-        <li class="list-group-item">
-                <div class="container">
-                        <div class="manager-row row">
-                                <div class="manager-label col-6">
-                                        <p>Padding</p>
+                                        <p>Margin</p>
                                 </div>
                                 <div>
                                         <app-common-number-selector [padding]="selectedElement.padding">
@@ -42,51 +18,23 @@
                 </div>
 
         </li>
-        <li class="list-group-item">
-                <div class="container">
-                        <div class="manager-row row">
-                                <div class="manager-label col-6">
-                                        <p>Align</p>
-                                </div>
-                                <div class="col-6">
-                                        <app-align-control [selectedElement]="selectedElement"></app-align-control>
-                                </div>
 
-                        </div>
-                </div>
-        </li>
-        <li class="list-group-item">
-                <div class="container">
-                        <div class="manager-row row">
-                                <div class="manager-label col-6">
-                                        <p>Dimensions</p>
-                                </div>
-                                <div class="col-12">
-                                        <app-dimensions-setter-widget [dimensions]="selectedElement.dimensions">
-                                        </app-dimensions-setter-widget>
-                                </div>
-                        </div>
-                </div>
 
-        </li>
-        <li class="list-group-item">
-                        <p class="element-settings-header">Element Settings</p>
-                <div [ngSwitch]="elementType">
-                        <div *ngSwitchCase="'ButtonElement'">
+                <ng-container [ngSwitch]="elementType">
+                        <ng-container *ngSwitchCase="'ButtonElement'">
                                 <app-element-button-manager></app-element-button-manager>
-                        </div>
-                        <div *ngSwitchCase="'DividerElement'">
-                                <app-element-divider-manager></app-element-divider-manager>
-                        </div>
-                        <div *ngSwitchCase="'ImageElement'">
+                        </ng-container>
+                        <ng-container *ngSwitchCase="'DividerElement'">
+                                <app-element-divider-manager [element]="selectedElement"></app-element-divider-manager>
+                        </ng-container>
+                        <ng-container *ngSwitchCase="'ImageElement'">
                                 <app-element-image-manager></app-element-image-manager>
-                        </div>
-                        <div *ngSwitchCase="'TextElement'">
+                        </ng-container>
+                        <ng-container *ngSwitchCase="'TextElement'">
                                 <app-element-text-manager></app-element-text-manager>
-                        </div>
-                        <div *ngSwitchDefault>output2</div>
-                </div>
-        </li>
+                        </ng-container>
+                        <ng-container *ngSwitchDefault>output2</ng-container>
+                </ng-container>
 
 
 

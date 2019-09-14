@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { DividerElement } from 'src/app/email-builder/models/elements/dividerElement';
 
 @Component({
   selector: 'app-element-divider-manager',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./element-divider-manager.component.scss']
 })
 export class ElementDividerManagerComponent implements OnInit {
+
+  @Input() element:DividerElement;
 
   constructor() { }
 
