@@ -8,31 +8,7 @@
                 <div class="container">
                         <div class="manager-row row">
                                 <div class="manager-label col-6">
-                                        <p>Background Color</p>
-                                </div>
-                                <div class="manager-input col-6">
-                                        <app-color-picker [(color)]="backgroundColor"></app-color-picker>
-                                </div>
-                        </div>
-                </div>
-        </li>
-        <li class="list-group-item">
-                        <div class="container">
-                                <div class="manager-row row">
-                                        <div class="manager-label col-6">
-                                                <p>Color</p>
-                                        </div>
-                                        <div class="manager-input col-6">
-                                                <app-color-picker [(color)]="color"></app-color-picker>
-                                        </div>
-                                </div>
-                        </div>
-                </li>
-        <li class="list-group-item">
-                <div class="container">
-                        <div class="manager-row row">
-                                <div class="manager-label col-6">
-                                        <p>Padding</p>
+                                        <p>Margin</p>
                                 </div>
                                 <div>
                                         <app-common-number-selector [padding]="selectedElement.padding">
@@ -42,33 +18,25 @@
                 </div>
 
         </li>
-        <li class="list-group-item">
-                <div class="container">
-                        <div class="manager-row row">
-                                <div class="manager-label col-6">
-                                        <p>Align</p>
-                                </div>
-                                 <div class="col-6">
-                                        <app-align-control [selectedElement]="selectedElement"></app-align-control>
-                                 </div>
-                                  
-                        </div>
-                </div>
-        </li>
-        <li class="list-group-item">
-                        <div class="container">
-                                <div class="manager-row row">
-                                        <div class="manager-label col-6">
-                                                <p>Dimensions</p>
-                                        </div>
-                                        <div class="col-12">
-                                                <app-dimensions-setter-widget [dimensions]="selectedElement.dimensions"></app-dimensions-setter-widget>
-                                        </div>
-                                </div>
-                        </div>
-        
-                </li>
-        <li class="list-group-item">More Property Mangers Here</li>
+
+
+                <ng-container [ngSwitch]="elementType">
+                        <ng-container *ngSwitchCase="'ButtonElement'">
+                                <app-element-button-manager></app-element-button-manager>
+                        </ng-container>
+                        <ng-container *ngSwitchCase="'DividerElement'">
+                                <app-element-divider-manager [element]="selectedElement"></app-element-divider-manager>
+                        </ng-container>
+                        <ng-container *ngSwitchCase="'ImageElement'">
+                                <app-element-image-manager></app-element-image-manager>
+                        </ng-container>
+                        <ng-container *ngSwitchCase="'TextElement'">
+                                <app-element-text-manager></app-element-text-manager>
+                        </ng-container>
+                        <ng-container *ngSwitchDefault>output2</ng-container>
+                </ng-container>
+
+
 
 
 </ul>

@@ -1,6 +1,7 @@
 import { Padding } from '../padding';
 import { Alignment } from '../enums/alignment';
 import { Dimensions } from '../dimensions';
+import { DividerElement } from './dividerElement';
 
 export class ElementBase{
     constructor(){
@@ -9,12 +10,10 @@ export class ElementBase{
         this.align = "left";
         this.autoWidth = false;
         this.backgroundColor = "transparent";
-        this.color = "#000";
     }
     padding: Padding;
     dimensions: Dimensions;
     align: string;
     autoWidth: boolean;
     backgroundColor:string;
-    color: string;
 }

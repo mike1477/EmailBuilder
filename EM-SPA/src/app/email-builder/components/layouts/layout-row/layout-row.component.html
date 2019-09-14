@@ -1,4 +1,4 @@
-<div class="row-layout" [style.background-color]="row.contentBackgroundColor">
+<div class="row-layout" [style.backgroundColor]="row.contentBackgroundColor">
     <div 
     app-layout-column 
     [ngClass]="'column column-' + column.widthInPixels " 
@@ -7,7 +7,8 @@
     [style.paddingTop]="column.padding.top + 'px'"
     [style.paddingBottom]="column.padding.bottom + 'px'"
     [style.paddingRight]="column.padding.right + 'px'"
-    [style.paddingLeft]="column.padding.left + 'px'">
+    [style.paddingLeft]="column.padding.left + 'px'"
+    [style.backgroundColor] = "column.backgroundColor">
     </div>
   
 </div>
