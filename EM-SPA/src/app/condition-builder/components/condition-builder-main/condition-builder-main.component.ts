@@ -29,6 +29,13 @@ export class ConditionBuilderMainComponent implements OnInit {
     if(!this.propertyManger) this.router.navigateByUrl("/");
   }
 
+  get defaultValue():string{
+    return this.propertyManger && this.propertyManger.defaultValue;
+  }
+  set defaultValue(newValue:string){
+    if(this.propertyManger) this.propertyManger.defaultValue = newValue;
+  }
+
   addSimple() {
     var condition = new ConditionDefinition();
     condition.operationModel = new ConditionOperator();

@@ -58,13 +58,6 @@ body{
   z-index: 100;
 }
 
-/*Disable arrow on number input boxes*/
-input[type=number]::-webkit-inner-spin-button, 
-input[type=number]::-webkit-outer-spin-button { 
-  -webkit-appearance: none; 
-  margin: 0; 
-}
-
 .manager-row{
   padding: 8px 0 8px 0;
 }

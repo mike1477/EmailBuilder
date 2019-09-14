@@ -14,15 +14,15 @@
             </select>
             <ng-container [ngSwitch]="selectedVariableType">
                 <ng-container *ngSwitchCase="'string'">
-                    <input class="form-control" type="text" value="string" placeholder="Enter Value"/>
+                    <input class="form-control" type="text" [(ngModel)]="operationModel.valueOperand" placeholder="Enter Value"/>
                 </ng-container>
                 <ng-container *ngSwitchCase="'number'">
-                    <input type="number" value="number"/>
+                    <input type="number" [(ngModel)]="operationModel.valueOperand"/>
                 </ng-container>
                 <ng-container *ngSwitchCase="'boolean'">
                 </ng-container>
                 <ng-container *ngSwitchCase="'date'">
-                    <input type="text" value="date"/>
+                    <input type="text" [(ngModel)]="operationModel.valueOperand"/>
                 </ng-container>
                 <ng-container *ngSwitchDefault>
                     <input disabled="disabled" type="text" value="No Merge Field Selected!"/>

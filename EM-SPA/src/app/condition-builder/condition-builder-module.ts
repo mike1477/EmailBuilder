@@ -7,6 +7,7 @@ import { ConditionCompoundComponent } from './components/condition-compound/cond
 import { MergeFieldManagerComponent } from '../shared/components/modals/merge-field-manager/merge-field-manager.component';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
+import { ColorPickerModule } from 'ngx-color-picker';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import { RouterModule } from '@angular/router';
   imports: [
     CommonModule,
     FormsModule,
+    ColorPickerModule,
     RouterModule
   ],
   providers: [],
