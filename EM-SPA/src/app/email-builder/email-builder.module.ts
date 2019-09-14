@@ -29,6 +29,10 @@ import { AlignControlComponent } from './components/controls/align-control/align
 import { RouterModule } from '@angular/router';
 import { ColorPropertyManagerComponent } from './components/controls/color-property-manager/color-property-manager.component';
 import { DimensionsSetterWidgetComponent } from './components/widgets/dimensions-setter-widget/dimensions-setter-widget.component';
+import { ElementButtonManagerComponent } from './components/sidebar-managers/element-button-manager/element-button-manager.component';
+import { ElementDividerManagerComponent } from './components/sidebar-managers/element-divider-manager/element-divider-manager.component';
+import { ElementImageManagerComponent } from './components/sidebar-managers/element-image-manager/element-image-manager.component';
+import { ElementTextManagerComponent } from './components/sidebar-managers/element-text-manager/element-text-manager.component';
 
 
 @NgModule({
@@ -53,7 +57,11 @@ import { DimensionsSetterWidgetComponent } from './components/widgets/dimensions
     CommonNumberSelectorComponent,
     AlignControlComponent,
     ColorPropertyManagerComponent,
-    DimensionsSetterWidgetComponent
+    DimensionsSetterWidgetComponent,
+    ElementButtonManagerComponent,
+    ElementDividerManagerComponent,
+    ElementImageManagerComponent,
+    ElementTextManagerComponent
   ],
   imports: [
     CommonModule,
