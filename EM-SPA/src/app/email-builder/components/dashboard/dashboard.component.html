@@ -1,57 +1,94 @@
 <div class="dashboard-outer">
-        <div class="sidebar">
-            <div class="sidepanel-tabs">
-                <input name="sidepanel-tabs" type="radio" id="sidepanel-tabs-rows" checked="checked"/>
-                <label for="sidepanel-tabs-rows" class="sidepanel-tabs-label">Rows</label>
-                <div class="sidepanel-tabs-panel" data-simplebar>
-                    <div id="layout-row-options" class="row-list" dragula="rows" [(dragulaModel)]="rowOptions">
-                        <div class="row-option" *ngFor="let row of rowOptions" >
-                            <div class="row-option-column" *ngFor="let columnWidth of row.columnDefinitions" 
-                            [style.width]="columnWidth/6 +'%'" ></div>
-                        </div>
+    <button type="btn btn-sm btn-secondary"
+            (click)="preview()"
+            style="position:absolute; right:0; top:0; z-index: 1;">preview</button>
+    <div class="sidebar">
+        <div class="sidepanel-tabs">
+            <input name="sidepanel-tabs"
+                   type="radio"
+                   id="sidepanel-tabs-rows"
+                   checked="checked" />
+            <label for="sidepanel-tabs-rows"
+                   class="sidepanel-tabs-label">Rows</label>
+            <div class="sidepanel-tabs-panel"
+                 data-simplebar>
+                <div id="layout-row-options"
+                     class="row-list"
+                     dragula="rows"
+                     [(dragulaModel)]="rowOptions">
+                    <div class="row-option"
+                         *ngFor="let row of rowOptions">
+                        <div class="row-option-column"
+                             *ngFor="let columnWidth of row.columnDefinitions"
+                             [style.width]="columnWidth/6 +'%'"></div>
                     </div>
                 </div>
-              
-                <input name="sidepanel-tabs" type="radio" id="sidepanel-tabs-elements"/>
-                <label for="sidepanel-tabs-elements" class="sidepanel-tabs-label">Elements</label>
-                <div class="sidepanel-tabs-panel" data-simplebar>
-                    <div id="layout-element-options" class="element-list" dragula="elements" [(dragulaModel)]="elementOptions" >
-                        <div class="element-box" *ngFor="let element of elementOptions">
-                            <div class="icon-container-material"><i class="material-icons"> {{element.icon}} </i> </div>
-                            <div [innerHTML]="element.html" class="html-container"></div>
-                        </div>
+            </div>
+
+            <input name="sidepanel-tabs"
+                   type="radio"
+                   id="sidepanel-tabs-elements" />
+            <label for="sidepanel-tabs-elements"
+                   class="sidepanel-tabs-label">Elements</label>
+            <div class="sidepanel-tabs-panel"
+                 data-simplebar>
+                <div id="layout-element-options"
+                     class="element-list"
+                     dragula="elements"
+                     [(dragulaModel)]="elementOptions">
+                    <div class="element-box"
+                         *ngFor="let element of elementOptions">
+                        <div class="icon-container-material"><i class="material-icons"> {{element.icon}} </i> </div>
+                        <div [innerHTML]="element.html"
+                             class="html-container"></div>
                     </div>
                 </div>
-                  
-                <input name="sidepanel-tabs" type="radio" id="sidepanel-tabs-properties"/>
-                <label for="sidepanel-tabs-properties" class="sidepanel-tabs-label">Properties</label>
-                <div class="sidepanel-tabs-panel" data-simplebar>
-                    <div class="accordion-tabs">
-                        <div class="accordion-tab">
-                            <input type="checkbox" id="body-properties" name="accordion-tab">
-                            <label class="accordion-tab-label" for="body-properties">Email Body Properties</label>
-                            <div class="accordion-tab-content">
-                               <app-email-body-manager></app-email-body-manager>
-                            </div>
+            </div>
+
+            <input name="sidepanel-tabs"
+                   type="radio"
+                   id="sidepanel-tabs-properties" />
+            <label for="sidepanel-tabs-properties"
+                   class="sidepanel-tabs-label">Properties</label>
+            <div class="sidepanel-tabs-panel"
+                 data-simplebar>
+                <div class="accordion-tabs">
+                    <div class="accordion-tab">
+                        <input type="checkbox"
+                               id="body-properties"
+                               name="accordion-tab">
+                        <label class="accordion-tab-label"
+                               for="body-properties">Email Body Properties</label>
+                        <div class="accordion-tab-content">
+                            <app-email-body-manager></app-email-body-manager>
                         </div>
-                        <div class="accordion-tab">
-                            <input type="checkbox" id="row-properties" name="accordion-tab">
-                            <label class="accordion-tab-label" for="row-properties">Row Properties</label>
-                            <div class="accordion-tab-content">
-                                <app-row-property-manager></app-row-property-manager>
-                            </div>
+                    </div>
+                    <div class="accordion-tab">
+                        <input type="checkbox"
+                               id="row-properties"
+                               name="accordion-tab">
+                        <label class="accordion-tab-label"
+                               for="row-properties">Row Properties</label>
+                        <div class="accordion-tab-content">
+                            <app-row-property-manager></app-row-property-manager>
                         </div>
-                        <div class="accordion-tab">
-                            <input type="checkbox" id="element-properties" name="accordion-tab">
-                            <label class="accordion-tab-label" for="element-properties">Cell Properties</label>
-                            <div class="accordion-tab-content">
-                                 <app-element-property-manager></app-element-property-manager>
-                            </div>
+                    </div>
+                    <div class="accordion-tab">
+                        <input type="checkbox"
+                               id="element-properties"
+                               name="accordion-tab">
+                        <label class="accordion-tab-label"
+                               for="element-properties">Cell Properties</label>
+                        <div class="accordion-tab-content">
+                            <app-element-property-manager></app-element-property-manager>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div app-display class="content-display" data-simplebar>
-        </div>
     </div>
+    <div app-display
+         class="content-display"
+         data-simplebar>
+    </div>
+</div>

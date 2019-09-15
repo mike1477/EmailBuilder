@@ -16,6 +16,7 @@ var path = __importStar(require("path"));
 var bodyParser = __importStar(require("body-parser"));
 var moment_1 = __importDefault(require("moment"));
 var express = require('express');
+var assembler = require("../Template-Assembler/index.js");
 var spa = "node_modules/em-spa/dist/EM-SPA";
 // Allowed extensions list can be extended depending on your own needs
 var allowedExt = [
@@ -32,11 +33,24 @@ var allowedExt = [
 var Server = /** @class */ (function () {
     function Server() {
         var _this = this;
-        this.port = 8888;
+        this.port = 6060;
         // Create expressjs application
         this.app = express();
+        this.app.use(bodyParser.json({ limit: '50mb' }));
+        this.app.use(bodyParser.raw({ limit: '50mb' }));
+        this.app.use(bodyParser.text({ limit: '50mb' }));
+        this.app.use(bodyParser.urlencoded({
+            limit: '50mb',
+            extended: true
+        }));
         // Route our backend calls
-        this.app.get('/api', function (req, res) { return res.json({ application: 'Reibo collection' }); });
+        this.app.get('/api', function (req, res) { return res.json({ application: 'Template Designer' }); });
+        this.app.post('/api/assemble', function (req, res) {
+            var data = JSON.parse(req.body.data);
+            var design = JSON.parse(req.body.design);
+            var result = assembler.render(data, design);
+            res.send(result);
+        });
         // Redirect all the other resquests
         this.app.get('*', function (req, res) {
             if (allowedExt.filter(function (ext) { return req.url.indexOf(ext) > 0; }).length > 0) {
@@ -46,14 +60,6 @@ var Server = /** @class */ (function () {
                 res.sendFile(path.resolve(spa + "/index.html"));
             }
         });
-        // Depending on your own needs, this can be extended
-        this.app.use(bodyParser.json({ limit: '50mb' }));
-        this.app.use(bodyParser.raw({ limit: '50mb' }));
-        this.app.use(bodyParser.text({ limit: '50mb' }));
-        this.app.use(bodyParser.urlencoded({
-            limit: '50mb',
-            extended: true
-        }));
         // Start the server on the provided port
         this.app.listen(this.port, function () { return console.log("http is started " + _this.port); });
         // Catch errors

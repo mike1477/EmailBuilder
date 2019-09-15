@@ -1,11 +1,132 @@
-<!DOCTYPE html>
-<html>
-    <title></title>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml">
+ <head>
+  <title> Responsive Email Template</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+  <style type="text/css">
+    html{
+        width: 100%; 
+    }
 
-    <head></head>
+    body{
+      width: 100%;  
+      margin:0; 
+      padding:0; 
+      -webkit-font-smoothing: antialiased;
+      mso-margin-top-alt:0px; 
+      mso-margin-bottom-alt:0px; 
+      mso-padding-alt: 0px 0px 0px 0px;
+    }
 
-    <body style="background-color:{{#design.backgroundColor}}{{renderCondition}}{{/design.backgroundColor}};">
-        {{#design.contentBackgroundColor}}{{renderCondition}}{{/design.contentBackgroundColor}}
-    </body>
+    body,
+    .wrapper {
+    background-color: #add8c7;
+    }
+    .layout {
+    background-color: #ffffff;
+    Margin: 0 auto;
+    width: 320px;
+    }
+    .spacing {
+    Margin: 20px;
+    }
+    p {
+    Margin: 20px 0;
+    }
 
+    p,h1,h2,h3,h4{
+      margin-top:0;
+      margin-bottom:0;
+      padding-top:0;
+      padding-bottom:0;
+    }
+
+    table{
+      font-size: 14px;
+      border: 0;
+    }
+
+    img{
+      border: none!important;
+    }
+    .layout {
+      display: table;
+        max-width: 600px;
+        min-width: 320px;
+        width: 320px;
+        width: calc(28000% - 173000px);      /*width: calc((Desktop Width - Mobile Width) * 100% - (Desktop Width - Mobile Width) * Breakpoint - Desktop Width);*/
+      /*width: calc((600px - 320px) * 100% - (600px - 320px) * 620 - 600px);*/
+    }
+    .narrow {
+      Float: left;
+      min-width: 200px;
+      max-width: 320px;
+      width: 320px;
+      width: calc(72200px - 12000%);
+    }
+    .wide {
+      Float: left;
+      min-width: 320px;
+      max-width: 400px;
+      width: 320px;
+      width: calc(8000% - 47600px);
+}
+    [owa] .layout {
+      width: 600px !important;
+    }
+    [owa] .column {
+      display: table-cell;
+    }
+    [owa] .narrow {
+      width: 200px !important;
+    }
+    [owa] .wide {
+      width: 400px !important;
+}
+@media screen and (min-width: 620px) {
+  .layout {
+    width: 600px !important;
+  }
+  .column {
+    display: table-cell;
+  }
+  .narrow {
+    width: 200px !important;
+  }
+  .wide {
+    width: 400px !important;
+  }
+}
+  </style>
+
+</head>
+<body style="margin: 0; padding: 0; background-color:{{#design.backgroundColor}}{{renderCondition}}{{/design.backgroundColor}};" yahoo="fix">
+    <div class="layout">
+    <!--[if (mso)|(IE)]>
+    <table class="layout" cellpadding="0" cellspacing="0" align="center" bgcolor="#ffffff">
+      <tr>
+        <td class="column" valign="top" style="width: 200px;">
+    <![endif]-->
+        <div class="column narrow">
+            <div class="spacing">
+                <p>Herligheter hva penge, tærer innflytelse forderve hukommelse.</p>
+            </div>
+        </div>
+        <!--[if (mso)|(IE)]>
+        </td>
+        <td class="column" valign="top" style="width: 400px;">
+    <![endif]-->
+        <div class="column wide">
+            <div class="spacing">
+                <p>Lettsindigheten anstrengende røbe, overser rekk makroner, sengeliggende avbetaler klokt uskjønt fedre.</p>
+            </div>
+        </div>
+        <!--[if (mso)|(IE)]>
+        </td>
+      </tr>
+    </table>
+    <![endif]-->
+    </div>
+</body>
 </html>

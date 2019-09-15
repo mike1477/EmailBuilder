@@ -83,7 +83,7 @@ const fs = require('fs');
 
 
     assembler.render = function (mergeData, designData) {
-        var template = fs.readFileSync('./template.mustache', 'utf8');
+        var template = fs.readFileSync(__dirname + '/template.mustache', 'utf8');
 
         var renderCondition = function () {
             //If this is not an object then just return its value

@@ -1,1 +1,40 @@
-<p>previewer-main works!</p>
+<div class="container-fluid preview-container">
+    <div class="row">
+        <div class="col-4 sidebar">
+            <div class="row">
+                <div class="col-3">
+                    <a class="btn btn-outline-secondary"
+                       [routerLink]="['/']">
+                        <i class="fas fa-arrow-left"></i> Back
+                    </a>
+                </div>
+                <div class="col-9">
+                    <h4> Data Test Values</h4>
+                </div>
+            </div>
+            <ul class="list-group">
+                <li class="list-group-item"
+                    *ngFor="let item of fieldOptions">
+                    <app-field-editor [fieldItem]=item></app-field-editor>
+                </li>
+            </ul>
+            <form action="api/assemble"
+                  method="post"
+                  target="preview-iframe">
+                <input name="data"
+                       type="hidden"
+                       [value]="data" />
+                <input name="design"
+                       type="hidden"
+                       [value]="design" />
+                <p class="form-group text-center">
+                    <button class="btn btn-lg btn-primary btn-block"
+                            type="submit">Submit</button>
+                </p>
+            </form>
+        </div>
+        <div class="col-8">
+            <iframe name="preview-iframe"></iframe>
+        </div>
+    </div>
+</div>
