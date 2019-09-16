@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { ButtonElement } from 'src/app/email-builder/models/elements/buttonElement';
 
 @Component({
   selector: 'app-element-button-manager',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./element-button-manager.component.scss']
 })
 export class ElementButtonManagerComponent implements OnInit {
+
+  @Input() element: ButtonElement;
 
   constructor() { }
 

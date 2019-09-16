@@ -53,7 +53,7 @@
 
         <ng-container [ngSwitch]="elementType">
                 <ng-container *ngSwitchCase="'ButtonElement'">
-                        <app-element-button-manager></app-element-button-manager>
+                        <app-element-button-manager [element]="selectedElement"></app-element-button-manager>
                 </ng-container>
                 <ng-container *ngSwitchCase="'DividerElement'">
                         <app-element-divider-manager [element]="selectedElement"></app-element-divider-manager>
@@ -62,7 +62,7 @@
                         <app-element-image-manager></app-element-image-manager>
                 </ng-container>
                 <ng-container *ngSwitchCase="'TextElement'">
-                        <app-element-text-manager></app-element-text-manager>
+                        <app-element-text-manager [element]="selectedElement"></app-element-text-manager>
                 </ng-container>
                 <ng-container *ngSwitchDefault>output2</ng-container>
         </ng-container>

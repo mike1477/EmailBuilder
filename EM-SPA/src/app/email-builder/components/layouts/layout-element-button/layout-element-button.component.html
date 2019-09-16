@@ -1,5 +1,25 @@
 <div class="element-button-display">
 
-    <p class="button">Edit button</p>
+    <p class="button"
+       [style.backgroundColor]="element.button.backgroundColor"
+       [style.color]="element.button.textColor"
+       [style.paddingTop]="element.button.padding.top  + 'px'"
+       [style.paddingBottom]="element.button.padding.bottom  + 'px'"
+       [style.paddingLeft]="element.button.padding.left  + 'px'"
+       [style.paddingRight]="element.button.padding.right  + 'px'">
+
+        <editor [init]="{
+                base_url: '/tinymce',
+                suffix: '.min',
+                plugins: 'lists advlist',
+                toolbar: 'undo redo | bold italic | bullist numlist outdent indent | alignleft aligncenter alignright alignjustify | fontsizeselect',
+                menubar:false,
+                statusbar:false,
+                inline: true
+              }"
+                [(ngModel)]="element.button.text"
+                [style.color]="element.button.textColor"></editor>
+
+    </p>
 
 </div>

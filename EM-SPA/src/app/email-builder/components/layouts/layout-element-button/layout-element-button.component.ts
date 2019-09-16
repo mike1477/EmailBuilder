@@ -7,7 +7,8 @@ import { ButtonElement } from 'src/app/email-builder/models/elements/buttonEleme
   styleUrls: ['./layout-element-button.component.scss']
 })
 export class LayoutElementButtonComponent implements OnInit {
-  @Input() element:ButtonElement;
+  @Input() element: ButtonElement;
+
   constructor() { }
 
   ngOnInit() {

@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { Border } from 'src/app/email-builder/models/border';
 
 @Component({
   selector: 'app-border-picker',
@@ -6,15 +7,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./border-picker.component.scss']
 })
 export class BorderPickerComponent implements OnInit {
-  borderSelected: string;
+
+  @Input() borderSelected: Border;
 
   constructor() { }
 
   ngOnInit() {
-    this.borderSelected = 'solid';
-  }
-  setBorder(border: string){
-    this.borderSelected = border;
   }
 
 }

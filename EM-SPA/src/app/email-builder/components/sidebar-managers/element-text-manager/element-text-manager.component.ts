@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { TextElement } from 'src/app/email-builder/models/elements/textElement';
 
 @Component({
   selector: 'app-element-text-manager',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./element-text-manager.component.scss']
 })
 export class ElementTextManagerComponent implements OnInit {
+  @Input() element: TextElement;
 
   constructor() { }
 
