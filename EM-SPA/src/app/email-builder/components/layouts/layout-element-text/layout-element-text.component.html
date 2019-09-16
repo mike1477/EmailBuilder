@@ -1,5 +1,5 @@
 <div class="element-wrapper">
-        <editor [init]="{
+  <editor [init]="{
             base_url: '/tinymce',
             suffix: '.min',
             plugins: 'lists advlist',
@@ -7,8 +7,8 @@
             menubar:false,
             statusbar:false,
             inline: true
-          }" [(ngModel)]="element.content"
+          }"
+          [(ngModel)]="element.text.content"
           [style.textAlign]="element.align"
-          [style.color]="element.color"
-          ></editor>
+          [style.color]="element.color"></editor>
 </div>

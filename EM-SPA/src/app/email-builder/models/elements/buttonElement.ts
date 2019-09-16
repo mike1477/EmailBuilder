@@ -1,9 +1,11 @@
 import { ElementBase } from './elementBase';
 
-export class ButtonElement extends ElementBase{
-    constructor(){
+export class ButtonElement extends ElementBase {
+    constructor() {
         super();
-        this.test = "This is the button"
+        this.button = {
+            text: "This is the button"
+        }
     }
-    test:string;
+    button: any
 }

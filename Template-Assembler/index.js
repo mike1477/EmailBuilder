@@ -86,9 +86,6 @@ const fs = require('fs');
         var template = fs.readFileSync(__dirname + '/template.mustache', 'utf8');
 
         var renderCondition = function () {
-            //If this is not an object then just return its value
-            if (!typeof (this) === "object") return this;
-
             //If conditions is not an array than return the defaultValue
             if (this.conditions instanceof Array) {
                 for (var i = 0, cnt = this.conditions.length; i < cnt; i++) {
@@ -102,9 +99,9 @@ const fs = require('fs');
                         return condition.conditionValue
                     }
                 }
+                return this.defaultValue;
             };
-
-            return this.defaultValue;
+            return this.toString();
         }
 
         var json = {

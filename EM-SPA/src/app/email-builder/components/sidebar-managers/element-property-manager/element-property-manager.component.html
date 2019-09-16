@@ -1,9 +1,11 @@
-<div class="element-property-manager" *ngIf="!selectedElement">
+<div class="element-property-manager"
+     *ngIf="!selectedElement">
         <div>
                 <p>Click on element in the display to see edit options</p>
         </div>
 </div>
-<ul class="list-group element-property-manager " *ngIf="selectedElement">
+<ul class="list-group element-property-manager "
+    *ngIf="selectedElement">
         <li class="list-group-item">
                 <div class="container">
                         <div class="manager-row row">
@@ -23,8 +25,11 @@
                         <div class="manager-row row">
                                 <div class="manager-label col-12">
                                         <p>Width {{selectedElement.widthInPercentage}}%</p>
-                                        <input class="form-control" type="range" min="0" max="100"
-                                                [(ngModel)]="selectedElement.widthInPercentage" />
+                                        <input class="form-control"
+                                               type="range"
+                                               min="0"
+                                               max="100"
+                                               [(ngModel)]="selectedElement.widthInPercentage" />
                                 </div>
                         </div>
                 </div>
@@ -43,7 +48,6 @@
                                 </div>
                         </div>
                 </div>
-
         </li>
 
 
@@ -62,8 +66,4 @@
                 </ng-container>
                 <ng-container *ngSwitchDefault>output2</ng-container>
         </ng-container>
-
-
-
-
 </ul>

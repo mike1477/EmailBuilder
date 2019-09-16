@@ -16,45 +16,45 @@ import { ImageElement } from 'src/app/email-builder/models/elements/imageElement
 
 export class SelectionManagerService {
 
-  public targetPropertyManger:PropertyManager<any> = null;
-  private _emailTemplate:Email = null;
+  public targetPropertyManger: PropertyManager<any> = null;
+  private _emailTemplate: Email = null;
   private _selectedRow: Row = null;
-  private _selectedElement: ElementBase = null;  
-  
-  get emailTemplate(): Email{
+  private _selectedElement: ElementBase = null;
+
+  get emailTemplate(): Email {
     return this._emailTemplate;
   }
-  get selectedRow(): Row{
+  get selectedRow(): Row {
     return this._selectedRow
   };
-  get selectedElement(): ElementBase{
+  get selectedElement(): ElementBase {
     return this._selectedElement;
   };
 
   constructor() { }
 
-  selectElement(element:ElementBase){
+  selectElement(element: ElementBase) {
     this._selectedElement = element;
   }
 
-  selectRow(row:Row){
+  selectRow(row: Row) {
     this._selectedElement = null;
     this._selectedRow = row;
   }
 
-  private activeObservable:Observable<Email> = null;
+  private activeObservable: Observable<Email> = null;
 
-  loadEmailTemplate():Observable<Email>{
-    if(this._emailTemplate){
-      return new Observable<Email>((observer)=>{
+  loadEmailTemplate(): Observable<Email> {
+    if (this._emailTemplate) {
+      return new Observable<Email>((observer) => {
         observer.next(this.emailTemplate);
         observer.complete();
-        return {unsubscribe(){}};
+        return { unsubscribe() { } };
       });
     }
-    if(!this.activeObservable){
-      this.activeObservable = new Observable<Email>((observer)=>{
-        
+    if (!this.activeObservable) {
+      this.activeObservable = new Observable<Email>((observer) => {
+
         this._emailTemplate = new Email();
         this._emailTemplate.backgroundColor = new PropertyManagerColor();
         this._emailTemplate.backgroundColor.defaultValue = "#ffffff";
@@ -62,18 +62,19 @@ export class SelectionManagerService {
 
         //Adding elements for developmnet purposes
         var newRow = new Row([200, 200, 200]);
- 
+
         newRow.columns[1].elements.push(new ButtonElement());
         newRow.columns[1].elements.push(new DividerElement());
         newRow.columns[1].elements.push(new TextElement());
         newRow.columns[1].elements.push(new ImageElement());
-        
+
         this._emailTemplate.rows = [newRow];
+        console.log(this._emailTemplate);
 
         observer.next(this._emailTemplate);
         observer.complete();
         this.activeObservable = null;
-        return{unsubscribe(){}};
+        return { unsubscribe() { } };
       });
     }
 

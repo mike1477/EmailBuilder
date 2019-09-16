@@ -9,19 +9,19 @@ import { SelectionManagerService } from 'src/app/shared/services/selection-manag
 })
 export class DisplayComponent implements OnInit {
 
-  constructor(private selectionManager:SelectionManagerService) {}
+  constructor(private selectionManager: SelectionManagerService) { }
 
-  emailTemplate:Email;
+  emailTemplate: Email;
 
   ngOnInit() {
     this.selectionManager.loadEmailTemplate().subscribe(
-      (newValue)=>{ this.emailTemplate = newValue},
-      (err)=> { /*TODO handle error */},
-      ()=>{ /*TODO handle complete*/}
+      (newValue) => { this.emailTemplate = newValue; console.log(newValue); },
+      (err) => { /*TODO handle error */ },
+      () => { /*TODO handle complete*/ }
     );;
   }
 
-  deleteRow(index:any){
+  deleteRow(index: any) {
     this.emailTemplate.rows.splice(index, 1);
   }
 

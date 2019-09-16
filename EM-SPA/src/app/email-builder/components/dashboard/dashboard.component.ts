@@ -50,9 +50,6 @@ export class DashboardComponent implements OnInit, OnDestroy {
       },
       copyItem: (elementOption: any) => {
         var newElement = new elementOption.type();
-        if (newElement instanceof TextElement) {
-          newElement.content = "Your text content here";
-        }
         return newElement;
       },
       accepts: (el, target, source, sibling) => {

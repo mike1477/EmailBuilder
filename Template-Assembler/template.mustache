@@ -28,10 +28,7 @@
     Margin: 0 auto;
     width: 320px;
     }
-    .spacing {
-    Margin: 20px;
-    }
-    p {
+     p {
     Margin: 20px 0;
     }
 
@@ -55,18 +52,32 @@
         max-width: 600px;
         min-width: 320px;
         width: 320px;
-        width: calc(28000% - 173000px);      /*width: calc((Desktop Width - Mobile Width) * 100% - (Desktop Width - Mobile Width) * Breakpoint - Desktop Width);*/
-      /*width: calc((600px - 320px) * 100% - (600px - 320px) * 620 - 600px);*/
+        width: calc(28000% - 173000px);      
+        /*width: calc((Desktop Width - Mobile Width) * 100% - (Desktop Width - Mobile Width) * Breakpoint - Desktop Width);*/
+        /*150 width: calc(((320px - 150px) * (600px - 1px) + 320px) - (320px - 150px) * 100%);*/
+        /*200 width: calc(((320px - 200px) * (600px - 1px) + 320px) - (320px - 200px) * 100%);*/
+        /*300 width: calc(((320px - 300px) * (600px - 1px) + 320px) - (320px - 300px) * 100%);*/
+        /*400 width: calc((400px - 320px) * 100% - (400px - 320px) * 600px - 400px);*/
     }
-    .narrow {
-      Float: left;
+    .col-150 {
+      min-width: 150px;
+      max-width: 320px;
+      width: 320px;
+      width: calc(102150px - 17000%);
+    }
+    .col-200 {
       min-width: 200px;
       max-width: 320px;
       width: 320px;
       width: calc(72200px - 12000%);
     }
-    .wide {
-      Float: left;
+    .col-300 {
+      min-width: 300px;
+      max-width: 320px;
+      width: 320px;
+      width: calc(12300px - 2000%);
+    }
+    .col-400 {
       min-width: 320px;
       max-width: 400px;
       width: 320px;
@@ -78,11 +89,23 @@
     [owa] .column {
       display: table-cell;
     }
-    [owa] .narrow {
+    [owa] .col-150 {
+      width: 150px !important;
+    }
+    [owa] .col-200 {
       width: 200px !important;
     }
-    [owa] .wide {
+    [owa] .col-300 {
+      width: 300px !important;
+    }
+    [owa] .col-400 {
       width: 400px !important;
+}
+@media screen and (max-width: 619px){
+  .column {
+    Float: left;
+    vertical-align:top;
+  }
 }
 @media screen and (min-width: 620px) {
   .layout {
@@ -90,11 +113,18 @@
   }
   .column {
     display: table-cell;
+    vertical-align:top;
   }
-  .narrow {
+  .col-150  {
+    width: 150px !important;
+  }
+  .col-200  {
     width: 200px !important;
   }
-  .wide {
+  .col-300  {
+    width: 300px !important;
+  }
+  .col-400 {
     width: 400px !important;
   }
 }
@@ -102,31 +132,50 @@
 
 </head>
 <body style="margin: 0; padding: 0; background-color:{{#design.backgroundColor}}{{renderCondition}}{{/design.backgroundColor}};" yahoo="fix">
+    {{#design.rows}}
     <div class="layout">
     <!--[if (mso)|(IE)]>
-    <table class="layout" cellpadding="0" cellspacing="0" align="center" bgcolor="#ffffff">
-      <tr>
-        <td class="column" valign="top" style="width: 200px;">
+    <table class="layout" 
+           cellpadding="0" 
+           cellspacing="0" 
+           align="center" 
+           bgcolor="{{#design.backgroundColor}}{{renderCondition}}{{/design.backgroundColor}}"><tr>
     <![endif]-->
-        <div class="column narrow">
-            <div class="spacing">
-                <p>Herligheter hva penge, tærer innflytelse forderve hukommelse.</p>
+      {{#columns}}
+        <!--[if (mso)|(IE)]>
+        <td class="column" 
+            valign="top" 
+            style="width: {{#widthInPixels}}{{renderCondition}}{{/widthInPixels}}px;"
+            bgcolor="{{#backgroundColor}}{{renderCondition}}{{/backgroundColor}}">
+        <![endif]-->
+        <div class="column col-{{#widthInPixels}}{{renderCondition}}{{/widthInPixels}}"
+              style="background-color:{{#backgroundColor}}{{renderCondition}}{{/backgroundColor}};">
+            <div class="spacing"
+                 style="Margin:{{#padding}}{{#top}}{{renderCondition}}{{/top}}px {{#right}}{{renderCondition}}{{/right}}px {{#bottom}}{{renderCondition}}{{/bottom}}px {{#left}}{{renderCondition}}{{/left}}px{{/padding}};">
+                {{#elements}}
+                  <div class="element-alignment"
+                       style="text-align:{{#alignment}}{{renderCondition}}{{/alignment}}">
+                    <div class="element-size"
+                         style="text-align:left;display:inline-block;width:{{#widthInPercentage}}{{renderCondition}}{{/widthInPercentage}}%;Margin:{{#padding}}{{#top}}{{renderCondition}}{{/top}}px {{#right}}{{renderCondition}}{{/right}}px {{#bottom}}{{renderCondition}}{{/bottom}}px {{#left}}{{renderCondition}}{{/left}}px{{/padding}};">
+                      {{#button}}
+                          {{text}}
+                      {{/button}} 
+                      {{#image}}IMAGE{{/image}} 
+                      {{#text}}
+                        {{&content}}
+                      {{/text}} 
+                      {{#divider}}
+                        <hr style ="border: 2px solid {{#color}}{{renderCondition}}{{/color}};"/>
+                      {{/divider}} 
+                    </div>
+                  </div> 
+                {{/elements}}
             </div>
         </div>
-        <!--[if (mso)|(IE)]>
-        </td>
-        <td class="column" valign="top" style="width: 400px;">
-    <![endif]-->
-        <div class="column wide">
-            <div class="spacing">
-                <p>Lettsindigheten anstrengende røbe, overser rekk makroner, sengeliggende avbetaler klokt uskjønt fedre.</p>
-            </div>
-        </div>
-        <!--[if (mso)|(IE)]>
-        </td>
-      </tr>
-    </table>
-    <![endif]-->
+      <!--[if (mso)|(IE)]></td><![endif]-->
+    {{/columns}}
+    <!--[if (mso)|(IE)]></tr></table><![endif]-->
     </div>
+    {{/design.rows}}
 </body>
 </html>

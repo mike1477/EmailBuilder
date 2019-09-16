@@ -1,9 +1,11 @@
 import { ElementBase } from './elementBase';
 
-export class TextElement extends ElementBase{
-    constructor(){
+export class TextElement extends ElementBase {
+    constructor() {
         super();
-        this.content = "Enter your content here!"
+        this.text = {
+            content: "Enter your content here!"
+        }
     }
-    content: string;
+    text: any
 }

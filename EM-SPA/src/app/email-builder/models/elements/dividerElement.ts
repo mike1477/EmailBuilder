@@ -1,9 +1,11 @@
 import { ElementBase } from './elementBase';
 
-export class DividerElement extends ElementBase{
-    constructor(){
+export class DividerElement extends ElementBase {
+    constructor() {
         super();
-        this.color = "#000";
+        this.divider = {
+            color: "#000000"
+        };
     }
-    color:string;
+    divider: any
 }
