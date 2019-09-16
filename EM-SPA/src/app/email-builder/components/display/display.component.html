@@ -12,10 +12,25 @@
         <div app-layout-row
              [row]="row"></div>
         <div class="row-controls">
-            <div class="delete-button"> <i class="material-icons"
-                   (click)="deleteRow(i)"> delete </i></div>
-            <div class="move-button enable-move"><i class="material-icons enable-move"> import_export </i></div>
+            <button class="btn btn-sm btn-secondary btn-block enable-move row-control-move"
+                    title="Move this row up or down">
+                <i class="fas fa-arrows-alt enable-move"></i>
+            </button>
+            <button class="btn btn-sm btn-secondary btn-block row-control-delete"
+                    title="Delete this row">
+                <i class="fas fa-trash-alt"
+                   (click)="deleteRow(i)"></i>
+            </button>
+            <button class="btn btn-sm btn-secondary btn-block row-control-deselect"
+                    title="Deselect this row"
+                    (click)="deselectRow()">
+                <i class="fas fa-object-ungroup"></i>
+            </button>
+            <button class="btn btn-sm btn-secondary btn-block row-control-copy"
+                    title="Duplicate this row"
+                    (click)="copyRow(row)">
+                <i class="fas fa-copy"></i>
+            </button>
         </div>
     </div>
-
 </div>

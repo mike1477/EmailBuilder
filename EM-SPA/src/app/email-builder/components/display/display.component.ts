@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Email } from 'src/app/email-builder/models/email';
 import { SelectionManagerService } from 'src/app/shared/services/selection-manager.service';
+import { Row } from '../../models/row';
 
 @Component({
   selector: '[app-display]',
@@ -21,12 +22,21 @@ export class DisplayComponent implements OnInit {
     );;
   }
 
-  deleteRow(index: any) {
-    this.emailTemplate.rows.splice(index, 1);
-  }
-
   get selectedRow() {
     return this.selectionManager.selectedRow;
   }
 
+  deleteRow(index: any) {
+    this.emailTemplate.rows.splice(index, 1);
+  }
+
+  copyRow(row: Row) {
+    var currentIdex = this.emailTemplate.rows.indexOf(row);
+    var duplicateRow = Row.duplicate(row);
+    this.emailTemplate.rows.splice(currentIdex, 0, duplicateRow);
+  }
+
+  deselectRow() {
+    this.selectionManager.selectRow(null);
+  }
 }

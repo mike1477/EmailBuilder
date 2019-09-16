@@ -14,32 +14,18 @@
 }
 .row-controls{
     position: absolute;
-    right: 0;
+    right: 0px;
     padding:2px;
     top:0px;
-    opacity: .0;
+    display: none;
   }
+
   .row-wrapper:hover .row-controls{
-    opacity: 1;
+    display: block;
   }
-  .row-controls div{
-    margin-bottom:5px;
-    background-color:lightblue;
-    color:#000;
-    border:solid #000 1px;
-    border-radius: 5px;
-    transition: all .5s;
-    height: 23px;
-  }
-  .row-controls div:hover{
-    border:lightblue dashed 1px;
-    color: lightblue;
-  }
-  .move-button:hover{
+ 
+  .row-control-move.btn:hover{
     cursor: move;
-  }
-  .delete-button:hover{
-    cursor: pointer;
   }
 
   .row-wrapper.selected{
@@ -47,4 +33,13 @@
     -moz-box-shadow: 0px 0px 17px 4px rgba(0,0,0,0.75);
     box-shadow: 0px 0px 17px 4px rgba(0,0,0,0.75);
   }
+
+  .row-wrapper.selected .row-control-deselect{
+    display: block;
+  }
+
+  .row-control-deselect{
+    display: none;
+  }
+
 
