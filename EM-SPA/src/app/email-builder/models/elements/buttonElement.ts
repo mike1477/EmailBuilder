@@ -1,4 +1,5 @@
 import { ElementBase } from './elementBase';
+import { Padding } from '../padding';
 
 export class ButtonElement extends ElementBase {
     constructor() {
@@ -7,5 +8,20 @@ export class ButtonElement extends ElementBase {
             text: "This is the button"
         }
     }
-    button: any
+    button: any;
+
+    static create(): ButtonElement {
+        return new ButtonElement;
+    }
+
+    static duplicate(button: ButtonElement): ButtonElement {
+        var newElement = new ButtonElement();
+        newElement.alignment = button.alignment;
+        newElement.autoWidth = button.autoWidth;
+        newElement.backgroundColor = button.backgroundColor;
+        newElement.padding = Padding.duplicate(button.padding);
+        newElement.widthInPercentage = button.widthInPercentage;
+        newElement.button = JSON.parse(JSON.stringify(button.button));
+        return newElement;
+    }
 }

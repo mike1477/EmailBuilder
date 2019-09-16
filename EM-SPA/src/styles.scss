@@ -37,6 +37,15 @@ html, body, app-root, .wrapper, .content, [app-dashboard], .dashboard-outer, .co
     filter: alpha(opacity=50);
   }
 
+  .gu-unselectable .row-wrapper:hover .row-controls{
+    display: none;
+  }
+
+  .gu-unselectable .row-wrapper.gu-transit:hover .row-controls{
+    display: block;
+  }
+
+
   
 .gu-transit.row-box{
   width:100% !important;
