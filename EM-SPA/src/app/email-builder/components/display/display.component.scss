@@ -14,11 +14,12 @@
 }
 .row-controls{
     position: absolute;
-    right: -36px;
+    right: 0px;
     padding:2px;
     top:0px;
     display: none;
   }
+
   .row-wrapper:hover .row-controls{
     display: block;
   }

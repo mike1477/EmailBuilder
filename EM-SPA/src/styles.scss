@@ -36,16 +36,14 @@ html, body, app-root, .wrapper, .content, [app-dashboard], .dashboard-outer, .co
     -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)";
     filter: alpha(opacity=50);
   }
-
+ 
   .gu-unselectable .row-wrapper:hover .row-controls{
-    display: none;
+    display: none !important;
   }
 
   .gu-unselectable .row-wrapper.gu-transit:hover .row-controls{
-    display: block;
+    display: block !important;
   }
-
-
   
 .gu-transit.row-box{
   width:100% !important;
