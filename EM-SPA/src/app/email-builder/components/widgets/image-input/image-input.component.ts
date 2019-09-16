@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { ImageElement } from 'src/app/email-builder/models/elements/imageElement';
 
 @Component({
   selector: 'app-image-input',
@@ -6,15 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./image-input.component.scss']
 })
 export class ImageInputComponent implements OnInit {
-  imageUrl: string;
+  @Input() imageElement: ImageElement;
+
+  // url: "",
+  // altText: "",
+  // link: ""
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  setImage(imageUrl: string){
-    console.log(this.imageUrl);
-  }
 
 }

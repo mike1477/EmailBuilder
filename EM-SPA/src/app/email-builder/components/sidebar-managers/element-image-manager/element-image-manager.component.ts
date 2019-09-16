@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
+import { ImageElement } from 'src/app/email-builder/models/elements/imageElement';
 
 @Component({
   selector: 'app-element-image-manager',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./element-image-manager.component.scss']
 })
 export class ElementImageManagerComponent implements OnInit {
+
+  @Input() element: ImageElement;
 
   constructor() { }
 

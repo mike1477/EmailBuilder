@@ -5,9 +5,9 @@ export class ImageElement extends ElementBase {
     constructor() {
         super();
         this.image = {
-            url: "",
-            altText: "",
-            link: ""
+            url: "https://drive.google.com/uc?id=1PN2nrHASs_A9krbLYLdpyDcxHiSNgjdZ",
+            altText: "Empty-image",
+            link: "https://drive.google.com/uc?id=1PN2nrHASs_A9krbLYLdpyDcxHiSNgjdZ"
         }
     }
 

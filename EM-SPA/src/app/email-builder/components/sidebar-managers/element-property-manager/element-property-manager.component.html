@@ -59,7 +59,7 @@
                         <app-element-divider-manager [element]="selectedElement"></app-element-divider-manager>
                 </ng-container>
                 <ng-container *ngSwitchCase="'ImageElement'">
-                        <app-element-image-manager></app-element-image-manager>
+                        <app-element-image-manager [element]="selectedElement"></app-element-image-manager>
                 </ng-container>
                 <ng-container *ngSwitchCase="'TextElement'">
                         <app-element-text-manager [element]="selectedElement"></app-element-text-manager>
