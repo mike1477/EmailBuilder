@@ -1,19 +1,21 @@
-<div 
-*ngIf="emailTemplate"
-id="layout-row-list" 
-dragula="rows" 
-[(dragulaModel)]="emailTemplate.rows"
-[style.background-color] = "emailTemplate.backgroundColor.defaultValue" >
+<div *ngIf="emailTemplate"
+     id="layout-row-list"
+     dragula="rows"
+     [(dragulaModel)]="emailTemplate.rows"
+     [style.background-color]="emailTemplate.backgroundColor.defaultValue">
 
-    <div *ngFor="let row of emailTemplate.rows; let i = index" 
-        class="row-wrapper" 
-        [appSelector]="row"
-        [style.background-color] = "row.backgroundColor">
-            <div app-layout-row [row]="row"></div>
-            <div class="row-controls">
-                    <div class="delete-button"> <i class="material-icons" (click)="deleteRow(i)"> delete </i></div>
-                    <div class="move-button"><i class="material-icons"> import_export </i></div>
-            </div>
+    <div *ngFor="let row of emailTemplate.rows; let i = index"
+         class="row-wrapper "
+         [ngClass]="{'selected': selectedRow == row}"
+         [appSelector]="row"
+         [style.background-color]="row.backgroundColor">
+        <div app-layout-row
+             [row]="row"></div>
+        <div class="row-controls">
+            <div class="delete-button"> <i class="material-icons"
+                   (click)="deleteRow(i)"> delete </i></div>
+            <div class="move-button enable-move"><i class="material-icons enable-move"> import_export </i></div>
+        </div>
     </div>
-    
+
 </div>

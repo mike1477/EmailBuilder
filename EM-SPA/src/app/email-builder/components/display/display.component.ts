@@ -25,4 +25,8 @@ export class DisplayComponent implements OnInit {
     this.emailTemplate.rows.splice(index, 1);
   }
 
+  get selectedRow() {
+    return this.selectionManager.selectedRow;
+  }
+
 }

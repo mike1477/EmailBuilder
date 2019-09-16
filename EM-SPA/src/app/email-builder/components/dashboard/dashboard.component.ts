@@ -32,8 +32,8 @@ export class DashboardComponent implements OnInit, OnDestroy {
       accepts: (el, target, source, sibling) => {
         return target.id !== 'layout-row-options';
       },
-      invalid: () => {
-        return false;
+      invalid: (el, hanldle) => {
+        return !hanldle.classList.contains("enable-move")
       },
       moves: function (el, container, target) {
         if (target.classList.contains("layout-element")) return false;

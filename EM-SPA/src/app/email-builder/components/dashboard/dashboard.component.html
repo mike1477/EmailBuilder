@@ -16,9 +16,9 @@
                      class="row-list"
                      dragula="rows"
                      [(dragulaModel)]="rowOptions">
-                    <div class="row-option"
+                    <div class="row-option enable-move"
                          *ngFor="let row of rowOptions">
-                        <div class="row-option-column"
+                        <div class="row-option-column enable-move"
                              *ngFor="let columnWidth of row.columnDefinitions"
                              [style.width]="columnWidth/6 +'%'"></div>
                     </div>
