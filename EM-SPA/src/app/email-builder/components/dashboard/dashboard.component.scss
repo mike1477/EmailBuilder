@@ -57,7 +57,6 @@ overflow: hidden;
 
 .element-list {
   max-width: 100%;
-  max-height: 600px;
   display: block;
   overflow: hidden;
   flex-flow: row wrap;
@@ -98,6 +97,10 @@ overflow: hidden;
   flex-wrap: wrap;
   max-width: 700px;
   background: $primary;
+  height: 100%;
+  position: relative;
+  top:-44px;
+  padding-top:44px;
 }
 input[name="sidepanel-tabs"] {
   position: absolute;
@@ -137,7 +140,7 @@ input[name="sidepanel-tabs"]:checked + .sidepanel-tabs-label {
   padding: 20px 30px 30px 20px;
   background: $secondary;
   width:100%;
-  height: calc(100vh - 44px);
+  height: 100%;
 }
 @media (min-width: 600px) {
   .sidepanel-tabs-panel {

@@ -3,8 +3,7 @@
 @import "styles.theme.scss";
 /* in-flight clone */
 html, body, app-root, .wrapper, .content, [app-dashboard], .dashboard-outer, .content-display, .sidebar, .row-list  {
-   height: 100vh;
-   max-height: 100vh;
+   height: 100%;
    padding:0;
    margin:0;
    font-family: Arial, Helvetica, sans-serif
