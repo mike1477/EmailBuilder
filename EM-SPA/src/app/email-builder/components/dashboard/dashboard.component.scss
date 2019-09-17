@@ -221,7 +221,11 @@ input[name="accordion-tab"]:checked {
     }
   }
   ~ .accordion-tab-content {
-    max-height: 100vh;
+    max-height: 5000px;
     padding: 0;
   }
+}
+.empty-box{
+  background-color: #000;
+  height: 600px;
 }
