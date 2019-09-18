@@ -6,9 +6,9 @@ export class ButtonElement extends ElementBase {
         super();
         this.button = {
             text: "This is the button",
-            backgroundColor: "#59bd5d",
+            backgroundColor: "#C9C9C9",
             padding: new Padding(),
-            textColor: "#000000"
+            textColor: "#ffffff"
         }
     }
     button: any;
