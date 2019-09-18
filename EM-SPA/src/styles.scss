@@ -2,6 +2,9 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 @import "styles.theme.scss";
 /* in-flight clone */
+html, body{
+  min-width: 1080px;
+}
 html, body, app-root, .wrapper, .content, [app-dashboard], .dashboard-outer, .content-display, .sidebar, .row-list  {
    height: 100%;
    padding:0;
@@ -60,17 +63,18 @@ body{
   position: relative;
 }
 .row-wrapper:hover .column{
-  outline: dotted 2px black;
+  outline: dashed .1em black;
+  outline-offset: -.2em;
   z-index: 100;
-}
-
-.manager-row{
-  padding: 8px 0 8px 0;
 }
 
 #layout-row-list *{
   padding:0;
   margin:0;
+}
+
+.list-group-item{
+  background-color: $accent2;
 }
 
 #layout-row-list .row-controls button{
@@ -81,4 +85,18 @@ body{
 
 #layout-row-list [app-layout-row]{
   margin:auto;
+}
+
+.sidepanel-tabs-panel{
+  font-size: .8em;
+}
+
+.sidepanel-tabs-panel .form-control{
+  font-size: .8em;
+  border-color:$primary;
+}
+
+.sidepanel-tabs-panel .btn-secondary{
+  background-color: $primary;
+  font-size: .75 em;
 }

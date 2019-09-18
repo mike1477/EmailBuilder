@@ -8,26 +8,22 @@
 <ul class="list-group element-property-manager"
     *ngIf="columns">
     <li class="list-group-item">
-        <div class="container">
-            <div class="manager-row row">
-                <div class="manager-label col-6">
-                    <p>Background Color</p>
-                </div>
-                <div class="manager-input col-6">
-                    <app-color-picker [(color)]="backgroundColor"></app-color-picker>
-                </div>
+        <div class="manager-row row">
+            <div class="manager-label col-6">
+                <p>Background Color</p>
+            </div>
+            <div class="manager-input col-6">
+                <app-color-picker [(color)]="backgroundColor"></app-color-picker>
             </div>
         </div>
     </li>
     <li class="list-group-item">
-        <div class="container">
-            <div class="manager-row row">
-                <div class="manager-label col-6">
-                    <p>Content Background Color</p>
-                </div>
-                <div class="manager-input col-6">
-                    <app-color-picker [(color)]="contentBackgroundColor"></app-color-picker>
-                </div>
+        <div class="manager-row row">
+            <div class="manager-label col-6">
+                <p>Content Background Color</p>
+            </div>
+            <div class="manager-input col-6">
+                <app-color-picker [(color)]="contentBackgroundColor"></app-color-picker>
             </div>
         </div>
     </li>
@@ -44,14 +40,12 @@
                     {{columns.indexOf(column) + 1}}</label>
                 <div class="row-property-tabs-panel">
                     <app-common-number-selector [padding]="column.padding"></app-common-number-selector>
-                    <div class="container">
-                        <div class="manager-row row">
-                            <div class="manager-label col-6">
-                                <p>Column Background Color</p>
-                            </div>
-                            <div class="manager-input col-6">
-                                <app-color-picker [(color)]="column.backgroundColor"></app-color-picker>
-                            </div>
+                    <div class="manager-row row">
+                        <div class="manager-label col-6">
+                            <p>Column Background Color</p>
+                        </div>
+                        <div class="manager-input col-6">
+                            <app-color-picker [(color)]="column.backgroundColor"></app-color-picker>
                         </div>
                     </div>
                 </div>

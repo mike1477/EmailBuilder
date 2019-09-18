@@ -1,25 +1,20 @@
 <div class="container number-widget">
-<div class="row">
-    <div class="col-4"></div>
-    <div class="col-4">
-        <app-number-selector-input [(value)]="padding.top"></app-number-selector-input>
+    <div class="row">
+        <div class="col-12">
+            <app-number-selector-input [(value)]="padding.top"></app-number-selector-input>
+        </div>
     </div>
-    <div class="col-4"></div>
+    <div class="row">
+        <div class="col-6">
+            <app-number-selector-input [(value)]="padding.left"></app-number-selector-input>
+        </div>
+        <div class="col-6">
+            <app-number-selector-input [(value)]="padding.right"></app-number-selector-input>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12">
+            <app-number-selector-input [(value)]="padding.bottom"></app-number-selector-input>
+        </div>
+    </div>
 </div>
-<div class="row">
-    <div class="col-4">
-        <app-number-selector-input [(value)]="padding.left"></app-number-selector-input>
-    </div>
-    <div class="col-4"></div>
-    <div class="col-4">
-        <app-number-selector-input [(value)]="padding.right"></app-number-selector-input>
-    </div>
-</div>
-<div class="row">
-    <div class="col-4"></div>
-    <div class="col-4">
-        <app-number-selector-input [(value)]="padding.bottom"></app-number-selector-input>
-    </div>
-    <div class="col-4"></div>
-</div>
-</div>                                  

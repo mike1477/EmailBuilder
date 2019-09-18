@@ -63,7 +63,7 @@ overflow: hidden;
   
 }
 .element-box {
-  background-color: $primary;
+  background-color: $accent2;
   color: $text;
   padding: 10px 10px;
   border: $secondary solid 1px;
@@ -108,11 +108,11 @@ input[name="sidepanel-tabs"] {
 }
 .sidepanel-tabs-label {
   width: 100%;
-  padding: 7px 30px;
+  padding: .4em 1em;
   background: $primary;
   cursor: pointer;
   font-weight: bold;
-  font-size: 18px;
+  font-size: 1.1em;
   color: $text;
   transition: background 0.1s, color 0.1s;
   margin:0;
@@ -221,7 +221,7 @@ input[name="accordion-tab"]:checked {
     }
   }
   ~ .accordion-tab-content {
-    max-height: 5000px;
+    max-height: unset;
     padding: 0;
   }
 }
