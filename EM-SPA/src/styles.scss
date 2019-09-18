@@ -2,7 +2,7 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 @import "styles.theme.scss";
 /* in-flight clone */
-html, body{
+html, body, app-root, .wrapper, .content, [app-dashboard], .dashboard-outer{
   min-width: 1080px;
 }
 html, body, app-root, .wrapper, .content, [app-dashboard], .dashboard-outer, .content-display, .sidebar, .row-list  {
@@ -99,4 +99,8 @@ body{
 .sidepanel-tabs-panel .btn-secondary{
   background-color: $primary;
   font-size: .75 em;
+}
+
+.accordion-tabs p{
+  margin: 0;
 }

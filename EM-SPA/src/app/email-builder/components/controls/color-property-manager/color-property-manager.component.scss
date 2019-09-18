@@ -1,10 +1,11 @@
 .edit-condition-action{
     position: absolute;
     right: 0;
-    margin-right: -24px;
-    bottom: 50%;
-    margin-bottom: -18px;
+    margin-right: -15px;
+    bottom: 0;
+    margin-bottom: -6px;
     outline: none;
+    transform: rotate(90deg);
 }
 .edit-condition-action:focus{
     box-shadow: none;

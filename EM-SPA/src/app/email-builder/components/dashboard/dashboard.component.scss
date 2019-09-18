@@ -29,19 +29,19 @@ overflow: hidden;
 }
 
 .row-option-column{
-  display: table-cell;
-  padding: 30px 0;
-  background-color:$secondary;
-  border: solid;
-  border-color: $primary;
-  border-width:12px 6px;
+    display: table-cell;
+    padding: 3em 0;
+    background-color: #FFFBF6;
+    border: solid;
+    border-color: #B1C2D9;
+    border-width: 1em .5em;
 }
 
 .row-option-column:first-child{
-  border-left-width: 12px;
+  border-left-width: 1em;
 }
 .row-option-column:last-child{
-  border-right-width: 12px;
+  border-right-width: 1em;
 }
 
 .row-box:active {
