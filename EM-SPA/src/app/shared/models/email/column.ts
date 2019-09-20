@@ -4,8 +4,10 @@ import { ButtonElement } from './elements/buttonElement';
 import { DividerElement } from './elements/dividerElement';
 import { ImageElement } from './elements/imageElement';
 import { TextElement } from './elements/textElement';
+import { AppStructureTypes } from './app-stucture-types';
+import { IStructureType } from './i-structure-type';
 
-export class Column {
+export class Column implements IStructureType {
     constructor(width: number) {
         this.padding = new Padding();
         this.backgroundColor = "transparent";
@@ -20,6 +22,10 @@ export class Column {
     widthInPixels: number;
     elements: Array<ElementBase>;
 
+    get appStuctureType(): AppStructureTypes {
+        return AppStructureTypes.column;
+    }
+
     static create(width: number): Column {
         return new Column(width);
     }
@@ -30,10 +36,10 @@ export class Column {
         newColumn.padding = Padding.duplicate(column.padding);
         newColumn.widthInPercentage = column.widthInPercentage;
         newColumn.elements = column.elements.map((el) => {
-            if (el instanceof ButtonElement) return ButtonElement.duplicate(el);
-            if (el instanceof DividerElement) return DividerElement.duplicate(el);
-            if (el instanceof ImageElement) return ImageElement.duplicate(el);
-            if (el instanceof TextElement) return TextElement.duplicate(el);
+            if (el.hasOwnProperty("button")) return ButtonElement.duplicate(el as ButtonElement);
+            if (el.hasOwnProperty("divider")) return DividerElement.duplicate(el as DividerElement);
+            if (el.hasOwnProperty("image")) return ImageElement.duplicate(el as ImageElement);
+            if (el.hasOwnProperty("text")) return TextElement.duplicate(el as TextElement);
             return new ElementBase();
         });
         return newColumn;

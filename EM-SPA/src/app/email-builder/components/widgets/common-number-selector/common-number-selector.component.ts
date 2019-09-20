@@ -1,5 +1,5 @@
-import { Component, OnInit, EventEmitter, Output , SimpleChange, SimpleChanges, Input} from '@angular/core';
-import { Padding } from 'src/app/email-builder/models/padding';
+import { Component, OnInit, EventEmitter, Output, SimpleChange, SimpleChanges, Input } from '@angular/core';
+import { Padding } from 'src/app/shared/models/email/padding';
 
 @Component({
   selector: 'app-common-number-selector',
@@ -8,14 +8,14 @@ import { Padding } from 'src/app/email-builder/models/padding';
 })
 export class CommonNumberSelectorComponent implements OnInit {
 
- 
 
-  @Input() padding:Padding
+
+  @Input() padding: Padding
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  
+
 }

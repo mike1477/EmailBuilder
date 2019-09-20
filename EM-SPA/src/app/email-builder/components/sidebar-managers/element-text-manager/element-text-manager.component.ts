@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { TextElement } from 'src/app/email-builder/models/elements/textElement';
+import { TextElement } from 'src/app/shared/models/email/elements/textElement';
 
 @Component({
   selector: 'app-element-text-manager',

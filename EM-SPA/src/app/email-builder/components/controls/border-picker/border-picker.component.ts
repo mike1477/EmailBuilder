@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Border } from 'src/app/email-builder/models/border';
+import { Border } from 'src/app/shared/models/email/border';
 
 @Component({
   selector: 'app-border-picker',

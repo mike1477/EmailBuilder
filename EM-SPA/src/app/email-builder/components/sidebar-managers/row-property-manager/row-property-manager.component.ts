@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SelectionManagerService } from '../../../../shared/services/selection-manager.service';
-import { Padding } from 'src/app/email-builder/models/padding';
-import { Row } from 'src/app/email-builder/models/row';
+import { Section } from 'src/app/shared/models/email/section';
 
 @Component({
   selector: 'app-row-property-manager',
@@ -9,37 +8,37 @@ import { Row } from 'src/app/email-builder/models/row';
   styleUrls: ['./row-property-manager.component.scss']
 })
 export class RowPropertyManagerComponent implements OnInit {
-  
-  constructor(private selectionManager: SelectionManagerService) { }
-  
-  ngOnInit() {}
 
-  get selectedRow(): Row {
+  constructor(private selectionManager: SelectionManagerService) { }
+
+  ngOnInit() { }
+
+  get selectedRow(): Section {
     return this.selectionManager.selectedRow;
   }
 
-  get backgroundColor():string{
+  get backgroundColor(): string {
     var color = this.selectedRow && this.selectedRow.backgroundColor;
-    return typeof color === "string" ? color :"transparent";
+    return typeof color === "string" ? color : "transparent";
   }
-  
-  set backgroundColor(color:string){
+
+  set backgroundColor(color: string) {
     color = typeof color === "string" ? color : "transparent";
     if (this.selectedRow) this.selectedRow.backgroundColor = color;
   }
 
-  get contentBackgroundColor():string{
+  get contentBackgroundColor(): string {
     var color = this.selectedRow && this.selectedRow.contentBackgroundColor;
-    return typeof color === "string" ? color :"transparent";
+    return typeof color === "string" ? color : "transparent";
   }
-  
-  set contentBackgroundColor(color:string){
+
+  set contentBackgroundColor(color: string) {
     color = typeof color === "string" ? color : "transparent";
     if (this.selectedRow) this.selectedRow.contentBackgroundColor = color;
   }
 
-  get columns(){
+  get columns() {
     return this.selectionManager.selectedRow && this.selectionManager.selectedRow.columns;
   }
 
-  }
+}

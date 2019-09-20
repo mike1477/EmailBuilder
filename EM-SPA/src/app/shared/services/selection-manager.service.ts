@@ -1,14 +1,14 @@
 import { Injectable } from '@angular/core';
-import { Email } from 'src/app/email-builder/models/email';
-import { Row } from 'src/app/email-builder/models/row';
-import { ElementBase } from 'src/app/email-builder/models/elements/elementBase';
-import { Observable, Subject } from 'rxjs';
+import { Body } from 'src/app/shared/models/email/body';
+import { Section } from 'src/app/shared/models/email/section';
+import { ElementBase } from 'src/app/shared/models/email/elements/elementBase';
+import { Observable } from 'rxjs';
 import { PropertyManager } from '../models/property-manager';
 import { PropertyManagerColor } from '../models/property-manager-color';
-import { ButtonElement } from 'src/app/email-builder/models/elements/buttonElement';
-import { DividerElement } from 'src/app/email-builder/models/elements/dividerElement';
-import { TextElement } from 'src/app/email-builder/models/elements/textElement';
-import { ImageElement } from 'src/app/email-builder/models/elements/imageElement';
+import { ButtonElement } from 'src/app/shared/models/email/elements/buttonElement';
+import { DividerElement } from 'src/app/shared/models/email/elements/dividerElement';
+import { TextElement } from 'src/app/shared/models/email/elements/textElement';
+import { ImageElement } from 'src/app/shared/models/email/elements/imageElement';
 
 @Injectable({
   providedIn: 'root'
@@ -17,14 +17,14 @@ import { ImageElement } from 'src/app/email-builder/models/elements/imageElement
 export class SelectionManagerService {
 
   public targetPropertyManger: PropertyManager<any> = null;
-  private _emailTemplate: Email = null;
-  private _selectedRow: Row = null;
+  private _emailTemplate: Body = null;
+  private _selectedRow: Section = null;
   private _selectedElement: ElementBase = null;
 
-  get emailTemplate(): Email {
+  get emailTemplate(): Body {
     return this._emailTemplate;
   }
-  get selectedRow(): Row {
+  get selectedRow(): Section {
     return this._selectedRow
   };
   get selectedElement(): ElementBase {
@@ -37,38 +37,38 @@ export class SelectionManagerService {
     this._selectedElement = element;
   }
 
-  selectRow(row: Row) {
+  selectRow(row: Section) {
     this._selectedElement = null;
     this._selectedRow = row;
   }
 
-  private activeObservable: Observable<Email> = null;
+  private activeObservable: Observable<Body> = null;
 
-  loadEmailTemplate(): Observable<Email> {
+  loadEmailTemplate(): Observable<Body> {
     if (this._emailTemplate) {
-      return new Observable<Email>((observer) => {
+      return new Observable<Body>((observer) => {
         observer.next(this.emailTemplate);
         observer.complete();
         return { unsubscribe() { } };
       });
     }
     if (!this.activeObservable) {
-      this.activeObservable = new Observable<Email>((observer) => {
+      this.activeObservable = new Observable<Body>((observer) => {
 
-        this._emailTemplate = new Email();
+        this._emailTemplate = new Body();
         this._emailTemplate.backgroundColor = new PropertyManagerColor();
         this._emailTemplate.backgroundColor.defaultValue = "#ffffff";
         this._emailTemplate.contentBackgroundColor = new PropertyManagerColor();
 
         //Adding elements for developmnet purposes
-        var newRow = new Row([200, 200, 200]);
+        var newRow = Section.create([200, 200, 200]);
 
-        newRow.columns[1].elements.push(new ButtonElement());
-        newRow.columns[1].elements.push(new DividerElement());
-        newRow.columns[1].elements.push(new TextElement());
-        newRow.columns[1].elements.push(new ImageElement());
+        newRow.columns[1].elements.push(ButtonElement.create());
+        newRow.columns[1].elements.push(DividerElement.create());
+        newRow.columns[1].elements.push(TextElement.create());
+        newRow.columns[1].elements.push(ImageElement.create());
 
-        this._emailTemplate.rows = [newRow];
+        this._emailTemplate.sections = [newRow];
         console.log(this._emailTemplate);
 
         observer.next(this._emailTemplate);

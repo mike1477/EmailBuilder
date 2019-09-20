@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { DividerElement } from 'src/app/email-builder/models/elements/dividerElement';
+import { DividerElement } from 'src/app/shared/models/email/elements/dividerElement';
 
 @Component({
   selector: 'app-element-divider-manager',
@@ -8,7 +8,7 @@ import { DividerElement } from 'src/app/email-builder/models/elements/dividerEle
 })
 export class ElementDividerManagerComponent implements OnInit {
 
-  @Input() element:DividerElement;
+  @Input() element: DividerElement;
 
   constructor() { }
 

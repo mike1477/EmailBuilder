@@ -1,0 +1,50 @@
+<mjml>
+  <mj-head>
+    <mj-title>Say hello to RealEstate</mj-title>
+    <mj-font name="Alice" href="https://fonts.googleapis.com/css?family=Alice"></mj-font>
+    <mj-font name="Roboto" href="https://fonts.googleapis.com/css?family=Roboto:400,700"></mj-font>
+    <mj-attributes>
+      <mj-all font-family="Roboto, Helvetica, Arial, sans-serif" padding="0px"></mj-all>
+      <mj-text font-weight="400" font-size="14px" color="#000000" line-height="21px"></mj-text>
+    </mj-attributes>
+  </mj-head>
+  <mj-body background-color="{{#design.backgroundColor}}{{renderCondition}}{{/design.backgroundColor}}">
+    {{#design.sections}}
+      <mj-section 
+              background-url="{{#backgroundUrl}}{{renderCondition}}{{/backgroundUrl}}"
+              background-size="cover"
+              background-repeat="no-repeat"
+              background-color="{{#backgroundColor}}{{renderCondition}}{{/backgroundColor}}"
+              {{#padding}}
+                padding-top="{{#top}}{{renderCondition}}{{/top}}px"
+                padding-right="{{#right}}{{renderCondition}}{{/right}}px"
+                padding-bottom="{{#bottom}}{{renderCondition}}{{/bottom}}px"
+                padding-left="{{#left}}{{renderCondition}}{{/left}}px"
+              {{/padding}}>
+        {{#columns}}
+          <mj-column 
+                width="{{#widthInPixels}}{{renderCondition}}{{/widthInPixels}}px"
+                background-color="{{#backgroundColor}}{{renderCondition}}{{/backgroundColor}}">
+                {{#elements}}
+                  {{#image}}
+                  <mj-image 
+                   src="{{#src}}{{renderCondition}}{{/src}}"
+                   width="{{#widthInPercentage}}{{renderCondition}}{{/widthInPercentage}}%" 
+                   alt="{{#alt}}{{renderCondition}}{{/alt}}" 
+                   href=""
+                   align="center" 
+                   border="none"
+                   {{#padding}}
+                    padding-top="{{#top}}{{renderCondition}}{{/top}}px"
+                    padding-right="{{#right}}{{renderCondition}}{{/right}}px"
+                    padding-bottom="{{#bottom}}{{renderCondition}}{{/bottom}}px"
+                    padding-left="{{#left}}{{renderCondition}}{{/left}}px"
+                  {{/padding}}></mj-image>
+                  {{/image}}
+                {{/elements}}
+          </mj-column>
+        {{/columns}}
+      </mj-section>
+    {{/design.sections}}
+  </mj-body>
+</mjml>

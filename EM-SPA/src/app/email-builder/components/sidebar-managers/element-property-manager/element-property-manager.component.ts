@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SelectionManagerService } from 'src/app/shared/services/selection-manager.service';
-import { ElementBase } from 'src/app/email-builder/models/elements/elementBase';
+import { ElementBase } from 'src/app/shared/models/email/elements/elementBase';
 
 
 @Component({
@@ -36,10 +36,4 @@ export class ElementPropertyManagerComponent implements OnInit {
   set alignment(newValue: string) {
     if (this.selectedElement) this.selectedElement.alignment = newValue;
   }
-
-
-  get elementType(): string {
-    return typeof this.selectedElement.constructor && this.selectedElement.constructor.name;
-  }
-
 }

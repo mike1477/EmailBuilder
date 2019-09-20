@@ -1,4 +1,5 @@
 const mustache = require("Mustache");
+const mjml = require("mjml");
 const fs = require('fs');
 
 (function defineTemplateAssembler(global, factory) {
@@ -83,7 +84,7 @@ const fs = require('fs');
 
 
     assembler.render = function (mergeData, designData) {
-        var template = fs.readFileSync(__dirname + '/template.mustache', 'utf8');
+        var template = fs.readFileSync(__dirname + '/mjml.mustache', 'utf8');
 
         var renderCondition = function () {
             //If conditions is not an array than return the defaultValue
@@ -110,7 +111,11 @@ const fs = require('fs');
             renderCondition: renderCondition
         }
 
-        return mustache.render(template, json);
+        var mjmlTemplate = mustache.render(template, json);
+
+        var mjmlResult = mjml(mjmlTemplate);
+
+        return mjmlResult.html;
     }
 
     return assembler;

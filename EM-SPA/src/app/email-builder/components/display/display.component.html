@@ -1,10 +1,10 @@
 <div *ngIf="emailTemplate"
      id="layout-row-list"
      dragula="rows"
-     [(dragulaModel)]="emailTemplate.rows"
+     [(dragulaModel)]="emailTemplate.sections"
      [style.background-color]="emailTemplate.backgroundColor.defaultValue">
 
-    <div *ngFor="let row of emailTemplate.rows; let i = index"
+    <div *ngFor="let row of emailTemplate.sections; let i = index"
          class="row-wrapper "
          [ngClass]="{'selected': selectedRow == row}"
          [appSelector]="row"

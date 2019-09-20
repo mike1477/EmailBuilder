@@ -51,17 +51,17 @@
     </li>
 
 
-    <ng-container [ngSwitch]="elementType">
-        <ng-container *ngSwitchCase="'ButtonElement'">
+    <ng-container [ngSwitch]="selectedElement.elementType">
+        <ng-container *ngSwitchCase="'button'">
             <app-element-button-manager [element]="selectedElement"></app-element-button-manager>
         </ng-container>
-        <ng-container *ngSwitchCase="'DividerElement'">
+        <ng-container *ngSwitchCase="'divider'">
             <app-element-divider-manager [element]="selectedElement"></app-element-divider-manager>
         </ng-container>
-        <ng-container *ngSwitchCase="'ImageElement'">
+        <ng-container *ngSwitchCase="'image'">
             <app-element-image-manager [element]="selectedElement"></app-element-image-manager>
         </ng-container>
-        <ng-container *ngSwitchCase="'TextElement'">
+        <ng-container *ngSwitchCase="'text'">
             <app-element-text-manager [element]="selectedElement"></app-element-text-manager>
         </ng-container>
         <ng-container *ngSwitchDefault>output2</ng-container>

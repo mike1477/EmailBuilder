@@ -1,26 +1,29 @@
 import { Directive, ElementRef, HostListener, Input } from '@angular/core';
-import { Row } from 'src/app/email-builder/models/row';
-import { ElementBase } from 'src/app/email-builder/models/elements/elementBase';
+import { Section } from 'src/app/shared/models/email/section';
+import { ElementBase } from 'src/app/shared/models/email/elements/elementBase';
 import { SelectionManagerService } from 'src/app/shared/services/selection-manager.service';
+import { IStructureType } from 'src/app/shared/models/email/i-structure-type';
+import { AppStructureTypes } from 'src/app/shared/models/email/app-stucture-types';
 
 @Directive({
   selector: '[appSelector]'
 })
 export class SelectorDirective {
 
-  @Input() appSelector: any;
-  
-  private clickHandler(){
-    if(this.appSelector instanceof Row){
-      this.selectionService.selectRow(this.appSelector);
+  @Input() appSelector: IStructureType;
+
+  clickHandler() {
+    if (this.appSelector.appStuctureType === AppStructureTypes.section) {
+      var section = this.appSelector as Section;
+      this.selectionService.selectRow(section);
     }
-    else if(this.appSelector instanceof ElementBase){
-      this.selectionService.selectElement(this.appSelector);
+    else if (this.appSelector.appStuctureType === AppStructureTypes.element) {
+      var element = this.appSelector as ElementBase;
+      this.selectionService.selectElement(element);
     }
-    console.log(this.appSelector);
   }
 
-  constructor(el: ElementRef, private selectionService:SelectionManagerService) {
+  constructor(el: ElementRef, private selectionService: SelectionManagerService) {
     el.nativeElement.addEventListener("click", this.clickHandler.bind(this), true);
   }
 

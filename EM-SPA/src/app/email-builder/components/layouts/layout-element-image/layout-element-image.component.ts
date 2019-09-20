@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ImageElement } from 'src/app/email-builder/models/elements/imageElement';
+import { ImageElement } from 'src/app/shared/models/email/elements/imageElement';
 
 @Component({
   selector: '[app-layout-element-image]',
@@ -7,7 +7,7 @@ import { ImageElement } from 'src/app/email-builder/models/elements/imageElement
   styleUrls: ['./layout-element-image.component.scss']
 })
 export class LayoutElementImageComponent implements OnInit {
-  @Input() element:ImageElement;
+  @Input() element: ImageElement;
   constructor() { }
 
   ngOnInit() {

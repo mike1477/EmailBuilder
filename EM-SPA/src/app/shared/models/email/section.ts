@@ -1,6 +1,8 @@
 import { Column } from './column';
+import { AppStructureTypes } from './app-stucture-types';
+import { IStructureType } from './i-structure-type';
 
-export class Row {
+export class Section implements IStructureType {
     constructor(columnDefinition: Array<number>) {
         this.backgroundColor = "transparent";
         this.contentBackgroundColor = "transparent";
@@ -14,11 +16,15 @@ export class Row {
     mobileStack: boolean;
     columns: Column[];
 
-    static create(columnDefinition: Array<number>): Row {
-        return new Row(columnDefinition);
+    get appStuctureType(): AppStructureTypes {
+        return AppStructureTypes.section;
     }
-    static duplicate(row: Row): Row {
-        var newRow = new Row(null);
+
+    static create(columnDefinition: Array<number>): Section {
+        return new Section(columnDefinition);
+    }
+    static duplicate(row: Section): Section {
+        var newRow = new Section(null);
         newRow.backgroundColor = row.backgroundColor;
         newRow.contentBackgroundColor = row.contentBackgroundColor;
         newRow.mobileStack = row.mobileStack;

@@ -1,13 +1,12 @@
-.layout-element{
-    position: relative;
-    padding:0;
-    margin:0;
-}
-
 .layout-element-width{
     position: relative;
-    display: inline-block;
-    text-align: left;
+    display: table-cell;
+    display: flex;
+    justify-content: center;
+}
+
+.layout-element-width>div{
+
 }
 
 

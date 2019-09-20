@@ -1,35 +1,37 @@
-<div class="layout-element"
+<div class="layout-element-width"
      #layoutElement
      *ngFor="let element of column.elements"
      [style.backgroundColor]="element.backgroundColor"
-     [ngSwitch]="element && element.constructor && element.constructor.name"
+     [ngSwitch]="element.elementType"
      [appSelector]="element"
-     [style.textAlign]="element.alignment"
+     [style.justifyContent]="flexAlignment(element.alignment)"
      [style.paddingTop]="element.padding.top + 'px'"
      [style.paddingBottom]="element.padding.bottom + 'px'"
      [style.paddingRight]="element.padding.right + 'px'"
      [style.paddingLeft]="element.padding.left + 'px'">
-    <div class="layout-element-width"
-         [style.width]="element.widthInPercentage + '%'">
-        <div app-layout-element-button
-             class="layout-element-button"
-             *ngSwitchCase="'ButtonElement'"
-             [element]="element"></div>
-        <div app-layout-element-divider
-             class="layout-element-divider"
-             *ngSwitchCase="'DividerElement'"
-             [element]="element"></div>
-        <div app-layout-element-image
-             class="layout-element-image"
-             *ngSwitchCase="'ImageElement'"
-             [element]="element"></div>
-        <div app-layout-element-text
-             class="layout-element-text"
-             *ngSwitchCase="'TextElement'"
-             [element]="element">
-        </div>
-        <div app-layout-element-unknown
-             class="layout-element-unknown"
-             *ngSwitchDefault></div>
-    </div>
+     <div app-layout-element-button
+          [style.width]="element.widthInPercentage + '%'"
+          class="layout-element-button"
+          *ngSwitchCase="'button'"
+          [element]="element"></div>
+     <div app-layout-element-divider
+          [style.width]="element.widthInPercentage + '%'"
+          class="layout-element-divider"
+          *ngSwitchCase="'divider'"
+          [element]="element"></div>
+     <div app-layout-element-image
+          [style.width]="element.widthInPercentage + '%'"
+          class="layout-element-image"
+          *ngSwitchCase="'image'"
+          [element]="element"></div>
+     <div app-layout-element-text
+          [style.width]="element.widthInPercentage + '%'"
+          class="layout-element-text"
+          *ngSwitchCase="'text'"
+          [element]="element">
+     </div>
+     <div app-layout-element-unknown
+          [style.width]="element.widthInPercentage + '%'"
+          class="layout-element-unknown"
+          *ngSwitchDefault></div>
 </div>

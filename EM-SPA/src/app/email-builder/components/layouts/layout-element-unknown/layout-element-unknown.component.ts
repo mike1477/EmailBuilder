@@ -6,11 +6,12 @@ import { Component, OnInit, Input } from '@angular/core';
   styleUrls: ['./layout-element-unknown.component.scss']
 })
 export class LayoutElementUnknownComponent implements OnInit {
-  @Input() element:any;
+  @Input() element: any;
 
   constructor() { }
 
   ngOnInit() {
+    console.log(this.element);
   }
 
 }

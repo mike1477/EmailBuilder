@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { Row } from 'src/app/email-builder/models/row';
+import { Section } from 'src/app/shared/models/email/section';
 
 @Component({
   selector: '[app-layout-row]',
@@ -8,7 +8,7 @@ import { Row } from 'src/app/email-builder/models/row';
 })
 export class LayoutRowComponent implements OnInit {
 
-  @Input() row:Row;
+  @Input() row: Section;
   constructor() { }
 
   ngOnInit() {

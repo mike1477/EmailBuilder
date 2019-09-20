@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { Email } from 'src/app/email-builder/models/email';
+import { Body } from 'src/app/shared/models/email/body';
 import { SelectionManagerService } from 'src/app/shared/services/selection-manager.service';
-import { Row } from '../../models/row';
+import { Section } from '../../../shared/models/email/section';
 
 @Component({
   selector: '[app-display]',
@@ -12,7 +12,7 @@ export class DisplayComponent implements OnInit {
 
   constructor(private selectionManager: SelectionManagerService) { }
 
-  emailTemplate: Email;
+  emailTemplate: Body;
 
   ngOnInit() {
     this.selectionManager.loadEmailTemplate().subscribe(
@@ -27,13 +27,13 @@ export class DisplayComponent implements OnInit {
   }
 
   deleteRow(index: any) {
-    this.emailTemplate.rows.splice(index, 1);
+    this.emailTemplate.sections.splice(index, 1);
   }
 
-  copyRow(row: Row) {
-    var currentIdex = this.emailTemplate.rows.indexOf(row);
-    var duplicateRow = Row.duplicate(row);
-    this.emailTemplate.rows.splice(currentIdex, 0, duplicateRow);
+  copyRow(row: Section) {
+    var currentIdex = this.emailTemplate.sections.indexOf(row);
+    var duplicateRow = Section.duplicate(row);
+    this.emailTemplate.sections.splice(currentIdex, 0, duplicateRow);
   }
 
   deselectRow() {

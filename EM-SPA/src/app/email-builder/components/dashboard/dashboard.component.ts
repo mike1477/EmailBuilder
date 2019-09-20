@@ -1,11 +1,11 @@
 import { Component, OnInit, ViewContainerRef, OnDestroy, } from '@angular/core';
 import { DragulaService, Group } from 'ng2-dragula';
-import { Row } from 'src/app/email-builder/models/row';
+import { Section } from 'src/app/shared/models/email/section';
 import { RowOption } from 'src/app/email-builder/models/rowOption';
-import { DividerElement } from 'src/app/email-builder/models/elements/dividerElement';
-import { ImageElement } from 'src/app/email-builder/models/elements/imageElement';
-import { TextElement } from 'src/app/email-builder/models/elements/textElement';
-import { ButtonElement } from 'src/app/email-builder/models/elements/buttonElement';
+import { DividerElement } from 'src/app/shared/models/email/elements/dividerElement';
+import { ImageElement } from 'src/app/shared/models/email/elements/imageElement';
+import { TextElement } from 'src/app/shared/models/email/elements/textElement';
+import { ButtonElement } from 'src/app/shared/models/email/elements/buttonElement';
 import { Router } from '@angular/router';
 
 const rowDragGroup = "rows"
@@ -26,7 +26,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
         return source.id === 'layout-row-options';
       },
       copyItem: (rowOption: any) => {
-        var newRow = new Row(rowOption.columnDefinitions);
+        var newRow = Section.create(rowOption.columnDefinitions);
         return newRow;
       },
       accepts: (el, target, source, sibling) => {
@@ -49,7 +49,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
         return source.id === 'layout-element-options';
       },
       copyItem: (elementOption: any) => {
-        var newElement = new elementOption.type();
+        var newElement = elementOption.type.create();
         return newElement;
       },
       accepts: (el, target, source, sibling) => {

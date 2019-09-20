@@ -1,14 +1,20 @@
 <div class="image-input-container">
-       <input type="text"
-              name="imageUrl"
-              [(ngModel)]="imageElement.image.link"
-              placeholder="Image Url"
-              class="form-control">
+    <input type="text"
+           name="imageUrl"
+           [(ngModel)]="imageElement.image.url"
+           placeholder="Image Url"
+           class="form-control">
 
-       <input type="text"
-              name="alt"
-              [(ngModel)]="imageElement.image.alt"
-              placeholder="Imag Alternate text"
-              class="form-control">
+    <input type="text"
+           name="alt"
+           [(ngModel)]="imageElement.image.alt"
+           placeholder="Imag Alternate text"
+           class="form-control">
+
+    <input type="text"
+           name="href"
+           [(ngModel)]="imageElement.image.href"
+           placeholder="Imag Alternate href"
+           class="form-control">
 
 </div>
