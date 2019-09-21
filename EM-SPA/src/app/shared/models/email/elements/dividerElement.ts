@@ -1,7 +1,6 @@
 import { ElementBase } from './elementBase';
 import { Border } from '../border';
 
-const defaultColor = "#000000";
 const defaultWidthInPercentage = 100;
 
 export class DividerElement extends ElementBase {
@@ -12,10 +11,7 @@ export class DividerElement extends ElementBase {
         if (obj) super(obj);
         else super();
         var divider = obj && obj.divider || {}
-        this.divider = {
-            color: divider.color || defaultColor,
-            border: divider.border ? Border.duplicate(divider.border) : Border.create()
-        };
+        this.divider = Border.duplicate(divider);
     }
     divider: any;
 

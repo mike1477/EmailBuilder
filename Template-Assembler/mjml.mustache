@@ -32,7 +32,6 @@
                   {{#image}}
                   <mj-image 
                    src="{{#src}}{{renderCondition}}{{/src}}"
-                   width="{{#widthInPixels}}{{renderCondition}}{{/widthInPixels}}px" 
                    alt="{{#alt}}{{renderCondition}}{{/alt}}" 
                    href="{{#href}}{{renderCondition}}{{/href}}"
                   {{/image}}
@@ -43,10 +42,15 @@
                     color="{{#textColor}}{{renderCondition}}{{/textColor}}"
                     background-color="{{#backgroundColor}}{{renderCondition}}{{/backgroundColor}}"
                     height="{{#height}}{{renderCondition}}{{/height}}px"
-                    width="{{#widthInPixels}}{{renderCondition}}{{/widthInPixels}}px"
                     border-radius="{{#borderRadius}}{{renderCondition}}{{/borderRadius}}px"
                   {{/button}}
-
+                  {{#divider}}
+                  <mj-divider
+                  border-color="{{#color}}{{renderCondition}}{{/color}}"
+                  border-style="{{#style}}{{renderCondition}}{{/style}}"
+                  border-width="{{#width}}{{renderCondition}}{{/width}}px"
+                  {{/divider}}
+                   width="{{#widthInPixels}}{{renderCondition}}{{/widthInPixels}}px"
                    align="{{#align}}{{renderCondition}}{{/align}}" 
                    border="none"
                    {{#padding}}
@@ -58,6 +62,8 @@
 
                   {{#image}}</mj-image>{{/image}}
                   {{#button}}{{&text}}</mj-button>{{/button}}
+                  {{#divider}}</mj-divider>{{/divider}}
+                  <mj-text>test {{#widthInPixels}}{{renderCondition}}{{/widthInPixels}}px</h1></mj-text>
                 {{/elements}}
           </mj-column>
         {{/columns}}

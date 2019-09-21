@@ -4,7 +4,7 @@
             <p>Border Type</p>
         </div>
         <div class="manager-input col-6">
-            <app-border-picker [(borderSelected)]="element.divider.border"></app-border-picker>
+            <app-border-picker [(borderSelected)]="element.divider"></app-border-picker>
         </div>
     </div>
 </li>
@@ -25,7 +25,7 @@
         </div>
         <div class="manager-input col-6"
              app-number-selector-input
-             [(value)]="element.divider.border.thickness">
+             [(value)]="element.divider.width">
         </div>
     </div>
 </li>

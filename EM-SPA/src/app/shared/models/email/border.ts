@@ -1,25 +1,32 @@
 import { BorderType } from './enums/borderType';
 
-const defaultType = BorderType.SOLID;
-const defaultThickness = 2;
+const defaultStyle = BorderType.SOLID;
+const defaultWidth = 1;
+const defaultColor = "#000000";
 
 export class Border {
     constructor();
     constructor(obj: Border);
     constructor(obj?: any) {
-        this.type = obj && obj.type || defaultType;
-        this.thickness = obj && obj.thickness || 0;
+        this.style = obj && obj.style || defaultStyle;
+        this.width = obj && obj.width || 0;
+        this.color = obj && obj.color || defaultColor;
     }
-    type: BorderType;
-    thickness: number;
+    style: BorderType;
+    width: number;
+    color: string;
 
     static create(): Border {
         var newBorder = new Border();
-        newBorder.thickness = defaultThickness;
+        newBorder.width = defaultWidth;
         return newBorder;
     }
 
     static duplicate(obj: Border): Border {
-        return new Border(obj);
+        var newBorder = new Border(obj);
+        if (!obj.width && obj.width !== 0) {
+            newBorder.width = defaultWidth;
+        }
+        return newBorder;
     }
 }
