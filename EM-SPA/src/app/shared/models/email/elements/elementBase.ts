@@ -8,7 +8,7 @@ export class ElementBase implements IStructureType {
     constructor(obj: ElementBase)
     constructor(obj?: any) {
         this.padding = obj ? new Padding(obj.padding) : new Padding();
-        this.alignment = obj && obj.alignment || "center";
+        this.align = obj && obj.align || "center";
         this.widthInPercentage = obj && obj.widthInPercentage || 0;
         this.widthInPixels = obj && obj.widthInPixels || 0;
         this.autoWidth = obj && obj.autoWidth || false;
@@ -17,7 +17,7 @@ export class ElementBase implements IStructureType {
     padding: Padding;
     widthInPercentage: number;
     widthInPixels: number;
-    alignment: string;
+    align: string;
     autoWidth: boolean;
     backgroundColor: string;
 

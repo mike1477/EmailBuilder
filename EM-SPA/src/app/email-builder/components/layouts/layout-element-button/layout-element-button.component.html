@@ -1,14 +1,13 @@
-<div class="element-button-display">
+<div class="element-button-display"
+     [style.height]="element.button.height  + 'px'"
+     [style.backgroundColor]="element.button.backgroundColor"
+     [style.color]="element.button.textColor"
+     [style.borderRadius]="element.button.borderRadius + 'px'"
+     [appPixelTracker]="element"
+     [appPixelTrackerPercentageValue]="element.widthInPercentage">
 
-    <p class="button"
-       [style.backgroundColor]="element.button.backgroundColor"
-       [style.color]="element.button.textColor"
-       [style.paddingTop]="element.button.padding.top  + 'px'"
-       [style.paddingBottom]="element.button.padding.bottom  + 'px'"
-       [style.paddingLeft]="element.button.padding.left  + 'px'"
-       [style.paddingRight]="element.button.padding.right  + 'px'">
-
-        <editor [init]="{
+  <p class="button">
+    <editor [init]="{
                 base_url: '/tinymce',
                 suffix: '.min',
                 plugins: 'lists advlist',
@@ -17,9 +16,9 @@
                 statusbar:false,
                 inline: true
               }"
-                [(ngModel)]="element.button.text"
-                [style.color]="element.button.textColor"></editor>
+            [(ngModel)]="element.button.text"
+            [style.color]="element.button.textColor"></editor>
 
-    </p>
+  </p>
 
 </div>

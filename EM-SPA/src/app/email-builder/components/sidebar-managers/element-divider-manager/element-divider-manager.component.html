@@ -23,8 +23,9 @@
         <div class="manager-label col-6">
             <p>Thickness</p>
         </div>
-        <div class="manager-input col-6">
-            <app-number-selector-input [(value)]="element.divider.border.thickness"></app-number-selector-input>
+        <div class="manager-input col-6"
+             app-number-selector-input
+             [(value)]="element.divider.border.thickness">
         </div>
     </div>
 </li>

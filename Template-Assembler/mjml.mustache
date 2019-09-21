@@ -10,11 +10,14 @@
   </mj-head>
   <mj-body background-color="{{#design.backgroundColor}}{{renderCondition}}{{/design.backgroundColor}}">
     {{#design.sections}}
+    <mj-wrapper
+        full-width="full-width"
+        background-color="{{#backgroundColor}}{{renderCondition}}{{/backgroundColor}}">
       <mj-section 
               background-url="{{#backgroundUrl}}{{renderCondition}}{{/backgroundUrl}}"
               background-size="cover"
               background-repeat="no-repeat"
-              background-color="{{#backgroundColor}}{{renderCondition}}{{/backgroundColor}}"
+              background-color="{{#contentBackgroundColor}}{{renderCondition}}{{/contentBackgroundColor}}"
               {{#padding}}
                 padding-top="{{#top}}{{renderCondition}}{{/top}}px"
                 padding-right="{{#right}}{{renderCondition}}{{/right}}px"
@@ -29,22 +32,37 @@
                   {{#image}}
                   <mj-image 
                    src="{{#src}}{{renderCondition}}{{/src}}"
-                   width="{{#widthInPercentage}}{{renderCondition}}{{/widthInPercentage}}%" 
+                   width="{{#widthInPixels}}{{renderCondition}}{{/widthInPixels}}px" 
                    alt="{{#alt}}{{renderCondition}}{{/alt}}" 
-                   href=""
-                   align="center" 
+                   href="{{#href}}{{renderCondition}}{{/href}}"
+                  {{/image}}
+                  {{#button}}
+                  <mj-button
+                    vertical-align="middle"
+                    text-align="center"
+                    color="{{#textColor}}{{renderCondition}}{{/textColor}}"
+                    background-color="{{#backgroundColor}}{{renderCondition}}{{/backgroundColor}}"
+                    height="{{#height}}{{renderCondition}}{{/height}}px"
+                    width="{{#widthInPixels}}{{renderCondition}}{{/widthInPixels}}px"
+                    border-radius="{{#borderRadius}}{{renderCondition}}{{/borderRadius}}px"
+                  {{/button}}
+
+                   align="{{#align}}{{renderCondition}}{{/align}}" 
                    border="none"
                    {{#padding}}
                     padding-top="{{#top}}{{renderCondition}}{{/top}}px"
                     padding-right="{{#right}}{{renderCondition}}{{/right}}px"
                     padding-bottom="{{#bottom}}{{renderCondition}}{{/bottom}}px"
                     padding-left="{{#left}}{{renderCondition}}{{/left}}px"
-                  {{/padding}}></mj-image>
-                  {{/image}}
+                  {{/padding}}>
+
+                  {{#image}}</mj-image>{{/image}}
+                  {{#button}}{{&text}}</mj-button>{{/button}}
                 {{/elements}}
           </mj-column>
         {{/columns}}
       </mj-section>
+    </mj-wrapper>
     {{/design.sections}}
   </mj-body>
 </mjml>

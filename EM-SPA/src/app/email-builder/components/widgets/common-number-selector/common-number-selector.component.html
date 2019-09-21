@@ -1,20 +1,23 @@
 <div class="container number-widget">
     <div class="row">
-        <div class="col-12">
-            <app-number-selector-input [(value)]="padding.top"></app-number-selector-input>
+        <div app-number-selector-input
+             [(value)]="padding.top"
+             class="col-12">
         </div>
     </div>
     <div class="row">
-        <div class="col-6">
-            <app-number-selector-input [(value)]="padding.left"></app-number-selector-input>
+        <div app-number-selector-input
+             [(value)]="padding.left"
+             class="col-6">
         </div>
-        <div class="col-6">
-            <app-number-selector-input [(value)]="padding.right"></app-number-selector-input>
+        <div app-number-selector-input
+             [(value)]="padding.right"
+             class="col-6">
         </div>
     </div>
     <div class="row">
-        <div class="col-12">
-            <app-number-selector-input [(value)]="padding.bottom"></app-number-selector-input>
-        </div>
+        <div app-number-selector-input
+             [(value)]="padding.bottom"
+             class="col-12"></div>
     </div>
 </div>

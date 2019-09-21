@@ -1,4 +1,6 @@
 <div class="element-image-display">
     <img [src]="element.image.src"
-         [alt]="element.image.alt">
+         [alt]="element.image.alt"
+         [appPixelTracker]="element"
+         [appPixelTrackerPercentageValue]="element.widthInPercentage">
 </div>

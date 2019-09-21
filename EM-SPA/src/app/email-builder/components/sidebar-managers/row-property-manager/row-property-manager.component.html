@@ -39,7 +39,11 @@
                        class="row-property-tabs-label">Column
                     {{columns.indexOf(column) + 1}}</label>
                 <div class="row-property-tabs-panel">
-                    <app-common-number-selector [padding]="column.padding"></app-common-number-selector>
+                    <div class="row">
+                        <div app-common-number-selector
+                             [padding]="column.padding"
+                             class="col-12"></div>
+                    </div>
                     <div class="manager-row row">
                         <div class="manager-label col-6">
                             <p>Column Background Color</p>

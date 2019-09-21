@@ -1,51 +1,48 @@
 <div class="element-property-manager"
      *ngIf="!selectedElement">
-    <div>
-        <p>Click on element in the display to see edit options</p>
+    <div class="row">
+        <div class="col-12">
+            <p>Click on element in the display to see edit options</p>
+        </div>
     </div>
 </div>
 <ul class="list-group element-property-manager "
     *ngIf="selectedElement">
     <li class="list-group-item">
-        <div class="container">
-            <div class="manager-row row">
-                <div class="manager-label col-6">
-                    <p>Margin</p>
+        <div class="row">
+            <div class="manager-label col-12">
+                <p>Margin</p>
+                <div app-common-number-selector
+                     [padding]="selectedElement.padding"
+                     class="col-12">
                 </div>
-                <div>
-                    <app-common-number-selector [padding]="selectedElement.padding">
-                    </app-common-number-selector>
-                </div>
+
             </div>
         </div>
 
     </li>
     <li class="list-group-item">
-        <div class="container">
-            <div class="manager-row row">
-                <div class="manager-label col-12">
-                    <p>Width {{selectedElement.widthInPercentage}}%</p>
-                    <input class="form-control"
-                           type="range"
-                           min="0"
-                           max="100"
-                           [(ngModel)]="selectedElement.widthInPercentage" />
-                </div>
+        <div class="row">
+            <div class="manager-label col-12">
+                <p>Width {{selectedElement.widthInPercentage}}%</p>
+                <input class="form-control"
+                       type="range"
+                       min="0"
+                       max="100"
+                       [(ngModel)]="selectedElement.widthInPercentage" />
             </div>
         </div>
 
     </li>
     <li class="list-group-item">
-        <div class="container">
-            <div class="manager-row row">
-                <div class="manager-label col-3">
-                    <p>Alignment</p>
+        <div class="row">
+            <div class="manager-label col-3">
+                <p>Alignment</p>
 
-                </div>
-                <div class="col-9">
-                    <app-align-control [(alignment)]="alignment">
-                    </app-align-control>
-                </div>
+            </div>
+            <div class="col-9">
+                <app-align-control [(alignment)]="alignment">
+                </app-align-control>
             </div>
         </div>
     </li>

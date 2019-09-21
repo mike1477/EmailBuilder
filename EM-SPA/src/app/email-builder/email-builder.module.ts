@@ -32,6 +32,7 @@ import { ElementButtonManagerComponent } from './components/sidebar-managers/ele
 import { ElementDividerManagerComponent } from './components/sidebar-managers/element-divider-manager/element-divider-manager.component';
 import { ElementImageManagerComponent } from './components/sidebar-managers/element-image-manager/element-image-manager.component';
 import { ElementTextManagerComponent } from './components/sidebar-managers/element-text-manager/element-text-manager.component';
+import { PixelTrackerDirective } from './directives/pixel-tracker/pixel-tracker.directive';
 
 
 @NgModule({
@@ -59,7 +60,8 @@ import { ElementTextManagerComponent } from './components/sidebar-managers/eleme
     ElementButtonManagerComponent,
     ElementDividerManagerComponent,
     ElementImageManagerComponent,
-    ElementTextManagerComponent
+    ElementTextManagerComponent,
+    PixelTrackerDirective
   ],
   imports: [
     CommonModule,

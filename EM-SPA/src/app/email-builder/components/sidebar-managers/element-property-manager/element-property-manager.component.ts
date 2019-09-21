@@ -31,9 +31,9 @@ export class ElementPropertyManagerComponent implements OnInit {
   }
 
   get alignment(): string {
-    return this.selectedElement && this.selectedElement.alignment;
+    return this.selectedElement && this.selectedElement.align;
   }
   set alignment(newValue: string) {
-    if (this.selectedElement) this.selectedElement.alignment = newValue;
+    if (this.selectedElement) this.selectedElement.align = newValue;
   }
 }

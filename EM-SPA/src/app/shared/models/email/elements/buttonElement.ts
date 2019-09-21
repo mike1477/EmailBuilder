@@ -4,7 +4,9 @@ import { Padding } from '../padding';
 const defaultWidthInPercentage = 100;
 const defaultText = "Call To Action";
 const defaultBackgroundColor = "#C9C9C9";
-const defaultColor = "#ffffff"
+const defaultColor = "#ffffff";
+const defaultHeight = 60;
+const defaultBorderRadius = 0;
 
 export class ButtonElement extends ElementBase {
 
@@ -17,8 +19,9 @@ export class ButtonElement extends ElementBase {
         this.button = {
             text: btn.text || defaultText,
             backgroundColor: btn.backgroundColor || defaultBackgroundColor,
-            padding: btn.padding ? new Padding(btn.padding) : new Padding(),
-            textColor: btn && btn.textColor || defaultColor
+            textColor: btn && btn.textColor || defaultColor,
+            height: btn && btn.height || defaultHeight,
+            borderRadius: btn && btn.borderRadius || defaultBorderRadius
         }
     }
     button: any;

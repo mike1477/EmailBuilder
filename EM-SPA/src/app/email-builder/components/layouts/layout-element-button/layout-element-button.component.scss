@@ -1,8 +1,5 @@
-.element-button-display .button{
-        background-color: #4CAF50;
-        border: none;
-        color: white;
-        text-align: center;
-        text-decoration: none;
-        display: block;
+.element-button-display{
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
 }

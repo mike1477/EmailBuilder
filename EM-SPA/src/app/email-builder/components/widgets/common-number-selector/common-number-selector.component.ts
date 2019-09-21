@@ -2,7 +2,7 @@ import { Component, OnInit, EventEmitter, Output, SimpleChange, SimpleChanges, I
 import { Padding } from 'src/app/shared/models/email/padding';
 
 @Component({
-  selector: 'app-common-number-selector',
+  selector: '[app-common-number-selector]',
   templateUrl: './common-number-selector.component.html',
   styleUrls: ['./common-number-selector.component.scss']
 })
