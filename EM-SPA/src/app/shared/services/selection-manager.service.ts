@@ -38,7 +38,7 @@ export class SelectionManagerService {
 
   selectElement(element: ElementBase) {
     this._selectedElement = element;
-    if (this._selectedElement) this.elementSelectedEvent
+    if (this._selectedElement) this.elementSelectedEvent.emit();
   }
 
   selectRow(row: Section) {
