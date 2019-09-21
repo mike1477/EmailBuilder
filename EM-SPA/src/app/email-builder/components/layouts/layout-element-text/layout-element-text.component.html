@@ -1,5 +1,7 @@
-<div class="element-wrapper">
-    <editor [init]="{
+<div class="element-wrapper"
+     [appPixelTracker]="element"
+     [appPixelTrackerPercentageValue]="element.widthInPercentage">
+  <editor [init]="{
             base_url: '/tinymce',
             suffix: '.min',
             plugins: 'lists advlist',
@@ -8,6 +10,6 @@
             statusbar:false,
             inline: true
           }"
-            [(ngModel)]="element.text.content"
-            [style.color]="element.text.color"></editor>
+          [(ngModel)]="element.text.content"
+          [style.color]="element.text.color"></editor>
 </div>
