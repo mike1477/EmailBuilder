@@ -30,5 +30,6 @@ export class ElementBase implements IStructureType {
         if (this.hasOwnProperty("image")) return "image";
         if (this.hasOwnProperty("divider")) return "divider";
         if (this.hasOwnProperty("text")) return "text";
+        return "element";
     }
 }

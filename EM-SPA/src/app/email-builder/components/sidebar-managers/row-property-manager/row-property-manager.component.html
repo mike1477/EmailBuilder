@@ -29,15 +29,15 @@
     </li>
     <li class="list-group-item">
         <div class="row-property-tabs">
-            <ng-container *ngFor="let column of columns">
-                <input name="row-property-tabs"
+            <ng-container *ngFor="let column of columns; let i=index">
+                <input name="s"
                        type="radio"
-                       id="{{column.id}}"
+                       id="{{'row-property-tab-' + i}}"
                        checked="checked"
                        class="row-property-tabs-input" />
-                <label for="{{column.id}}"
+                <label for="{{'row-property-tab-' + i}}"
                        class="row-property-tabs-label">Column
-                    {{columns.indexOf(column) + 1}}</label>
+                    {{i + 1}}</label>
                 <div class="row-property-tabs-panel">
                     <div class="row">
                         <div app-common-number-selector

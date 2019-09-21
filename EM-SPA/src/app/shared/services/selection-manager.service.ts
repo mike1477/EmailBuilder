@@ -1,4 +1,4 @@
-import { Injectable } from '@angular/core';
+import { Injectable, EventEmitter } from '@angular/core';
 import { Body } from 'src/app/shared/models/email/body';
 import { Section } from 'src/app/shared/models/email/section';
 import { ElementBase } from 'src/app/shared/models/email/elements/elementBase';
@@ -21,11 +21,14 @@ export class SelectionManagerService {
   private _selectedRow: Section = null;
   private _selectedElement: ElementBase = null;
 
+  rowSelectedEvent = new EventEmitter();
+  elementSelectedEvent = new EventEmitter();
+
   get emailTemplate(): Body {
     return this._emailTemplate;
   }
   get selectedRow(): Section {
-    return this._selectedRow
+    return this._selectedRow;
   };
   get selectedElement(): ElementBase {
     return this._selectedElement;
@@ -35,11 +38,13 @@ export class SelectionManagerService {
 
   selectElement(element: ElementBase) {
     this._selectedElement = element;
+    if (this._selectedElement) this.elementSelectedEvent
   }
 
   selectRow(row: Section) {
     this._selectedElement = null;
     this._selectedRow = row;
+    if (this._selectedRow) this.rowSelectedEvent.emit();
   }
 
   private activeObservable: Observable<Body> = null;

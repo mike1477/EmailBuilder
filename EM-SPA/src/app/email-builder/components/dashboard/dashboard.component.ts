@@ -1,12 +1,9 @@
-import { Component, OnInit, ViewContainerRef, OnDestroy, } from '@angular/core';
-import { DragulaService, Group } from 'ng2-dragula';
+import { Component, OnInit, OnDestroy, } from '@angular/core';
+import { DragulaService } from 'ng2-dragula';
 import { Section } from 'src/app/shared/models/email/section';
-import { RowOption } from 'src/app/email-builder/models/rowOption';
-import { DividerElement } from 'src/app/shared/models/email/elements/dividerElement';
-import { ImageElement } from 'src/app/shared/models/email/elements/imageElement';
-import { TextElement } from 'src/app/shared/models/email/elements/textElement';
-import { ButtonElement } from 'src/app/shared/models/email/elements/buttonElement';
 import { Router } from '@angular/router';
+import { AppConfigurationService } from 'src/app/shared/services/app-configuration.service';
+import { SelectionManagerService } from 'src/app/shared/services/selection-manager.service';
 
 const rowDragGroup = "rows"
 const elementDragGroup = "elements"
@@ -18,9 +15,28 @@ const elementDragGroup = "elements"
 })
 export class DashboardComponent implements OnInit, OnDestroy {
 
-  constructor(private dragulaService: DragulaService, private router: Router) { }
+  constructor(
+    private dragulaService: DragulaService,
+    private router: Router,
+    private appConfig: AppConfigurationService,
+    private selectionService: SelectionManagerService) { }
+
+  private rowSelectedEvent() {
+    this._selectedManagerPanel = "sidepanel-tabs-properties";
+    this._bodyPropertiesVisible = false;
+    this._rowPropertiesSelected = true;
+  }
+
+  private elementSelectedEvent() {
+    this._selectedManagerPanel = "sidepanel-tabs-properties";
+    this._bodyPropertiesVisible = false;
+    this._elementPropertiesSelected = true;
+  }
 
   ngOnInit() {
+    this.selectionService.rowSelectedEvent.subscribe(this.rowSelectedEvent.bind(this));
+    this.selectionService.elementSelectedEvent.subscribe(this.elementSelectedEvent.bind(this));
+
     this.dragulaService.createGroup(rowDragGroup, {
       copy: (el, source) => {
         return source.id === 'layout-row-options';
@@ -71,80 +87,61 @@ export class DashboardComponent implements OnInit, OnDestroy {
   ngOnDestroy(): void {
     this.dragulaService.destroy(rowDragGroup);
     this.dragulaService.destroy(elementDragGroup);
+    this.selectionService.rowSelectedEvent.unsubscribe();
+    this.selectionService.elementSelectedEvent.unsubscribe();
   }
 
-  elementOptions = [
-    {
-      title: 'Text',
-      poster: '../../../assets/angular.png',
-      type: TextElement,
-      icon: 'format_size',
-      html: '<p>Add Text Field Editor</p>'
-    },
-    {
-      title: 'Button',
-      poster: '../../../assets/angular.png',
-      icon: "radio_button_checked",
-      type: ButtonElement,
-      html: '<p>Add Button</p>'
-    },
-    {
-      title: 'Divider',
-      poster: '../../../assets/angular.png',
-      icon: "view_stream",
-      type: DividerElement,
-      html: '<p>Add Divider</p>'
-    },
-    {
-      title: 'Image',
-      poster: '../../../assets/angular.png',
-      icon: "insert_photo",
-      type: ImageElement,
-      html: '<p>Add Image Container</p>'
-    },
-  ];
+  elementOptions = this.appConfig.ELEMENT_OPTIONS;
 
-  rowOptions: Array<RowOption> = [
-    {
-      title: 'single row',
-      poster: 'https://drive.google.com/uc?id=1bVgvI_BG9bl85wXdDsAesE_8LZcn3pyP',
-      columnDefinitions: [600]
-    },
-    {
-      title: '10 / 2 row',
-      poster: 'https://drive.google.com/uc?id=1ccfJylQqoOGzAd7phgv0a5p9xvB4uLO7',
-      columnDefinitions: [450, 150]
-    },
-    {
-      title: '3 / 9 row',
-      poster: 'https://drive.google.com/uc?id=1VSPd9GlafcTNborSpPbLNTAE_7V0cJMV',
-      columnDefinitions: [200, 400]
-    },
-    {
-      title: '6 / 6 row',
-      poster: 'https://drive.google.com/uc?id=1r3YJbRDydPzVtF_cZigaj4xBCvDZO6dQ',
-      columnDefinitions: [300, 300]
-    },
-    {
-      title: '9 / 3 row',
-      poster: 'https://drive.google.com/uc?id=1GY7ayA5HqFYck6srV9eoITNs02zkHqx4',
-      columnDefinitions: [400, 200]
-    },
-    {
-      title: '4/4/4 row',
-      poster: 'https://drive.google.com/uc?id=1InpMYPVfYb5UUOjj7KNfh0CtxHGcRkHZ',
-      columnDefinitions: [200, 200, 200]
-    },
-    {
-      title: '3/3/6 row',
-      poster: 'https://drive.google.com/uc?id=1WnYaIEVrloy-n7Fm0rFPAW-4jMJbjvJy',
-      columnDefinitions: [300, 150, 150]
-    },
-    {
-      title: '3/3/6 row',
-      poster: 'https://drive.google.com/uc?id=1nasFuhuuGsweGP-OdgmCiWH5OvdJ7v0-',
-      columnDefinitions: [150, 150, 300]
-    },
+  rowOptions = this.appConfig.ROW_OPTIONS;
 
-  ]
+  private _selectedManagerPanel: string = "sidepanel-tabs-elements";
+  get selectedManagerPanel(): string {
+    return this._selectedManagerPanel;
+  }
+  set selectedManagerPanel(newValue: string) {
+    this._selectedManagerPanel = newValue;
+  }
+
+  private _bodyPropertiesVisible: boolean = false;
+  get bodyPropertiesVisible(): boolean {
+    return this._bodyPropertiesVisible;
+  }
+  set bodyPropertiesVisible(newValue: boolean) {
+    this._bodyPropertiesVisible = newValue;
+    console.log(newValue);
+  }
+
+  private _rowPropertiesSelected: boolean = false;
+  get rowPropertiesSelected(): boolean {
+    return this._rowPropertiesSelected;
+  }
+  set(newValue: boolean) {
+    this._rowPropertiesSelected = newValue;
+  }
+
+  private _elementPropertiesSelected: boolean = false;
+  get elementPropertiesSelected(): boolean {
+    return this._elementPropertiesSelected;
+  }
+  set elementPropertiesSelected(newValue: boolean) {
+    this._elementPropertiesSelected = newValue;
+  }
+
+  get currentElementName(): string {
+    var currentElement = this.selectionService.selectedElement;
+    var name = currentElement && currentElement.elementType;
+    switch (name) {
+      case "button":
+        return "Button";
+      case "text":
+        return "Text";
+      case "divider":
+        return "Divider";
+      case "image":
+        return "Image";
+      default:
+        return "Element";
+    }
+  }
 }
