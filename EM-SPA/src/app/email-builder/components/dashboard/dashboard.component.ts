@@ -121,7 +121,7 @@ export class DashboardComponent implements OnInit, OnDestroy {
   get rowPropertiesSelected(): boolean {
     return this._rowPropertiesSelected;
   }
-  set(newValue: boolean) {
+  set rowPropertiesSelected(newValue: boolean) {
     this._rowPropertiesSelected = newValue;
   }
 

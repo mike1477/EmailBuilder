@@ -1,19 +1,27 @@
-
 <div class="input-group">
-    <div class="input-group-prepend" (click)="toggle=!toggle">
-        <span class="input-group-text open-color-picker" [style.background-color]="color"></span>
-    </div> 
-    <input type="text" 
-    class="form-control"
-    #ignoredInput
-    [value]="color"
-    [style.background]="inputBackground"
-    [(cpToggle)]="toggle"
-    [(colorPicker)]="color"
-    [cpIgnoredElements]="[ignoredInput]"
-    [cpPosition]="'left'"
-    [cpOKButton]="false"
-    [cpOutputFormat]="'hex'"
-    [cpUseRootViewContainer]="true"
-    />
+    <div class="input-group-prepend"
+         (click)="color = 'transparent'"
+         *ngIf="color != 'transparent'">
+        <span class="input-group-text set-transparent">
+            <i class="fas fa-ban"
+               aria-hidden="true"></i>
+        </span>
+    </div>
+    <div class="input-group-prepend transparent-background"
+         (click)="toggle=!toggle">
+        <span class="input-group-text open-color-picker"
+              [style.background-color]="color"></span>
+    </div>
+    <input type="text"
+           class="form-control"
+           #ignoredInput
+           [value]="color"
+           [style.background]="inputBackground"
+           [(cpToggle)]="toggle"
+           [(colorPicker)]="color"
+           [cpIgnoredElements]="[ignoredInput]"
+           [cpPosition]="'left'"
+           [cpOKButton]="false"
+           [cpOutputFormat]="'hex'"
+           [cpUseRootViewContainer]="true" />
 </div>

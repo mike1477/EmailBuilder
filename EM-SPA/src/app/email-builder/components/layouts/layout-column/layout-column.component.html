@@ -11,6 +11,7 @@
      [style.paddingLeft]="element.padding.left + 'px'">
      <div app-layout-element-button
           [style.width]="element.widthInPercentage + '%'"
+          [style.backgroundColor]="element.backgroundColor"
           class="layout-element-button"
           *ngSwitchCase="'button'"
           [element]="element"></div>

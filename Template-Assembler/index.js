@@ -100,9 +100,11 @@ const fs = require('fs');
                         return condition.conditionValue
                     }
                 }
-                return this.defaultValue;
+                return this.defaultValue === 0 ? 1 : this.defaultValue;
+
             };
-            return this.toString();
+            var val = this.toString();
+            return val == 0 ? 1 : val;
         }
 
         var json = {

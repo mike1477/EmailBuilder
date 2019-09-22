@@ -33,10 +33,11 @@
                 {{#elements}}
                   {{#image}}
                   <mj-image 
-                   src="{{#src}}{{renderCondition}}{{/src}}"
+                  src="{{#src}}{{renderCondition}}{{/src}}"
                    alt="{{#alt}}{{renderCondition}}{{/alt}}" 
                    href="{{#href}}{{renderCondition}}{{/href}}"
                   {{/image}}
+
                   {{#button}}
                   <mj-button
                     vertical-align="middle"
@@ -46,35 +47,37 @@
                     height="{{#height}}{{renderCondition}}{{/height}}px"
                     border-radius="{{#borderRadius}}{{renderCondition}}{{/borderRadius}}px"
                   {{/button}}
+
                   {{#divider}}
-                  <mj-group 
+                  <mj-divider
+                  border-color="{{#color}}{{renderCondition}}{{/color}}"
+                  border-style="{{#style}}{{renderCondition}}{{/style}}"
+                  border-width="{{#width}}{{renderCondition}}{{/width}}px"
                   {{/divider}}
+
                   {{#text}}
-                  <mj-group 
+                   <mj-group 
                   {{/text}}
-                   width="{{#widthInPixels}}{{renderCondition}}{{/widthInPixels}}px"
-                   align="{{#align}}{{renderCondition}}{{/align}}" 
-                   border="none"
-                   {{#padding}}
+
+                  width="{{#widthInPixels}}{{renderCondition}}{{/widthInPixels}}px"
+                  align="{{#align}}{{renderCondition}}{{/align}}" 
+                  container-background-color="{{#backgroundColor}}{{renderCondition}}{{/backgroundColor}}"
+                  border="none"
+                  {{#padding}}
                     padding-top="{{#top}}{{renderCondition}}{{/top}}px"
                     padding-right="{{#right}}{{renderCondition}}{{/right}}px"
                     padding-bottom="{{#bottom}}{{renderCondition}}{{/bottom}}px"
                     padding-left="{{#left}}{{renderCondition}}{{/left}}px"
                   {{/padding}}>
-
                   {{#image}}</mj-image>{{/image}}
-                  {{#button}}{{&text}}</mj-button>{{/button}}
-                  {{#divider}}
-                  <mj-divider
-                  border-color="{{#color}}{{renderCondition}}{{/color}}"
-                  border-style="{{#style}}{{renderCondition}}{{/style}}"
-                  border-width="{{#width}}{{renderCondition}}{{/width}}px"></mj-divider>
-                  </mj-group>
-                  {{/divider}}
+                  {{#button}}{{text}}</mj-button>{{/button}}
+                  {{#divider}}</mj-divider>{{/divider}}
                   {{#text}}
                   <mj-text 
                   color="{{#color}}{{renderCondition}}{{/color}}">
-                  {{&content}}</mj-text></mj-group>{{/text}}
+                  {{&content}}</mj-text></mj-group>
+                  {{/text}}
+                
                 {{/elements}}
           </mj-column>
         {{/columns}}
