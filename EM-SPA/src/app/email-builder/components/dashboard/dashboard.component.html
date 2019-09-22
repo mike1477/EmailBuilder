@@ -1,7 +1,13 @@
 <div class="dashboard-outer">
-    <button type="btn btn-sm btn-secondary"
-            (click)="preview()"
-            style="position:absolute; right:0; top:0; z-index: 1;">preview</button>
+    <div class="designer-actions">
+        <span class="hamburger"><i class="fas fa-bars"></i></span>
+        <ul class="list-group">
+            <li class="list-group-item"
+                (click)="preview()">Preview</li>
+            <li class="list-group-item"
+                (click)="save()">Save</li>
+        </ul>
+    </div>
     <div class="sidebar">
         <div class="sidepanel-tabs">
             <input name="sidepanel-tabs"

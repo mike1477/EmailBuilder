@@ -45,10 +45,7 @@
                     border-radius="{{#borderRadius}}{{renderCondition}}{{/borderRadius}}px"
                   {{/button}}
                   {{#divider}}
-                  <mj-divider
-                  border-color="{{#color}}{{renderCondition}}{{/color}}"
-                  border-style="{{#style}}{{renderCondition}}{{/style}}"
-                  border-width="{{#width}}{{renderCondition}}{{/width}}px"
+                  <mj-group 
                   {{/divider}}
                   {{#text}}
                   <mj-group 
@@ -65,7 +62,13 @@
 
                   {{#image}}</mj-image>{{/image}}
                   {{#button}}{{&text}}</mj-button>{{/button}}
-                  {{#divider}}</mj-divider>{{/divider}}
+                  {{#divider}}
+                  <mj-divider
+                  border-color="{{#color}}{{renderCondition}}{{/color}}"
+                  border-style="{{#style}}{{renderCondition}}{{/style}}"
+                  border-width="{{#width}}{{renderCondition}}{{/width}}px"></mj-divider>
+                  </mj-group>
+                  {{/divider}}
                   {{#text}}
                   <mj-text 
                   color="{{#color}}{{renderCondition}}{{/color}}">

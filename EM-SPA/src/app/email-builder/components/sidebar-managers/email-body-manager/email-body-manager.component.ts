@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Body } from 'src/app/shared/models/email/body';
+import { EmailBody } from 'src/app/shared/models/email/body';
 import { SelectionManagerService } from 'src/app/shared/services/selection-manager.service';
 import { PropertyManagerColor } from 'src/app/shared/models/property-manager-color';
 
@@ -14,7 +14,7 @@ export class EmailBodyManagerComponent implements OnInit {
 
   ngOnInit() { }
 
-  get emailBody(): Body {
+  get emailBody(): EmailBody {
     return this.selectionManager.emailTemplate;
   }
 

@@ -3,6 +3,7 @@ import { AppStructureTypes } from './app-stucture-types';
 import { IStructureType } from './i-structure-type';
 
 export class Section implements IStructureType {
+
     constructor(columnDefinition: Array<number>) {
         this.backgroundColor = "transparent";
         this.contentBackgroundColor = "transparent";

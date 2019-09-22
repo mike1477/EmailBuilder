@@ -30,18 +30,18 @@ overflow: hidden;
 
 .row-option-column{
     display: table-cell;
-    padding: 3em 0;
+    padding: 2em 0;
     background-color: #FFFBF6;
     border: solid;
     border-color: #B1C2D9;
-    border-width: 1em .5em;
+    border-width: .8em .4em;
 }
 
 .row-option-column:first-child{
-  border-left-width: 1em;
+  border-left-width: .8em;
 }
 .row-option-column:last-child{
-  border-right-width: 1em;
+  border-right-width: .8em;
 }
 
 .row-box:active {
@@ -228,4 +228,34 @@ input[name="accordion-tab"]:checked {
 .empty-box{
   background-color: #000;
   height: 600px;
+}
+
+.designer-actions{
+  right: 0;
+  top:0;
+  z-index: 10;
+  position: fixed;
+}
+
+.designer-actions:hover .list-group{
+ display: block;
+}
+
+.designer-actions .list-group{
+  display: none;
+  cursor: pointer;
+}
+
+.designer-actions:hover .hamburger{
+  display: none;
+}
+
+.hamburger{
+  position:absolute;
+  z-index: 10;
+  right:0;
+  top:0;
+  font-size: 1.5em;
+  padding: .1em .4em;
+
 }

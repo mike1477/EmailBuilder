@@ -4,6 +4,7 @@ import { Section } from 'src/app/shared/models/email/section';
 import { Router } from '@angular/router';
 import { AppConfigurationService } from 'src/app/shared/services/app-configuration.service';
 import { SelectionManagerService } from 'src/app/shared/services/selection-manager.service';
+import { Subscription } from 'rxjs';
 
 const rowDragGroup = "rows"
 const elementDragGroup = "elements"
@@ -14,6 +15,7 @@ const elementDragGroup = "elements"
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements OnInit, OnDestroy {
+  private subs: Subscription = new Subscription();
 
   constructor(
     private dragulaService: DragulaService,
@@ -34,8 +36,8 @@ export class DashboardComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    this.selectionService.rowSelectedEvent.subscribe(this.rowSelectedEvent.bind(this));
-    this.selectionService.elementSelectedEvent.subscribe(this.elementSelectedEvent.bind(this));
+    this.subs.add(this.selectionService.rowSelectedEvent.subscribe(this.rowSelectedEvent.bind(this)));
+    this.subs.add(this.selectionService.elementSelectedEvent.subscribe(this.elementSelectedEvent.bind(this)));
 
     this.dragulaService.createGroup(rowDragGroup, {
       copy: (el, source) => {
@@ -84,11 +86,14 @@ export class DashboardComponent implements OnInit, OnDestroy {
     this.router.navigateByUrl("/preview");
   }
 
+  save() {
+    this.selectionService.save();
+  }
+
   ngOnDestroy(): void {
     this.dragulaService.destroy(rowDragGroup);
     this.dragulaService.destroy(elementDragGroup);
-    this.selectionService.rowSelectedEvent.unsubscribe();
-    this.selectionService.elementSelectedEvent.unsubscribe();
+    this.subs.unsubscribe();
   }
 
   elementOptions = this.appConfig.ELEMENT_OPTIONS;

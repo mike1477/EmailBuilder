@@ -1,14 +1,16 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { SelectionManagerService } from 'src/app/shared/services/selection-manager.service';
 import { MergeFieldsService } from 'src/app/shared/services/merge-fields.service';
 import { MergeFeildEdit } from '../../models/merge-field-edit';
+import { Subscription } from 'rxjs';
 
 @Component({
   selector: 'app-previewer-main',
   templateUrl: './previewer-main.component.html',
   styleUrls: ['./previewer-main.component.scss']
 })
-export class PreviewerMainComponent implements OnInit {
+export class PreviewerMainComponent implements OnInit, OnDestroy {
+  private subs: Subscription = new Subscription();
 
   private _testData: Array<MergeFeildEdit>;
 
@@ -19,7 +21,7 @@ export class PreviewerMainComponent implements OnInit {
 
   ngOnInit() {
     var self = this;
-    this.mergeFieldService.getMergeFields().subscribe(
+    this.subs.add(this.mergeFieldService.getMergeFields().subscribe(
       (mergeFields) => {
         self._testData = mergeFields.map((item) => {
           return { field: item, value: null };
@@ -27,13 +29,18 @@ export class PreviewerMainComponent implements OnInit {
       },
       (err) => { },  //TODO handle err
       () => { } //Complete
-    );
-    this.selectionManager.loadEmailTemplate().subscribe(
+    ));
+    this.subs.add(this.selectionManager.loadEmailTemplate().subscribe(
       (emailTemplate) => { },
       (err) => { },  //TODO handle err
       () => { } //Complete
-    );
+    ));
   }
+
+  ngOnDestroy(): void {
+    this.subs.unsubscribe();
+  }
+
 
   get data(): string {
     var returnValue = {};

@@ -18,7 +18,8 @@
                     <app-field-editor [fieldItem]=item></app-field-editor>
                 </li>
             </ul>
-            <form action="api/assemble"
+            <form appFormAutoSubmit
+                  action="api/assemble"
                   method="post"
                   target="preview-iframe">
                 <input name="data"

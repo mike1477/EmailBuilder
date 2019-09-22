@@ -4,11 +4,13 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { RouterModule } from '@angular/router';
 import { FieldEditorComponent } from './components/field-editor/field-editor.component';
+import { FormAutoSubmitDirective } from './directives/form-auto-submit/form-auto-submit.directive';
 
 @NgModule({
   declarations: [
     PreviewerMainComponent,
-    FieldEditorComponent
+    FieldEditorComponent,
+    FormAutoSubmitDirective
   ],
   imports: [
     CommonModule,
