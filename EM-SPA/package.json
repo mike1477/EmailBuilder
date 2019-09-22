@@ -29,6 +29,7 @@
     "ngx-color": "^4.1.0",
     "ngx-color-picker": "^8.1.0",
     "ngx-webstorage-service": "^4.1.0",
+    "resize-observer-polyfill": "^1.5.1",
     "rxjs": "~6.4.0",
     "simplebar": "^4.2.0",
     "tinymce": "^5.0.15",

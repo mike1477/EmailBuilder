@@ -1,6 +1,6 @@
 <div class="element-wrapper"
-     [appPixelTracker]="element"
-     [appPixelTrackerPercentageValue]="element.widthInPercentage">
+     appResizeObserver
+     (resize)="onResize($event)">
   <editor [init]="{
             base_url: '/tinymce',
             suffix: '.min',

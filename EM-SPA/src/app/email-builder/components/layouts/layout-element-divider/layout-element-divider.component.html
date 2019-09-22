@@ -1,5 +1,5 @@
-<hr [style.borderColor]="element.divider.color"
+<hr [style.borderColor]="element.divider.style"
     [style.border]="element.divider.style"
     [style.borderWidth]="element.divider.width + 'px'"
-    [appPixelTracker]="element"
-    [appPixelTrackerPercentageValue]="element.widthInPercentage" />
+    appResizeObserver
+    (resize)="onResize($event)" />

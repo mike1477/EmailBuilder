@@ -13,5 +13,7 @@ export class LayoutElementButtonComponent implements OnInit {
 
   ngOnInit() {
   }
-
+  onResize(ev) {
+    this.element.widthInPixels = ev.contentRect.width
+  }
 }

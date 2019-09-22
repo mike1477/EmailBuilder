@@ -3,8 +3,8 @@
      [style.backgroundColor]="element.button.backgroundColor"
      [style.color]="element.button.textColor"
      [style.borderRadius]="element.button.borderRadius + 'px'"
-     [appPixelTracker]="element"
-     [appPixelTrackerPercentageValue]="element.widthInPercentage">
+     appResizeObserver
+     (resize)="onResize($event)">
 
   <p class="button">
     <editor [init]="{

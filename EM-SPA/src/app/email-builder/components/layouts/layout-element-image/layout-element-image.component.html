@@ -1,6 +1,6 @@
-<div class="element-image-display">
+<div class="element-image-display"
+     appResizeObserver
+     (resize)="onResize($event)">
     <img [src]="element.image.src"
-         [alt]="element.image.alt"
-         [appPixelTracker]="element"
-         [appPixelTrackerPercentageValue]="element.widthInPercentage">
+         [alt]="element.image.alt">
 </div>
