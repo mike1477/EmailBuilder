@@ -14,20 +14,22 @@
         full-width="full-width"
         background-color="{{#backgroundColor}}{{renderCondition}}{{/backgroundColor}}">
       <mj-section 
-              background-url="{{#backgroundUrl}}{{renderCondition}}{{/backgroundUrl}}"
+              {{#backgroundImage}}
+              background-url="{{#url}}{{renderCondition}}{{/url}}"
               background-size="cover"
               background-repeat="no-repeat"
-              background-color="{{#contentBackgroundColor}}{{renderCondition}}{{/contentBackgroundColor}}"
-              {{#padding}}
+              {{/backgroundImage}}
+              background-color="{{#contentBackgroundColor}}{{renderCondition}}{{/contentBackgroundColor}}">
+        {{#columns}}
+          <mj-column 
+                width="{{#widthInPixels}}{{renderCondition}}{{/widthInPixels}}px"
+                background-color="{{#backgroundColor}}{{renderCondition}}{{/backgroundColor}}"
+                {{#padding}}
                 padding-top="{{#top}}{{renderCondition}}{{/top}}px"
                 padding-right="{{#right}}{{renderCondition}}{{/right}}px"
                 padding-bottom="{{#bottom}}{{renderCondition}}{{/bottom}}px"
                 padding-left="{{#left}}{{renderCondition}}{{/left}}px"
-              {{/padding}}>
-        {{#columns}}
-          <mj-column 
-                width="{{#widthInPixels}}{{renderCondition}}{{/widthInPixels}}px"
-                background-color="{{#backgroundColor}}{{renderCondition}}{{/backgroundColor}}">
+                {{/padding}}>
                 {{#elements}}
                   {{#image}}
                   <mj-image 

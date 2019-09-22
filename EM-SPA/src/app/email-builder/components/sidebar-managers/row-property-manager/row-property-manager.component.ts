@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { SelectionManagerService } from '../../../../shared/services/selection-manager.service';
 import { Section } from 'src/app/shared/models/email/section';
+import { BackgroundImage } from 'src/app/shared/models/email/backgroundImage';
 
 @Component({
   selector: 'app-row-property-manager',
@@ -35,6 +36,10 @@ export class RowPropertyManagerComponent implements OnInit {
   set contentBackgroundColor(color: string) {
     color = typeof color === "string" ? color : "transparent";
     if (this.selectedRow) this.selectedRow.contentBackgroundColor = color;
+  }
+
+  get backgroundImage(): BackgroundImage {
+    return this.selectedRow && this.selectedRow.backgroundImage;
   }
 
   get columns() {

@@ -8,7 +8,7 @@
 <ul class="list-group element-property-manager"
     *ngIf="columns">
     <li class="list-group-item">
-        <div class="manager-row row">
+        <div class="row">
             <div class="manager-label col-6">
                 <p>Background Color</p>
             </div>
@@ -18,12 +18,24 @@
         </div>
     </li>
     <li class="list-group-item">
-        <div class="manager-row row">
+        <div class="row">
             <div class="manager-label col-6">
                 <p>Content Background Color</p>
             </div>
             <div class="manager-input col-6">
                 <app-color-picker [(color)]="contentBackgroundColor"></app-color-picker>
+            </div>
+        </div>
+    </li>
+    <li class="list-group-item"
+        *ngIf="backgroundImage">
+        <div class="row">
+            <div class="manager-label col-12">
+                <label>Row Background Image Url</label>
+                <input type="text"
+                       class="form-control"
+                       placeholder="Image Url"
+                       [(ngModel)]="backgroundImage.url" />
             </div>
         </div>
     </li>

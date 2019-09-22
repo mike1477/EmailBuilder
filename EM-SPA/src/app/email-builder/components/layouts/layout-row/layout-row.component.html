@@ -1,5 +1,7 @@
 <div class="row-layout"
-     [style.backgroundColor]="row.contentBackgroundColor">
+     style="background-size: cover; background-repeat: no-repeat;"
+     [style.backgroundColor]="row.contentBackgroundColor"
+     [style.backgroundImage]="backgroundImageUrl">
     <div app-layout-column
          class="column column-{{column.widthInPixels}}"
          [ngClass]="{'empty-elements': column.elements.length == 0}"
