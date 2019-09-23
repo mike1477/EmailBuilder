@@ -5,20 +5,5 @@
      [style.borderRadius]="element.button.borderRadius + 'px'"
      appResizeObserver
      (resize)="onResize($event)">
-
-  <p class="button">
-    <editor [init]="{
-                base_url: '/tinymce',
-                suffix: '.min',
-                plugins: 'lists advlist',
-                toolbar: 'undo redo | bold italic | bullist numlist outdent indent | alignleft aligncenter alignright alignjustify | fontsizeselect',
-                menubar:false,
-                statusbar:false,
-                inline: true
-              }"
-            [(ngModel)]="element.button.text"
-            [style.color]="element.button.textColor"></editor>
-
-  </p>
-
+  {{element.button.text}}
 </div>
