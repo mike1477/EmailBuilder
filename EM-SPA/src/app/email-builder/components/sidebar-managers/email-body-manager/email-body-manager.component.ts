@@ -22,4 +22,7 @@ export class EmailBodyManagerComponent implements OnInit {
     return this.emailBody && this.emailBody.backgroundColor;
   }
 
+  editCondition() {
+    this.selectionManager.editPropertyMangager(this.backgroundColor);
+  }
 }

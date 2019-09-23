@@ -27,7 +27,6 @@ import { ElementPropertyManagerComponent } from './components/sidebar-managers/e
 import { CommonNumberSelectorComponent } from './components/widgets/common-number-selector/common-number-selector.component';
 import { AlignControlComponent } from './components/controls/align-control/align-control.component';
 import { RouterModule } from '@angular/router';
-import { ColorPropertyManagerComponent } from './components/controls/color-property-manager/color-property-manager.component';
 import { ElementButtonManagerComponent } from './components/sidebar-managers/element-button-manager/element-button-manager.component';
 import { ElementDividerManagerComponent } from './components/sidebar-managers/element-divider-manager/element-divider-manager.component';
 import { ElementImageManagerComponent } from './components/sidebar-managers/element-image-manager/element-image-manager.component';
@@ -56,7 +55,6 @@ import { ResizeObserverDirective } from './directives/resize-observer/resize-obs
     ElementPropertyManagerComponent,
     CommonNumberSelectorComponent,
     AlignControlComponent,
-    ColorPropertyManagerComponent,
     ElementButtonManagerComponent,
     ElementDividerManagerComponent,
     ElementImageManagerComponent,

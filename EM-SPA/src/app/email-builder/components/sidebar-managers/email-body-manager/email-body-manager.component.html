@@ -5,7 +5,8 @@
                 <p>Background Color</p>
             </div>
             <div class="manager-input col-6">
-                <app-color-property-manager [propertyManager]="backgroundColor"></app-color-property-manager>
+                <app-color-picker [(color)]="backgroundColor.defaultValue"
+                                  (conditionEditRequest)="editCondition()"></app-color-picker>
             </div>
         </div>
     </li>

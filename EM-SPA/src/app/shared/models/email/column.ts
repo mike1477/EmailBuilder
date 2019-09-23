@@ -7,12 +7,41 @@ import { TextElement } from './elements/textElement';
 import { AppStructureTypes } from './app-stucture-types';
 import { IStructureType } from './i-structure-type';
 
+const defaultBackgroundColor = "transparent";
+const defaultWidthInPercentage = 100;
+
 export class Column implements IStructureType {
-    constructor(width: number) {
-        this.padding = new Padding();
-        this.backgroundColor = "transparent";
-        this.widthInPixels = width;
-        this.elements = [];
+
+    constructor()
+    constructor(obj: number)
+    constructor(obj: Column)
+    constructor(obj?: any) {
+
+        if (typeof obj === "number") {
+            this.padding = Padding.create();
+            this.backgroundColor = defaultBackgroundColor;
+            this.widthInPixels = obj;
+            this.elements = [];
+        }
+        else if (typeof obj === "object") {
+            this.padding = Padding.duplicate(obj.padding);
+            this.backgroundColor = obj && obj.backgroundColor || defaultBackgroundColor;
+            this.widthInPercentage = obj && obj.widthInPercentage;
+            this.widthInPixels = obj && obj.widthInPixels;
+            this.elements = obj.elements.map((el) => {
+                if (el.hasOwnProperty("button")) return ButtonElement.duplicate(el as ButtonElement);
+                if (el.hasOwnProperty("divider")) return DividerElement.duplicate(el as DividerElement);
+                if (el.hasOwnProperty("image")) return ImageElement.duplicate(el as ImageElement);
+                if (el.hasOwnProperty("text")) return TextElement.duplicate(el as TextElement);
+                return new ElementBase();
+            });
+        }
+        else {
+            this.padding = Padding.create();
+            this.backgroundColor = defaultBackgroundColor;
+            this.widthInPercentage = defaultWidthInPercentage;
+            this.elements = [];
+        }
     }
     padding: Padding;
     backgroundColor: string;
@@ -29,17 +58,6 @@ export class Column implements IStructureType {
     }
 
     static duplicate(column: Column): Column {
-        var newColumn = new Column(column.widthInPixels);
-        newColumn.backgroundColor = column.backgroundColor;
-        newColumn.padding = Padding.duplicate(column.padding);
-        newColumn.widthInPercentage = column.widthInPercentage;
-        newColumn.elements = column.elements.map((el) => {
-            if (el.hasOwnProperty("button")) return ButtonElement.duplicate(el as ButtonElement);
-            if (el.hasOwnProperty("divider")) return DividerElement.duplicate(el as DividerElement);
-            if (el.hasOwnProperty("image")) return ImageElement.duplicate(el as ImageElement);
-            if (el.hasOwnProperty("text")) return TextElement.duplicate(el as TextElement);
-            return new ElementBase();
-        });
-        return newColumn;
+        return new Column(column);
     }
 }

@@ -5,6 +5,7 @@ import { ElementBase } from 'src/app/shared/models/email/elements/elementBase';
 import { Observable } from 'rxjs';
 import { PropertyManager } from '../models/property-manager';
 import { AppApiServiceService } from './app-api-service.service';
+import { Router } from '@angular/router';
 
 @Injectable({
   providedIn: 'root'
@@ -12,7 +13,7 @@ import { AppApiServiceService } from './app-api-service.service';
 
 export class SelectionManagerService {
 
-  public targetPropertyManger: PropertyManager<any> = null;
+  private _targetPropertyManger: PropertyManager<any> = null;
   private _emailTemplate: EmailBody = null;
   private _selectedRow: Section = null;
   private _selectedElement: ElementBase = null;
@@ -20,6 +21,9 @@ export class SelectionManagerService {
   rowSelectedEvent = new EventEmitter();
   elementSelectedEvent = new EventEmitter();
 
+  get targetPropertyManger() {
+    return this._targetPropertyManger;
+  }
   get emailTemplate(): EmailBody {
     return this._emailTemplate;
   }
@@ -30,7 +34,7 @@ export class SelectionManagerService {
     return this._selectedElement;
   };
 
-  constructor(private api: AppApiServiceService) { }
+  constructor(private api: AppApiServiceService, private router: Router) { }
 
   selectElement(element: ElementBase) {
     this._selectedElement = element;
@@ -80,5 +84,10 @@ export class SelectionManagerService {
 
   save() {
     this.api.saveEmailTempate(this.emailTemplate);
+  }
+
+  editPropertyMangager(manager: PropertyManager<any>) {
+    this._targetPropertyManger = manager;
+    this.router.navigateByUrl("/condition-builder");
   }
 }

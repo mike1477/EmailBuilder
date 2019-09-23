@@ -2,6 +2,8 @@ import { Padding } from '../padding';
 import { AppStructureTypes } from '../app-stucture-types';
 import { IStructureType } from '../i-structure-type';
 
+const defaultBackgroundColor = "transparent";
+
 export class ElementBase implements IStructureType {
 
     constructor();
@@ -12,7 +14,7 @@ export class ElementBase implements IStructureType {
         this.widthInPercentage = obj && obj.widthInPercentage || 0;
         this.widthInPixels = obj && obj.widthInPixels || 0;
         this.autoWidth = obj && obj.autoWidth || false;
-        this.backgroundColor = obj && obj.backgroundColor || "transparent";
+        this.backgroundColor = obj && obj.backgroundColor || defaultBackgroundColor;
     }
     padding: Padding;
     widthInPercentage: number;

@@ -18,10 +18,16 @@
            [value]="color"
            [style.background]="inputBackground"
            [(cpToggle)]="toggle"
-           [(colorPicker)]="color"
+           [(colorPicker)]="colorPickerValue"
            [cpIgnoredElements]="[ignoredInput]"
            [cpPosition]="'left'"
            [cpOKButton]="false"
            [cpOutputFormat]="'hex'"
            [cpUseRootViewContainer]="true" />
+    <div class="input-group-append">
+        <button type="button"
+                class="btn btn-outline-secondary"
+                (click)="editConditions()"
+                *ngIf="showPropertyMangerButton"> <i class="fas fa-cogs"></i></button>
+    </div>
 </div>

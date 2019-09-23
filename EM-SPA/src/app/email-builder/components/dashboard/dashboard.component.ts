@@ -114,7 +114,6 @@ export class DashboardComponent implements OnInit, OnDestroy {
   }
   set bodyPropertiesVisible(newValue: boolean) {
     this._bodyPropertiesVisible = newValue;
-    console.log(newValue);
   }
 
   private _rowPropertiesSelected: boolean = false;

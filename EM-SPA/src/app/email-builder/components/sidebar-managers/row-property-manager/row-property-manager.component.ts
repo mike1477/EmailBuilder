@@ -20,21 +20,19 @@ export class RowPropertyManagerComponent implements OnInit {
 
   get backgroundColor(): string {
     var color = this.selectedRow && this.selectedRow.backgroundColor;
-    return typeof color === "string" ? color : "transparent";
+    return color;
   }
 
   set backgroundColor(color: string) {
-    color = typeof color === "string" ? color : "transparent";
     if (this.selectedRow) this.selectedRow.backgroundColor = color;
   }
 
   get contentBackgroundColor(): string {
     var color = this.selectedRow && this.selectedRow.contentBackgroundColor;
-    return typeof color === "string" ? color : "transparent";
+    return color;
   }
 
   set contentBackgroundColor(color: string) {
-    color = typeof color === "string" ? color : "transparent";
     if (this.selectedRow) this.selectedRow.contentBackgroundColor = color;
   }
 
