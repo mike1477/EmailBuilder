@@ -2,6 +2,9 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 @import "styles.theme.scss";
 /* in-flight clone */
+html, body{
+  font-size: 12px;
+}
 html, body, app-root, .wrapper, .content, [app-dashboard], .dashboard-outer{
   min-width: 1080px;
 }
