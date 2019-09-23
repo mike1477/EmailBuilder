@@ -4,8 +4,8 @@ export class BackgroundImage {
     constructor(obj?: any) {
         this.url = obj && obj.url;
         this.repeat = obj && obj.repeat;
-        this.sizeInPercent = obj && obj.size;
-        this.sizeInPixel = obj && obj.size;
+        this.sizeInPercent = obj && obj.sizeInPercent;
+        this.sizeInPixel = obj && obj.sizeInPixel;
     }
     url: string;
     repeat: string;

@@ -27,7 +27,7 @@ export class Section implements IStructureType {
             this.backgroundColor = obj && obj.backgroundColor || defaultBackgroundColor;
             this.contentBackgroundColor = obj && obj.contentBackgroundColor || defaultBackgroundColor;
             this.mobileStack = obj && obj.mobileStack || false;
-            this.backgroundImage = BackgroundImage.duplicate(obj.backgroundColor);
+            this.backgroundImage = BackgroundImage.duplicate(obj.backgroundImage);
             this.columns = obj.columns.map(function (value: Column, index: number) {
                 return Column.duplicate(value);
             });
