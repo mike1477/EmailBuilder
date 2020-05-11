@@ -32,7 +32,7 @@
     "resize-observer-polyfill": "^1.5.1",
     "rxjs": "~6.4.0",
     "simplebar": "^4.2.0",
-    "tinymce": "^5.0.15",
+    "tinymce": "^5.2.2",
     "tslib": "^1.10.0",
     "zone.js": "~0.9.1"
   },
